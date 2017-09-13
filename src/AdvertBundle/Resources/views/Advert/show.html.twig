@@ -1,0 +1,80 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Advert</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ advert.id }}</td>
+            </tr>
+            <tr>
+                <th>Carmodel</th>
+                <td>{{ advert.carModel }}</td>
+            </tr>
+            <tr>
+                <th>Price</th>
+                <td>{{ advert.price }}</td>
+            </tr>
+            <tr>
+                <th>Power</th>
+                <td>{{ advert.power }}</td>
+            </tr>
+            <tr>
+                <th>Mileage</th>
+                <td>{{ advert.mileage }}</td>
+            </tr>
+            <tr>
+                <th>Yearofproduction</th>
+                <td>{{ advert.yearOfProduction }}</td>
+            </tr>
+            <tr>
+                <th>Gearbox</th>
+                <td>{{ advert.gearbox }}</td>
+            </tr>
+            <tr>
+                <th>Energy</th>
+                <td>{{ advert.energy }}</td>
+            </tr>
+            <tr>
+                <th>Colorindoor</th>
+                <td>{{ advert.colorIndoor }}</td>
+            </tr>
+            <tr>
+                <th>Coloroutdoor</th>
+                <td>{{ advert.colorOutdoor }}</td>
+            </tr>
+            <tr>
+                <th>Nbrofdoors</th>
+                <td>{{ advert.nbrOfDoors }}</td>
+            </tr>
+            <tr>
+                <th>Immatriculation</th>
+                <td>{{ advert.immatriculation }}</td>
+            </tr>
+            <tr>
+                <th>Greycard</th>
+                <td>{{ advert.greyCard }}</td>
+            </tr>
+            <tr>
+                <th>Firsthand</th>
+                <td>{% if advert.firstHand %}Yes{% else %}No{% endif %}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('advert_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('advert_edit', { 'id': advert.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

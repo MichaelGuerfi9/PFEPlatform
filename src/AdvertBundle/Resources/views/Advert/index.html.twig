@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Adverts list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Modèle de voiture</th>
+                <th>Prix</th>
+                <th>Puissance</th>
+                <th>Kilomètres</th>
+                <th>Année de production</th>
+                <th>Boîte de vitesse</th>
+                <th>Énergie</th>
+                <th>Couleur intérieure</th>
+                <th>Couleur extérieure</th>
+                <th>Nombre de portes</th>
+                <th>Première main</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for advert in adverts %}
+            <tr>
+                <td>{{ advert.carModel }}</td>
+                <td>{{ advert.price }}</td>
+                <td>{{ advert.power }}</td>
+                <td>{{ advert.mileage }}</td>
+                <td>{{ advert.yearOfProduction }}</td>
+                <td>{{ advert.gearbox }}</td>
+                <td>{{ advert.energy }}</td>
+                <td>{{ advert.colorIndoor }}</td>
+                <td>{{ advert.colorOutdoor }}</td>
+                <td>{{ advert.nbrOfDoors }}</td>
+                <td>{% if advert.firstHand %}Yes{% else %}No{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('advert_show', { 'id': advert.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('advert_edit', { 'id': advert.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('advert_new') }}">Create a new advert</a>
+        </li>
+    </ul>
+{% endblock %}
