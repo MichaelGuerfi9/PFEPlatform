@@ -14,4 +14,30 @@ class DefaultController extends Controller
     {
         return $this->render('UserBundle:Default:index.html.twig');
     }
+
+
+
+    /**
+     * @Route("/profil")
+     */
+    public function profilAction()
+    {
+
+
+        $user = $this->getUser();
+
+        if (!$user){
+            return $this->redirectToRoute('fos_user_security_login');
+        }
+
+        $em = $this->getDoctrine()->getManager();
+
+        //$matters = $em->getRepository('UserBundle:matter')->findAll();
+
+
+
+        return $this->render('UserBundle:Default:index.html.twig');
+    }
+
+
 }
