@@ -309,4 +309,9 @@ class Profil
     {
         return $this->user;
     }
+
+    public function getPassword(){
+        return $this->getUser()->getPassword();
+    }
+
 }

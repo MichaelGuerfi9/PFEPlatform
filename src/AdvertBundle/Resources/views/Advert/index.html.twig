@@ -42,6 +42,11 @@
                         <li>
                             <a href="{{ path('advert_edit', { 'id': advert.id }) }}">edit</a>
                         </li>
+
+                        <li>
+                            <a href="{{ path('advertToFavorite', { 'id': advert.id }) }}">favorite</a>
+                        </li>
+
                     </ul>
                 </td>
             </tr>
