@@ -79,6 +79,12 @@ class Profil
 
 
     /**
+     * @ORM\OneToOne(targetEntity="UserBundle\Entity\User", cascade={"persist"})
+     */
+    private $user;
+
+
+    /**
      * Get id
      *
      * @return int
@@ -279,5 +285,33 @@ class Profil
     {
         return $this->zipCode;
     }
-}
 
+    /**
+     * Set user
+     *
+     * @param \UserBundle\Entity\User $user
+     *
+     * @return Profil
+     */
+    public function setUser(\UserBundle\Entity\User $user = null)
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * Get user
+     *
+     * @return \UserBundle\Entity\User
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+
+    public function getPassword(){
+        return $this->getUser()->getPassword();
+    }
+
+}

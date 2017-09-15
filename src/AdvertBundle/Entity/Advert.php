@@ -112,7 +112,6 @@ class Advert
      */
     private $firstHand;
 
-
     /**
      * Get id
      *

@@ -24,6 +24,11 @@ class User extends BaseUser
 
 
     /**
+     * @ORM\ManyToMany(targetEntity="AdvertBundle\Entity\Advert", cascade={"persist"})
+     */
+    private $favorite_advert;
+
+    /**
      * Get id
      *
      * @return int
@@ -32,5 +37,38 @@ class User extends BaseUser
     {
         return $this->id;
     }
-}
 
+    /**
+     * Add favoriteAdvert
+     *
+     * @param \AdvertBundle\Entity\Advert $favoriteAdvert
+     *
+     * @return User
+     */
+    public function addFavoriteAdvert(\AdvertBundle\Entity\Advert $favoriteAdvert)
+    {
+        $this->favorite_advert[] = $favoriteAdvert;
+
+        return $this;
+    }
+
+    /**
+     * Remove favoriteAdvert
+     *
+     * @param \AdvertBundle\Entity\Advert $favoriteAdvert
+     */
+    public function removeFavoriteAdvert(\AdvertBundle\Entity\Advert $favoriteAdvert)
+    {
+        $this->favorite_advert->removeElement($favoriteAdvert);
+    }
+
+    /**
+     * Get favoriteAdvert
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getFavoriteAdvert()
+    {
+        return $this->favorite_advert;
+    }
+}
