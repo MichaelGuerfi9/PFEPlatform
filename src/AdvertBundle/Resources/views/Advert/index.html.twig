@@ -1,6 +1,44 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+
+
+<div class="grid">
+
+    {% for advert in adverts %}
+        <div class="grid-item item-presta" data-filter=".item-presta">
+            <div class="well clearfix">
+                <div class="grid-img" style="">
+                    <a href="">
+                        <img src="https://www.loisir-et-miniature.com/Files/122037/Img/15/AUTOART-chevrolet-corvette-cr7-black-big.jpg" class="img-responsive" alt="">
+
+                    </a>
+                    <a href="" data-toggle="tooltip" data-placement="left" title="Sauver cette annonce" class="js-save" data-id="{{ advert.id }}">
+                        <i class="material-icons">&#xE89A;</i>
+                    </a>
+                </div>
+                <div class="grid-caption">
+                    <h4 class="grid-title">{{ advert.carModel }}</h4>
+                    <hr>
+                    <div class="see-more-info">
+                        <ul>
+                            <li class="cat"> prix : {{ advert.price}} €</li>
+                            <li class="city"> puissance :{{ advert.power }}</li>
+                            {#                             <li class="rate"> 20 Vues</li>
+                             #}                            <li class="date">année : {{ advert.yearOfProduction}}</li>
+                        </ul>
+                        {# <div class="small-desc">
+                            <p>Description :</p>
+                            <p>Ad aute ea reprehenderit ullamco consequat commodo est proident aliquip sit in ut velit dolore et anim aute fugiat do proident eu qui fugiat anim et ex veniam ea.</p>
+                        </div> #}
+                    </div>
+                    <a class="view-more btn" href=""><i class="material-icons">&#xE409;</i></a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
     <h1>Adverts list</h1>
 
     <table>

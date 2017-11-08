@@ -25,7 +25,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/profil")
+     * @Route("/profil", name="myProfile")
      */
     public function profilAction(Request $request)
     {
