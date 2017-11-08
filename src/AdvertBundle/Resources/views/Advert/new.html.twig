@@ -1,16 +1,177 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Advert creation</h1>
 
+<h1>Advert creation</h1>
+
+
+    {{ form_start(form, {'attr': {'class': '' , 'enctype': 'multipart/form-data'}}) }}
+
+<div class="col-lg-8 col-md-8 col-sm-9 col-xs-12">
+
+    <div class="form-group">
+        {# 			<label class="form-label" for="field-6">Mon Adresse</label>
+         #}			{{ form_label(form.carModel, "carModel", {'label_attr': {'class': 'form-label'}}) }}
+        <span class="desc"></span>
+        <div class="controls">
+            {# <textarea class="form-control autogrow" cols="5" id="field-6">A-2 Canon Appt, Near Ring Road, City Streets, NY 12435</textarea> #}
+            {{ form_widget(form.carModel, {'attr': {'class': 'form-control' }}) }}
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        {# 			<label class="form-label" for="field-6">Mon Adresse</label>
+         #}			{{ form_label(form.price, "price", {'label_attr': {'class': 'form-label'}}) }}
+        <span class="desc"></span>
+        <div class="controls">
+            {# <textarea class="form-control autogrow" cols="5" id="field-6">A-2 Canon Appt, Near Ring Road, City Streets, NY 12435</textarea> #}
+            {{ form_widget(form.price, {'attr': {'class': 'form-control' }}) }}
+        </div>
+    </div>
+
+    <div class="form-group">
+        {# 			<label class="form-label" for="field-1">Mon Nom</label>
+         #}			{{ form_label(form.power, "power", {'label_attr': {'class': 'form-label'}}) }}
+        <span class="desc"></span>
+        <div class="controls">
+
+            {{ form_widget(form.power, {'attr': {'class': 'form-control' }}) }}
+            {# 				<input type="text" value="{{ app.user.username }}" class="form-control" id="field-1">
+             #}			</div>
+    </div>
+
+    <div class="form-group">
+        {# 			<label class="form-label" for="field-1">Mon Nom</label>
+         #}			{{ form_label(form.mileage, "mileage", {'label_attr': {'class': 'form-label'}}) }}
+        <span class="desc"></span>
+        <div class="controls">
+
+            {{ form_widget(form.mileage, {'attr': {'class': 'form-control' }}) }}
+            {# 				<input type="text" value="{{ app.user.username }}" class="form-control" id="field-1">
+             #}			</div>
+    </div>
+    <div class="form-group">
+        {# 			<label class="form-label" for="field-1">Mon Nom</label>
+         #}			{{ form_label(form.yearOfProduction, "yearOfProduction", {'label_attr': {'class': 'form-label'}}) }}
+        <span class="desc"></span>
+        <div class="controls">
+
+            {{ form_widget(form.yearOfProduction, {'attr': {'class': 'form-control'}}) }}
+            {# 				<input type="text" value="{{ app.user.username }}" class="form-control" id="field-1">
+             #}			</div>
+    </div>
+    <div class="form-group">
+        {# 			<label class="form-label" for="field-6">Mon Adresse</label>
+         #}			{{ form_label(form.gearbox, "gearbox", {'label_attr': {'class': 'form-label'}}) }}
+        <span class="desc"></span>
+        <div class="controls">
+            {# <textarea class="form-control autogrow" cols="5" id="field-6">A-2 Canon Appt, Near Ring Road, City Streets, NY 12435</textarea> #}
+            {{ form_widget(form.gearbox, {'attr': {'class': 'form-control' }}) }}
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        {# 			<label class="form-label" for="field-6">Mon Adresse</label>
+         #}			{{ form_label(form.energy, "energy", {'label_attr': {'class': 'form-label'}}) }}
+        <span class="desc"></span>
+        <div class="controls">
+            {# <textarea class="form-control autogrow" cols="5" id="field-6">A-2 Canon Appt, Near Ring Road, City Streets, NY 12435</textarea> #}
+            {{ form_widget(form.energy, {'attr': {'class': 'form-control' }}) }}
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        {# 			<label class="form-label" for="field-6">Mon Adresse</label>
+         #}			{{ form_label(form.colorIndoor, "colorIndoor", {'label_attr': {'class': 'form-label'}}) }}
+        <span class="desc"></span>
+        <div class="controls">
+            {# <textarea class="form-control autogrow" cols="5" id="field-6">A-2 Canon Appt, Near Ring Road, City Streets, NY 12435</textarea> #}
+            {{ form_widget(form.colorIndoor, {'attr': {'class': 'form-control' }}) }}
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        {# 			<label class="form-label" for="field-1">Facebook URL</label>
+         #}			 {{ form_label(form.colorOutdoor, "colorOutdoor", {'label_attr': {'class': 'form-label'}}) }}
+        <span class="desc"></span>
+        <div class="controls">
+            {#
+           <input type="text" class="form-control" name="facebookId" value="{{ app.user.facebookId }}" id="field-31">
+            #}
+            {{ form_widget(form.colorOutdoor, {'attr': {'class': 'form-control' }}) }}
+
+        </div>
+    </div>
+    <div class="form-group">
+        {# 			<label class="form-label" for="field-1">Twitter URL</label>
+         #}			{{ form_label(form.nbrOfDoors, "nbrOfDoors", {'label_attr': {'class': 'form-label'}}) }}
+        <span class="desc"></span>
+        <div class="controls">
+            {{ form_widget(form.nbrOfDoors, {'attr': {'class': 'form-control' }}) }}
+        </div>
+    </div>
+    <div class="form-group">
+        {# 			<label class="form-label" for="field-1">Google Plus URL</label>
+         #}			{{ form_label(form.immatriculation, "immatriculation", {'label_attr': {'class': 'form-label'}}) }}
+        <span class="desc"></span>
+        <div class="controls">
+            {{ form_widget(form.immatriculation, {'attr': {'class': 'form-control' }}) }}
+        </div>
+    </div>
+
+    <div class="form-group">
+        {# 			<label class="form-label" for="field-1">Google Plus URL</label>
+         #}			{{ form_label(form.greyCard, "greyCard", {'label_attr': {'class': 'form-label'}}) }}
+        <span class="desc"></span>
+        <div class="controls">
+            {{ form_widget(form.greyCard, {'attr': {'class': 'form-control' }}) }}
+        </div>
+    </div>
+
+    <div class="form-group">
+        {# 			<label class="form-label" for="field-1">Google Plus URL</label>
+         #}			{{ form_label(form.firstHand, "firstHand", {'label_attr': {'class': 'form-label'}}) }}
+        <span class="desc"></span>
+        <div class="controls">
+            {{ form_widget(form.firstHand, {'attr': {'class': 'form-control' }}) }}
+        </div>
+    </div>
+
+    <div class="col-lg-8 col-md-8 col-sm-9 col-xs-12 padding-bottom-30">
+        <div class="text-left">
+            <button type="submit" class="btn btn-primary">Create</button>
+        </div>
+    </div>
+    {{ form_widget(form._token) }}
+    {{ form_errors(form) }}
+    {{ form_end(form, {'render_rest': false}) }}
+
+
+
+
+    {#
     {{ form_start(form) }}
         {{ form_widget(form) }}
         <input type="submit" value="Create" />
     {{ form_end(form) }}
+    #}
 
+    <br>
     <ul>
         <li>
             <a href="{{ path('advert_index') }}">Back to the list</a>
         </li>
     </ul>
+
+
+    <style>
+        .form-control, .form-group .form-control, .form-group.is-focused .form-control{
+            background-image: none !important;
+        }
+    </style>
+
 {% endblock %}

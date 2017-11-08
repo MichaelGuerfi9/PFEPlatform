@@ -14,7 +14,8 @@
         <link rel="stylesheet" type="text/css" href="{{ asset('css/print.css') }}" />
     </head>
     <body>
-        {% block body %}{% endblock %}
+    {% include 'default/menu.html.twig' %}
+    {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
     </body>
 </html>
