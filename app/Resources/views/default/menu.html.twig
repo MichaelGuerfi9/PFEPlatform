@@ -1,4 +1,5 @@
-      {% if app.user and is_granted('ROLE_PRESTA') %}
+   <header>
+      {% if app.user and is_granted('ROLE_ADMIN') %}
       <ul class="nav navbar-nav">
         <li><a href=""><i class="material-icons">&#xE8B6;</i> Voir les annonces</a></li>
         <li><a href=""><i class="material-icons">&#xE871;</i> Mon dashboard</a></li>
@@ -12,7 +13,7 @@
 
       {% endif %}
 
-      {% if app.user and is_granted('ROLE_PRESTA') %}
+      {% if app.user and is_granted('ROLE_ADMIN') %}
       <ul class="nav navbar-nav navbar-right connected">
         {# <li>Bienvenue {{ app.user.username|capitalize }}</li> #}
         <!-- Single button -->
@@ -40,14 +41,18 @@
                           transform: translateX(-50%) translateY(-50%);
                 }
               </style>
-              
+              {#
               {% if  app.user.imageName %}
                 <div class="image-control user">
                   <img src="" alt="image user TCPQQ1">
                 </div>
-              {% else %} 
+              {% else %}
                 <i class="material-icons">&#xE853;</i>
               {% endif %}
+
+              #}
+                <i class="material-icons">&#xE853;</i>
+
               {# sinon #}
 {#               <img src="" alt="logo utilisateur logué">
  #}              {{ app.user.username|capitalize }} <span class="caret"></span>
@@ -77,7 +82,7 @@
 
         {# <li><a href="#" data-toggle="modal" data-target="#Connexion">Mon compte</a></li> #}
       </ul>
-    {% elseif app.user and is_granted('ROLE_PARTICULIER') %}
+    {% elseif app.user and is_granted('ROLE_USER') %}
       
       <ul class="nav navbar-nav navbar-right connected">
         {# <li>Bienvenue {{ app.user.username|capitalize }}</li> #}
@@ -123,4 +128,5 @@
       </ul>    	
 
       {% endif %}
-      
+
+   </header>
