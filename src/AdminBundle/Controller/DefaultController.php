@@ -13,11 +13,18 @@ class DefaultController extends Controller
     /**
      * Lists all advert entities.
      *
-     * @Route("/", name="advert_index")
+     * @Route("/", name="index")
      * @Method("GET")
      */
     public function indexAction()
     {
+
+        $user = $this->getUser();
+
+        if ($user == null){
+            return $this->redirect($this->generateUrl('fos_user_security_login'));
+        }
+
         $em = $this->getDoctrine()->getManager();
 
         $adverts = $em->getRepository('AdvertBundle:Advert')->findAll();
