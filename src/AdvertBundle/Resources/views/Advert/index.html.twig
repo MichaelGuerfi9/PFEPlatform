@@ -32,13 +32,32 @@
                             <p>Ad aute ea reprehenderit ullamco consequat commodo est proident aliquip sit in ut velit dolore et anim aute fugiat do proident eu qui fugiat anim et ex veniam ea.</p>
                         </div> #}
                     </div>
-                    <a class="view-more btn" href=""><i class="material-icons">&#xE409;</i></a>
+                    <a class="view-more btn" href="{{ path('advert_rent',{'id':advert.id}) }}"><i class="material-icons">&#xE409;</i></a>
                 </div>
             </div>
         </div>
     {% endfor %}
 </div>
 
+
+    <script>
+        {#jQuery(document).ready(function($){#}
+            {#$('.view-more').on('click', function(event) {#}
+                {#$.ajax({#}
+                    {#method: "POST",#}
+                    {#url: "{{path('advert_rent','id':13)}}"#}
+                    {#// data: { name: "John", location: "Boston" }#}
+                {#})#}
+                {#.done(function() {#}
+                    {#alert("Vous avez bien reservé cette annonce");#}
+                    {#//alert( "Data Saved: " + msg );#}
+                {#})#}
+                {#.fail(function(err) {#}
+                    {#console.log(err);#}
+                {#})#}
+            {#});#}
+        {#})#}
+    </script>
     {#
     <h1>Adverts list</h1>
 

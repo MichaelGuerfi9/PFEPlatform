@@ -29,6 +29,12 @@ class User extends BaseUser
     private $favorite_advert;
 
     /**
+     * @ORM\OneToOne(targetEntity="AdvertBundle\Entity\Advert", inversedBy="user")
+     */
+    public $reservedCar;
+
+
+    /**
      * Get id
      *
      * @return int

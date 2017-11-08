@@ -112,6 +112,30 @@ class Advert
      */
     private $firstHand;
 
+
+    /**
+     * @ORM\OneToOne(targetEntity="UserBundle\Entity\User", mappedBy="advert")
+     * @ORM\JoinColumn(name="reservedCar", referencedColumnName="id")
+     */
+    private $reservedBy;
+
+    /**
+     * @return mixed
+     */
+    public function getReservedBy()
+    {
+        return $this->reservedBy;
+    }
+
+    /**
+     * @param mixed $reservedBy
+     */
+    public function setReservedBy($reservedBy)
+    {
+        $this->reservedBy = $reservedBy;
+    }
+
+
     /**
      * Get id
      *

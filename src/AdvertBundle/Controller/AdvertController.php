@@ -117,4 +117,21 @@ class AdvertController extends Controller
             ->getForm()
         ;
     }
+
+    /**
+     * @param $advertId
+     * @return null|object
+     * @Route("/{id}", name="advert_rent")
+     */
+    public function rentAdvert($advertId)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $advert = $em->getRepository('Advert')->find($advertId);
+        if($this->getUser()){
+            $advert->setReservedBy($this->getUser());
+        }
+        $em->persist($advert);
+        $em->flush();
+        return $this->render('index');
+    }
 }
