@@ -119,19 +119,20 @@ class AdvertController extends Controller
     }
 
     /**
-     * @param $advertId
      * @return null|object
-     * @Route("/{id}", name="advert_rent")
+     * @Route("/rent/{id}", name="advert_rent")
      */
-    public function rentAdvert($advertId)
+    public function rentAdvert(Advert $advert)
     {
         $em = $this->getDoctrine()->getManager();
-        $advert = $em->getRepository('Advert')->find($advertId);
+//        $advert = $em->getRepository('Advert')->find($advertId);
         if($this->getUser()){
             $advert->setReservedBy($this->getUser());
+            $this->getUser()->setReservedCar($advert);
         }
         $em->persist($advert);
+        $em->persist($this->getUser());
         $em->flush();
-        return $this->render('index');
+        return $this->redirectToRoute('index');
     }
 }

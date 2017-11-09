@@ -33,6 +33,21 @@ class User extends BaseUser
      */
     public $reservedCar;
 
+    /**
+     * @return mixed
+     */
+    public function getReservedCar()
+    {
+        return $this->reservedCar;
+    }
+
+    /**
+     * @param mixed $reservedCar
+     */
+    public function setReservedCar($reservedCar)
+    {
+        $this->reservedCar = $reservedCar;
+    }
 
     /**
      * Get id
