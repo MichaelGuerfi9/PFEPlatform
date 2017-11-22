@@ -22,7 +22,7 @@ class DefaultController extends Controller
         $user = $this->getUser();
 
         if ($user == null){
-            return $this->redirect($this->generateUrl('fos_user_security_login'));
+            //return $this->redirect($this->generateUrl('fos_user_security_login'));
         }
 
         $em = $this->getDoctrine()->getManager();
@@ -33,5 +33,18 @@ class DefaultController extends Controller
             'adverts' => $adverts,
         ));
     }
+
+
+    /**
+     * Lists all advert entities.
+     *
+     * @Route("/home", name="home")
+     * @Method("GET")
+     */
+    public function homeAction()
+    {
+        return $this->render('AdvertBundle:Default:index.html.twig');
+    }
+
 
 }
