@@ -22,7 +22,7 @@ class DefaultController extends Controller
         $user = $this->getUser();
 
         if ($user == null){
-            return $this->redirect($this->generateUrl('fos_user_security_login'));
+            //return $this->redirect($this->generateUrl('fos_user_security_login'));
         }
 
         $em = $this->getDoctrine()->getManager();
