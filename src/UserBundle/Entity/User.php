@@ -29,27 +29,6 @@ class User extends BaseUser
     private $favorite_advert;
 
     /**
-     * @ORM\OneToOne(targetEntity="AdvertBundle\Entity\Advert", inversedBy="user")
-     */
-    public $reservedCar;
-
-    /**
-     * @return mixed
-     */
-    public function getReservedCar()
-    {
-        return $this->reservedCar;
-    }
-
-    /**
-     * @param mixed $reservedCar
-     */
-    public function setReservedCar($reservedCar)
-    {
-        $this->reservedCar = $reservedCar;
-    }
-
-    /**
      * Get id
      *
      * @return int
