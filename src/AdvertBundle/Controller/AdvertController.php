@@ -128,10 +128,8 @@ class AdvertController extends Controller
 //        $advert = $em->getRepository('Advert')->find($advertId);
         if($this->getUser()){
             $advert->setReservedBy($this->getUser());
-            $this->getUser()->setReservedCar($advert);
         }
         $em->persist($advert);
-        $em->persist($this->getUser());
         $em->flush();
         return $this->redirectToRoute('index');
     }
