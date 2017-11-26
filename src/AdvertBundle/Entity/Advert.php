@@ -3,6 +3,9 @@
 namespace AdvertBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping\OneToMany;
+use Doctrine\ORM\Mapping\ManyToOne;
+use Doctrine\ORM\Mapping\JoinColumn;
 
 /**
  * Advert
@@ -114,26 +117,11 @@ class Advert
 
 
     /**
-     * @ORM\OneToOne(targetEntity="UserBundle\Entity\User", mappedBy="advert")
-     * @ORM\JoinColumn(name="reservedCar", referencedColumnName="id")
+     * Many Features have One Product.
+     * @ORM\ManyToOne(targetEntity="UserBundle\Entity\User", inversedBy="reservedCar")
+     * @JoinColumn(name="user_id", referencedColumnName="id")
      */
     private $reservedBy;
-
-    /**
-     * @return mixed
-     */
-    public function getReservedBy()
-    {
-        return $this->reservedBy;
-    }
-
-    /**
-     * @param mixed $reservedBy
-     */
-    public function setReservedBy($reservedBy)
-    {
-        $this->reservedBy = $reservedBy;
-    }
 
 
     /**
