@@ -10,10 +10,34 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component
 /**
  * Advert controller.
  *
- * @Route("advert")
+ * @Route("/")
  */
 class AdvertController extends Controller
 {
+
+    /**
+     * Lists all advert entities.
+     *
+     * @Route("/", name="index")
+     * @Method("GET")
+     */
+    public function indexAction()
+    {
+
+        $user = $this->getUser();
+
+        if ($user == null){
+            //return $this->redirect($this->generateUrl('fos_user_security_login'));
+        }
+
+        $em = $this->getDoctrine()->getManager();
+
+        $adverts = $em->getRepository('AdvertBundle:Advert')->findBy(array('reservedBy'=>null),array('id'=>'DESC'),3);
+
+        return $this->render('AdvertBundle:Advert:index.html.twig', array(
+            'adverts' => $adverts,
+        ));
+    }
 
     /**
      * Creates a new advert entity.
@@ -132,5 +156,25 @@ class AdvertController extends Controller
         $em->persist($advert);
         $em->flush();
         return $this->redirectToRoute('index');
+    }
+
+    /**
+     * Lists all advert entities.
+     *
+     * @Route("/list", name="list")
+     * @Method("GET")
+     */
+    public function listAction()
+    {
+
+        $user = $this->getUser();
+
+        $em = $this->getDoctrine()->getManager();
+
+        $adverts = $em->getRepository('AdvertBundle:Advert')->findAll();
+
+        return $this->render('AdvertBundle:Advert:list.html.twig',array(
+            'adverts'=> $adverts,
+        ));
     }
 }

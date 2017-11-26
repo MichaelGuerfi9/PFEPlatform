@@ -13,31 +13,6 @@ class DefaultController extends Controller
     /**
      * Lists all advert entities.
      *
-     * @Route("/", name="index")
-     * @Method("GET")
-     */
-    public function indexAction()
-    {
-
-        $user = $this->getUser();
-
-        if ($user == null){
-            //return $this->redirect($this->generateUrl('fos_user_security_login'));
-        }
-
-        $em = $this->getDoctrine()->getManager();
-
-        $adverts = $em->getRepository('AdvertBundle:Advert')->findAll();
-
-        return $this->render('AdvertBundle:Advert:index.html.twig', array(
-            'adverts' => $adverts,
-        ));
-    }
-
-
-    /**
-     * Lists all advert entities.
-     *
      * @Route("/home", name="home")
      * @Method("GET")
      */
