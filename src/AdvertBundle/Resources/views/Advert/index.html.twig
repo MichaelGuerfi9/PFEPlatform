@@ -8,7 +8,7 @@
 
     </div>
 
-    <div id="search" style="background: white; width: 50%; height: 100px; margin-left: 25%; border: 1px solid grey; border-radius: 5px">
+    <div id="search" class="col-md-6" style="background: white; width: 50%; height: 100px; margin-left: 25%; border: 1px solid grey; border-radius: 5px">
 
         <input id="homeSearchInput" type="text" class="center-block" style="width: 80%; margin-top: 2%; border: none; border-bottom: 1px solid grey;" placeholder="Modele, marque ville ...">
 
@@ -50,61 +50,154 @@
 
     </div>
 
-    <div id="blockInformations" class="col-lg-10" style="margin-left: 10%; margin-top: 4%">
+    <div class="col-md-12" style="background: #F5F5F5; margin-top: 4%">
 
-        <h2 class="center-block" style="width:36%;">Swicar en quelques points</h2>
+        <div id="blockInformations" class="col-lg-10" style="margin-left: 10%; ">
 
-        <div class="informationBlock col-lg-3" style="background: red">
-            t
+            <h2 class="center-block" style="width:36%;">Swicar en quelques points</h2>
+
+            <div class="informationBlock col-lg-3" style="background: red">
+                t
+            </div>
+            <div class="informationBlock col-lg-3" style="background: red">
+                t
+            </div>
+            <div class="informationBlock col-lg-3" style="background: red">
+                t
+            </div>
+            <div class="informationBlock col-lg-3" style="background: red">
+                t
+            </div>
+
+            <style>
+
+                .informationBlock{
+                    margin-right: 5%;
+                    width: 20%;
+                }
+
+            </style>
+
         </div>
-        <div class="informationBlock col-lg-3" style="background: red">
-            t
-        </div>
-        <div class="informationBlock col-lg-3" style="background: red">
-            t
-        </div>
-        <div class="informationBlock col-lg-3" style="background: red">
-            t
-        </div>
-
-        <style>
-
-            .informationBlock{
-                margin-right: 5%;
-                width: 20%;
-            }
-
-        </style>
-
     </div>
-
     <br>
 
-    <div id="blockLastAdvert" style="margin-top: 14%; margin-left: 10%">
+    <div class="col-md-12" style="background: #E6E6E6;">
 
-        <h2 class="center-block" style="width:36%;">Denieres offres en ligne</h2>
+        <div id="blockLastAdvert" style="margin-left: 10%;">
 
-        <div class="advertBlock col-lg-3" style="background: red">
-            t
+            <h2 class="center-block" style="width:36%;">Denieres offres en ligne</h2>
+
+            <div class="advertBlock col-lg-3" style="background: red; border-radius: 6%">
+                <img style="width: 100%" src="http://www.camerounsports.info/wp-content/uploads/sites/5/2017/10/mclaren-650s-spyder-2014-750x410.jpeg" alt="">
+                <div style="background: red">
+                    t
+                </div>
+            </div>
+            <div class="advertBlock col-lg-3" style="background: red;  border-radius: 6%">
+                <img style="width: 100%" src="http://www.camerounsports.info/wp-content/uploads/sites/5/2017/10/mclaren-650s-spyder-2014-750x410.jpeg" alt="">
+                <div style="background: red">
+                    t
+                </div>
+            </div>
+            <div class="advertBlock col-lg-3" style="background: red;  border-radius: 6%">
+                <img style="width: 100%" src="http://www.camerounsports.info/wp-content/uploads/sites/5/2017/10/mclaren-650s-spyder-2014-750x410.jpeg" alt="">
+                <div style="background: red">
+                    t
+                </div>
+            </div>
+
+            <style>
+
+                .advertBlock{
+                    margin-right: 7%;
+                    padding-left: 0;
+                    padding-right: 0%;
+                }
+
+            </style>
+
         </div>
-        <div class="advertBlock col-lg-3" style="background: red">
-            t
+    </div>
+
+
+    <div class="col-md-12" style="background: white">
+
+        <div id="commentBlock" class="col-lg-10" style="margin-left: 10%; ">
+
+            <h2 class="center-block" style="width:36%; text-align: center;">Ils nous ont fais confiance </h2>
+
+            <div class="comment">
+                <img src="{{ asset("image.jpg") }}" alt="" class="col-md-2" style="border-radius: 50%">
+            </div>
+
         </div>
-        <div class="advertBlock col-lg-3" style="background: red">
-            t
+
+    </div>
+
+        <div class="col-md-12" style="background: linear-gradient(to right, #447398, #204D7E); color: white">
+
+            <div id="blockFooter" class="col-lg-10" style="margin-left: 10%; ">
+
+                <h2 class="center-block" style="width:36%; text-align: center; color: white">Des questions ?</h2>
+
+                <div class="col-md-12">
+
+                    <div class="livraison-footer block-img col-md-3">
+                        <span class="txt">TELEPHONE <br>01 59 60 44 66</span>
+                    </div>
+
+                    <div class="livraison-footer block-img col-md-3">
+                        <span class="txt">EMAIL <br>contact@swicar.com</span>
+                    </div>
+
+                    <div class="livraison-footer block-img col-md-3">
+                        <span class="txt">CHAT <br>cliquez ici</span>
+                    </div>
+
+                </div>
+
+                <p class="coyprigthFooter col-md-12" style="text-align: center; border-top: 1px solid white;">&copy; 2017 SWICAR</p>
+
+                <p class="col-md-1 text-footer" style="min-width: 11%">Mentions légales</p>
+                <p class="col-md-1 text-footer" style="max-width: 7%">À propos</p>
+                <p class="col-md-1 text-footer" style="max-width: 6%">Contact</p>
+                <p class="col-md-1 text-footer" style="min-width: 12%">Conditions générales</p>
+
+            </div>
+
         </div>
 
         <style>
 
-            .advertBlock{
-                margin-right: 7%;
+            .block-img{
+                display: inline-block;
+                /*
+                width: 20%;
+                 */
+            }
+
+            .livraison-footer {
+                background: url(https://vintage-motors.net/themes/default-bootstrap/img/livraison.png)no-repeat center 15px;
+                background-position: center top;
+                background-size: 80px;
+                padding-top: 90px;
+                text-align: center;
+                margin-left: 6%;
+                /*
+                margin-left: 9%;
+                 */
+            }
+
+            .text-footer {
+                padding: 0;
             }
 
         </style>
 
     </div>
 
-    <br><br><br><br><br><br><br><br><br>
+</div>
 
 
     <!-- Modal -->
