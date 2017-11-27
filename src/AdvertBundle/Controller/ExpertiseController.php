@@ -26,17 +26,17 @@ class ExpertiseController extends Controller
 
         $user = $this->getUser();
 
-        if (!$user || !$advert->getReservedBy()){
+        if (!$user || !$advert->getReservedBy()) {
             echo 'user or advert error';
             die;
         }
 
-        if ($advert->getReservedBy()->getId() != $user->getId()){
+        if ($advert->getReservedBy()->getId() != $user->getId()) {
             echo "user doesn't have reserved this car";
             die;
         }
 
-        if ($advert->getExpertise()){
+        if ($advert->getExpertise()) {
             echo "already ask a expertise";
             die;
         }
@@ -55,4 +55,19 @@ class ExpertiseController extends Controller
 
     }
 
+    /**
+     * @Route("/myExpertise/{id}", name="my_expertise")
+     * @Method("GET")
+     */
+    public function myExpertiseAction(Expertise $expertise)
+    {
+
+        $advert = $expertise->getAdvert();
+
+        return $this->render('AdvertBundle:Expertise:show.html.twig', array(
+            'expertise' => $expertise,
+            'advert' => $advert,
+        ));
+
+    }
 }

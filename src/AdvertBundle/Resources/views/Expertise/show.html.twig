@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Advert</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ expertise.id }}</td>
+            </tr>
+            <tr>
+                <th>status</th>
+                <td>{{ expertise.status }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('index') }}">Back to the list</a>
+        </li>
+        {% if advert.reservedBy %}
+
+            {% if app.user and advert.reservedBy.id == app.user.id %}
+
+                <li>
+                    <a href="{{ path('advert_rent', { 'id' : advert.id }) }}">Ne plus reserver</a>
+                </li>
+
+                {% if advert.expertise %}
+                    L'expertise à déja été demandée.
+                {% else %}
+                    <li>
+                        <a href="{{ path('ask_expertise', { 'id' : advert.id }) }}">Demander une expertise</a>
+                    </li>
+                {% endif %}
+
+                <li>
+                    <a href="{{ path('advert_rent', { 'id' : advert.id }) }}">Demander la livraison</a>
+                </li>
+
+            {% else %}
+                Cette voiture est déja réservée.
+            {% endif %}
+        {% else %}
+            <li>
+                <a href="{{ path('advert_rent', { 'id' : advert.id }) }}">Réserver</a>
+            </li>
+        {% endif %}
+        <li>
+            <a href="{{ path('advert_edit', { 'id': advert.id }) }}">Edit</a>
+        </li>
+    </ul>
+
+{% endblock %}
