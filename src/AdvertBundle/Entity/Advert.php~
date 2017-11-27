@@ -445,28 +445,5 @@ class Advert
     {
         return $this->firstHand;
     }
-
-    /**
-     * Set reservedBy
-     *
-     * @param \UserBundle\Entity\User $reservedBy
-     *
-     * @return Advert
-     */
-    public function setReservedBy(\UserBundle\Entity\User $reservedBy = null)
-    {
-        $this->reservedBy = $reservedBy;
-
-        return $this;
-    }
-
-    /**
-     * Get reservedBy
-     *
-     * @return \UserBundle\Entity\User
-     */
-    public function getReservedBy()
-    {
-        return $this->reservedBy;
-    }
 }
+

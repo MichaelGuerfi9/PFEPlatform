@@ -68,7 +68,7 @@ class AdvertController extends Controller
     /**
      * Finds and displays a advert entity.
      *
-     * @Route("/{id}", name="advert_show")
+     * @Route("/advert/{id}", name="advert_show")
      * @Method("GET")
      */
     public function showAction(Advert $advert)
@@ -148,14 +148,25 @@ class AdvertController extends Controller
      */
     public function rentAdvert(Advert $advert)
     {
-        $em = $this->getDoctrine()->getManager();
-//        $advert = $em->getRepository('Advert')->find($advertId);
-        if($this->getUser()){
-            $advert->setReservedBy($this->getUser());
+
+        $user = $this->getUser();
+
+        if($user && !$advert->getReservedBy()){
+            $user->addReservedCar($advert);
+            $advert->setReservedBy($user);
+
+            $em = $this->getDoctrine()->getManager();
+
+            $em->persist($advert);
+            $em->persist($user);
+            $em->flush();
+            return $this->redirectToRoute('advert_show', array('id' => $advert->getId()));
+
+        }else{
+            echo "error";
+            die;
         }
-        $em->persist($advert);
-        $em->flush();
-        return $this->redirectToRoute('index');
+
     }
 
     /**
@@ -166,8 +177,6 @@ class AdvertController extends Controller
      */
     public function listAction()
     {
-
-        $user = $this->getUser();
 
         $em = $this->getDoctrine()->getManager();
 
