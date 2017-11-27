@@ -6,6 +6,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Doctrine\ORM\Mapping\OneToMany;
 use Doctrine\ORM\Mapping\ManyToOne;
 use Doctrine\ORM\Mapping\JoinColumn;
+use Doctrine\ORM\Mapping\OneToOne;
 
 /**
  * Advert
@@ -123,6 +124,11 @@ class Advert
      */
     private $reservedBy;
 
+    /**
+     * One Customer has One Cart.
+     * @OneToOne(targetEntity="AdvertBundle\Entity\Expertise", mappedBy="advert")
+     */
+    private $expertise;
 
     /**
      * Get id
@@ -468,5 +474,29 @@ class Advert
     public function getReservedBy()
     {
         return $this->reservedBy;
+    }
+
+    /**
+     * Set expertise
+     *
+     * @param \AdvertBundle\Entity\Expertise $expertise
+     *
+     * @return Advert
+     */
+    public function setExpertise(\AdvertBundle\Entity\Expertise $expertise = null)
+    {
+        $this->expertise = $expertise;
+
+        return $this;
+    }
+
+    /**
+     * Get expertise
+     *
+     * @return \AdvertBundle\Entity\Expertise
+     */
+    public function getExpertise()
+    {
+        return $this->expertise;
     }
 }

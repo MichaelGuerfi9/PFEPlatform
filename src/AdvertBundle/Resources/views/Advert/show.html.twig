@@ -77,16 +77,12 @@
                 </li>
 
                 <li>
-                    <a href="{{ path('advert_rent', { 'id' : advert.id }) }}">Demander une expertise</a>
+                    <a href="{{ path('ask_expertise', { 'id' : advert.id }) }}">Demander une expertise</a>
                 </li>
 
                 <li>
                     <a href="{{ path('advert_rent', { 'id' : advert.id }) }}">Demander la livraison</a>
                 </li>
-
-
-
-
 
             {% else %}
                 Cette voiture est déja réservée.
