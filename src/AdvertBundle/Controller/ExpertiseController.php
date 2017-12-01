@@ -41,15 +41,15 @@ class ExpertiseController extends Controller
             die;
         }
 
-        $exertise = new Expertise();
+        $expertise = new Expertise();
 
-        $advert->setExpertise($exertise);
-        $exertise->setAdvert($advert);
-        $exertise->setStatus("ask");
+        $advert->setExpertise($expertise);
+        $expertise->setAdvert($advert);
+        $expertise->setStatus("ask");
 
         $em = $this->getDoctrine()->getManager();
         $em->persist($advert);
-        $em->persist($exertise);
+        $em->persist($expertise);
         $em->flush();
         return $this->redirectToRoute('advert_show', array('id' => $advert->getId()));
 
