@@ -5,7 +5,9 @@ namespace AdvertBundle\Controller;
 use AdvertBundle\Entity\Expertise;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\Request;
+use AdvertBundle\Entity\Advert;
 
 /**
  * Expertise controller.
