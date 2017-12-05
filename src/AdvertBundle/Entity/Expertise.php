@@ -26,7 +26,7 @@ class Expertise
     /**
      * One Cart has One Customer.
      * @OneToOne(targetEntity="AdvertBundle\Entity\Advert", inversedBy="expertise")
-     * @JoinColumn(name="advert_id", referencedColumnName="id")
+     * @JoinColumn(name="advertId", referencedColumnName="id")
      */
     private $advert;
 
@@ -34,7 +34,7 @@ class Expertise
     /**
      * @var string
      *
-     * @ORM\Column(name="status", type="text", length=255)
+     * @ORM\Column(name="status", type="text", length=255, nullable=true)
      */
 
     private $status;
@@ -43,16 +43,17 @@ class Expertise
     /**
      * @var string
      *
-     * @ORM\Column(name="marque", type="text", length=255)
+     * @ORM\Column(name="marque", type="text", length=255, nullable=true)
+     * nu
      */
 
-    private $marque;
+    private $marque ;
 
 
     /**
      * @var string
      *
-     * @ORM\Column(name="motorisation", type="text", length=255)
+     * @ORM\Column(name="motorisation", type="text", length=255, nullable=true)
      */
 
     private $motorisation;
@@ -61,16 +62,16 @@ class Expertise
     /**
      * @var string
      *
-     * @ORM\Column(name="date_circulation", type="text", length=255)
+     * @ORM\Column(name="dateCirculation", type="text", length=255, nullable=true)
      */
 
-    private $date_circulation;
+    private $dateCirculation;
 
 
     /**
      * @var string
      *
-     * @ORM\Column(name="carburant", type="text", length=255)
+     * @ORM\Column(name="carburant", type="text", length=255, nullable=true)
      */
 
     private $carburant;
@@ -79,7 +80,7 @@ class Expertise
     /**
      * @var string
      *
-     * @ORM\Column(name="puissance", type="text", length=255)
+     * @ORM\Column(name="puissance", type="text", length=255, nullable=true)
      */
 
     private $puissance;
@@ -88,7 +89,7 @@ class Expertise
     /**
      * @var string
      *
-     * @ORM\Column(name="couleur", type="text", length=255)
+     * @ORM\Column(name="couleur", type="text", length=255, nullable=true)
      */
 
     private $couleur;
@@ -97,7 +98,7 @@ class Expertise
     /**
      * @var string
      *
-     * @ORM\Column(name="modele", type="text", length=255)
+     * @ORM\Column(name="modele", type="text", length=255, nullable=true)
      */
 
     private $modele;
@@ -106,7 +107,7 @@ class Expertise
     /**
      * @var string
      *
-     * @ORM\Column(name="finition", type="text", length=255)
+     * @ORM\Column(name="finition", type="text", length=255, nullable=true)
      */
 
     private $finition;
@@ -115,25 +116,25 @@ class Expertise
     /**
      * @var string
      *
-     * @ORM\Column(name="numero_chassis", type="text", length=255)
+     * @ORM\Column(name="numeroChassis", type="text", length=255, nullable=true)
      */
 
-    private $numero_chassis;
+    private $numeroChassis;
 
 
     /**
      * @var string
      *
-     * @ORM\Column(name="boite_vitesse", type="text", length=255)
+     * @ORM\Column(name="boiteVitesse", type="text", length=255, nullable=true)
      */
 
-    private $boite_vitesse;
+    private $boiteVitesse;
 
 
     /**
      * @var string
      *
-     * @ORM\Column(name="kilometrage", type="text", length=255)
+     * @ORM\Column(name="kilometrage", type="text", length=255, nullable=true)
      */
 
     private $kilometrage;
@@ -142,7 +143,7 @@ class Expertise
     /**
      * @var string
      *
-     * @ORM\Column(name="pays", type="text", length=255)
+     * @ORM\Column(name="pays", type="text", length=255, nullable=true)
      */
 
     private $pays;
@@ -150,23 +151,23 @@ class Expertise
     /**
      * @var string
      *
-     * @ORM\Column(name="controle_technique", type="text", length=255)
+     * @ORM\Column(name="controleTechnique", type="text", length=255, nullable=true)
      */
 
-    private $controle_technique;
+    private $controleTechnique;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="nombre_cle", type="text", length=255)
+     * @ORM\Column(name="nombreCle", type="text", length=255, nullable=true)
      */
 
-    private $nombre_cle;
+    private $nombreCle;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="notice", type="text", length=255)
+     * @ORM\Column(name="notice", type="text", length=255, nullable=true)
      */
 
     private $notice;
@@ -174,39 +175,39 @@ class Expertise
     /**
      * @var string
      *
-     * @ORM\Column(name="facture_entretien", type="text", length=255)
+     * @ORM\Column(name="factureEntretien", type="text", length=255, nullable=true)
      */
 
-    private $facture_entretien;
+    private $factureEntretien;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="carnet_entretien", type="text", length=255)
+     * @ORM\Column(name="carnetEntretien", type="text", length=255, nullable=true)
      */
 
-    private $carnet_entretien;
+    private $carnetEntretien;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="certificat_conformite_europeen", type="text", length=255)
+     * @ORM\Column(name="certificatConformiteEuropeen", type="text", length=255, nullable=true)
      */
 
-    private $certificat_conformite_europeen;
+    private $certificatConformiteEuropeen;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="date_controle_technique", type="text", length=255)
+     * @ORM\Column(name="dateControleTechnique", type="text", length=255, nullable=true)
      */
 
-    private $date_controle_technique;
+    private $dateControleTechnique;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="importation", type="text", length=255)
+     * @ORM\Column(name="importation", type="text", length=255, nullable=true)
      */
 
     private $importation;
@@ -214,15 +215,15 @@ class Expertise
     /**
      * @var string
      *
-     * @ORM\Column(name="facture_achat", type="text", length=255)
+     * @ORM\Column(name="factureAchat", type="text", length=255, nullable=true)
      */
 
-    private $facture_achat;
+    private $factureAchat;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="location", type="text", length=255)
+     * @ORM\Column(name="location", type="text", length=255, nullable=true)
      */
 
     private $location;
@@ -230,63 +231,63 @@ class Expertise
     /**
      * @var string
      *
-     * @ORM\Column(name="commentaire_administratif", type="text", length=255)
+     * @ORM\Column(name="commentaireAdministratif", type="text", length=255, nullable=true)
      */
 
-    private $commentaire_administratif;
+    private $commentaireAdministratif;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="siege_avant", type="text", length=255)
+     * @ORM\Column(name="siegeAvant", type="text", length=255, nullable=true)
      */
 
-    private $siege_avant;
+    private $siegeAvant;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="planche_bord", type="text", length=255)
+     * @ORM\Column(name="plancheBord", type="text", length=255, nullable=true)
      */
 
-    private $planche_bord;
+    private $plancheBord;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="etat_retroviseur_interieur", type="text", length=255)
+     * @ORM\Column(name="etatRetroviseurInterieur", type="text", length=255, nullable=true)
      */
 
-    private $etat_retroviseur_interieur;
+    private $etatRetroviseurInterieur;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="panneaux_portes", type="text", length=255)
+     * @ORM\Column(name="panneauxPortes", type="text", length=255, nullable=true)
      */
 
-    private $panneaux_portes;
+    private $panneauxPortes;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="siege_arriere", type="text", length=255)
+     * @ORM\Column(name="siegeArriere", type="text", length=255, nullable=true)
      */
 
-    private $siege_arriere;
+    private $siegeArriere;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="plage_arriere", type="text", length=255)
+     * @ORM\Column(name="plageArriere", type="text", length=255, nullable=true)
      */
 
-    private $plage_arriere;
+    private $plageArriere;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="cric", type="text", length=255)
+     * @ORM\Column(name="cric", type="text", length=255, nullable=true)
      */
 
     private $cric;
@@ -294,23 +295,23 @@ class Expertise
     /**
      * @var string
      *
-     * @ORM\Column(name="garniture_ciel", type="text", length=255)
+     * @ORM\Column(name="garnitureCiel", type="text", length=255, nullable=true)
      */
 
-    private $garniture_ciel;
+    private $garnitureCiel;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="leves_vitres", type="text", length=255)
+     * @ORM\Column(name="levesVitres", type="text", length=255, nullable=true)
      */
 
-    private $leves_vitres;
+    private $levesVitres;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="ceintures", type="text", length=255)
+     * @ORM\Column(name="ceintures", type="text", length=255, nullable=true)
      */
 
     private $ceintures;
@@ -318,47 +319,47 @@ class Expertise
     /**
      * @var string
      *
-     * @ORM\Column(name="moquettes_avants", type="text", length=255)
+     * @ORM\Column(name="moquettesAvants", type="text", length=255, nullable=true)
      */
 
-    private $moquettes_avants;
+    private $moquettesAvants;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="usure_commande", type="text", length=255)
+     * @ORM\Column(name="usureCommande", type="text", length=255, nullable=true)
      */
 
-    private $usure_commande;
+    private $usureCommande;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="mode_nuit_retroviseur_interieur", type="text", length=255)
+     * @ORM\Column(name="modeNuitRetroviseurInterieur", type="text", length=255, nullable=true)
      */
 
-    private $mode_nuit_retroviseur_interieur;
+    private $modeNuitRetroviseurInterieur;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="tapis_sols", type="text", length=255)
+     * @ORM\Column(name="tapisSols", type="text", length=255, nullable=true)
      */
 
-    private $tapis_sols;
+    private $tapisSols;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="moquettes_arriere", type="text", length=255)
+     * @ORM\Column(name="moquettesArriere", type="text", length=255, nullable=true)
      */
 
-    private $moquettes_arriere;
+    private $moquettesArriere;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="coffre", type="text", length=255)
+     * @ORM\Column(name="coffre", type="text", length=255, nullable=true)
      */
 
     private $coffre;
@@ -366,39 +367,39 @@ class Expertise
     /**
      * @var string
      *
-     * @ORM\Column(name="roue__secours", type="text", length=255)
+     * @ORM\Column(name="roueSecours", type="text", length=255, nullable=true)
      */
 
-    private $roue__secours;
+    private $roueSecours;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="ecrou_antivol", type="text", length=255)
+     * @ORM\Column(name="ecrouAntivol", type="text", length=255, nullable=true)
      */
 
-    private $ecrou_antivol;
+    private $ecrouAntivol;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="frein_main", type="text", length=255)
+     * @ORM\Column(name="freinMain", type="text", length=255, nullable=true)
      */
 
-    private $frein_main;
+    private $freinMain;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="commentaire_interieure", type="text", length=255)
+     * @ORM\Column(name="commentaireInterieure", type="text", length=255, nullable=true)
      */
 
-    private $commentaire_interieure;
+    private $commentaireInterieure;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="gps", type="text", length=255)
+     * @ORM\Column(name="gps", type="text", length=255, nullable=true)
      */
 
     private $gps;
@@ -406,31 +407,31 @@ class Expertise
     /**
      * @var string
      *
-     * @ORM\Column(name="commande_volant", type="text", length=255)
+     * @ORM\Column(name="commandeVolant", type="text", length=255, nullable=true)
      */
 
-    private $commande_volant;
+    private $commandeVolant;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="toit_ouvrant", type="text", length=255)
+     * @ORM\Column(name="toitOuvrant", type="text", length=255, nullable=true)
      */
 
-    private $toit_ouvrant;
+    private $toitOuvrant;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="fermeture_centralisee", type="text", length=255)
+     * @ORM\Column(name="fermetureCentralisee", type="text", length=255, nullable=true)
      */
 
-    private $fermeture_centralisee;
+    private $fermetureCentralisee;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="autoradio", type="text", length=255)
+     * @ORM\Column(name="autoradio", type="text", length=255, nullable=true)
      */
 
     private $autoradio;
@@ -438,89 +439,89 @@ class Expertise
     /**
      * @var string
      *
-     * @ORM\Column(name="radars_recul", type="text", length=255)
+     * @ORM\Column(name="radarsRecul", type="text", length=255, nullable=true)
      */
 
-    private $radars_recul;
+    private $radarsRecul;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="ouverture_sans_cle", type="text", length=255)
+     * @ORM\Column(name="ouvertureSansCle", type="text", length=255, nullable=true)
      */
 
-    private $ouverture_sans_cle;
+    private $ouvertureSansCle;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="presence_marque_reparation", type="text", length=255)
+     * @ORM\Column(name="presenceMarqueReparation", type="text", length=255, nullable=true)
      */
 
-    private $presence_marque_reparation;
+    private $presenceMarqueReparation;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="etat_pare_brise_avant", type="text", length=255)
+     * @ORM\Column(name="etatPareBriseAvant", type="text", length=255, nullable=true)
      */
 
-    private $etat_pare_brise_avant;
+    private $etatPareBriseAvant;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="etat_essuie_glaces", type="text", length=255)
+     * @ORM\Column(name="etatEssuieGlaces", type="text", length=255, nullable=true)
      */
 
-    private $etat_essuie_glaces;
+    private $etatEssuieGlaces;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="etat_retroviseur_gauche", type="text", length=255)
+     * @ORM\Column(name="etatRetroviseurGauche", type="text", length=255, nullable=true)
      */
 
-    private $etat_retroviseur_gauche;
+    private $etatRetroviseurGauche;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="etat_vitres_laterales", type="text", length=255)
+     * @ORM\Column(name="etatVitresLaterales", type="text", length=255, nullable=true)
      */
 
-    private $etat_vitres_laterales;
+    private $etatVitresLaterales;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="etat_pare_brise_arrière", type="text", length=255)
+     * @ORM\Column(name="etatPareBriseArriere", type="text", length=255, nullable=true)
      */
 
-    private $etat_pare_brise_arrière;
-
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="feux_stop", type="text", length=255)
-     */
-
-    private $feux_stop;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="feu_recul", type="text", length=255)
-     */
-
-    private $feu_recul;
+    private $etatPareBriseArriere;
 
 
     /**
      * @var string
      *
-     * @ORM\Column(name="repetiteurs", type="text", length=255)
+     * @ORM\Column(name="feuxStop", type="text", length=255, nullable=true)
+     */
+
+    private $feuxStop;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="feuRecul", type="text", length=255, nullable=true)
+     */
+
+    private $feuRecul;
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="repetiteurs", type="text", length=255, nullable=true)
      */
 
     private $repetiteurs;
@@ -528,142 +529,142 @@ class Expertise
     /**
      * @var string
      *
-     * @ORM\Column(name="alignement_elements", type="text", length=255)
+     * @ORM\Column(name="alignementElements", type="text", length=255, nullable=true)
      */
 
-    private $alignement_elements;
+    private $alignementElements;
 
 
     /**
      * @var string
      *
-     * @ORM\Column(name="presence_rouille", type="text", length=255)
+     * @ORM\Column(name="presenceRouille", type="text", length=255, nullable=true)
      */
 
-    private $presence_rouille;
+    private $presenceRouille;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="differences_teintes_carrosserie", type="text", length=255)
+     * @ORM\Column(name="differencesTeintesCarrosserie", type="text", length=255, nullable=true)
      */
 
-    private $differences_teintes_carrosserie;
-
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="impacts_champ_vision", type="text", length=255)
-     */
-
-    private $impacts_champ_vision;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="feux_avants", type="text", length=255)
-     */
-
-    private $feux_avants;
+    private $differencesTeintesCarrosserie;
 
 
     /**
      * @var string
      *
-     * @ORM\Column(name="etat_retroviseur_droite", type="text", length=255)
+     * @ORM\Column(name="impactsChampVision", type="text", length=255, nullable=true)
      */
 
-    private $etat_retroviseur_droite;
+    private $impactsChampVision;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="vitres_surteintees", type="text", length=255)
+     * @ORM\Column(name="feuxAvants", type="text", length=255, nullable=true)
      */
 
-    private $vitres_surteintees;
-
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="feux_arrieres", type="text", length=255)
-     */
-
-    private $feux_arrieres;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="feux_antibrouillards", type="text", length=255)
-     */
-
-    private $feux_antibrouillards;
+    private $feuxAvants;
 
 
     /**
      * @var string
      *
-     * @ORM\Column(name="feux_detresse", type="text", length=255)
+     * @ORM\Column(name="etatRetroviseurDroite", type="text", length=255, nullable=true)
      */
 
-    private $feux_detresse;
+    private $etatRetroviseurDroite;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="etat_joints", type="text", length=255)
+     * @ORM\Column(name="vitresSurteintees", type="text", length=255, nullable=true)
      */
 
-    private $etat_joints;
-
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="etat_jantes", type="text", length=255)
-     */
-
-    private $etat_jantes;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="commentaire_exterieur", type="text", length=255)
-     */
-
-    private $commentaire_exterieur;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="vehicule_vu", type="text", length=255)
-     */
-
-    private $vehicule_vu;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="corrosion_perforante", type="text", length=255)
-     */
-
-    private $corrosion_perforante;
+    private $vitresSurteintees;
 
 
     /**
      * @var string
      *
-     * @ORM\Column(name="presence_fuite_huile", type="text", length=255)
+     * @ORM\Column(name="feuxArrieres", type="text", length=255, nullable=true)
      */
 
-    private $presence_fuite_huile;
+    private $feuxArrieres;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="echappement", type="text", length=255)
+     * @ORM\Column(name="feuxAntibrouillards", type="text", length=255, nullable=true)
+     */
+
+    private $feuxAntibrouillards;
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="feuxDetresse", type="text", length=255, nullable=true)
+     */
+
+    private $feuxDetresse;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="etatJoints", type="text", length=255, nullable=true)
+     */
+
+    private $etatJoints;
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="etatJantes", type="text", length=255, nullable=true)
+     */
+
+    private $etatJantes;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="commentaireExterieur", type="text", length=255, nullable=true)
+     */
+
+    private $commentaireExterieur;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="vehiculeVu", type="text", length=255, nullable=true)
+     */
+
+    private $vehiculeVu;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="corrosionPerforante", type="text", length=255, nullable=true)
+     */
+
+    private $corrosionPerforante;
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="presenceFuiteHuile", type="text", length=255, nullable=true)
+     */
+
+    private $presenceFuiteHuile;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="echappement", type="text", length=255, nullable=true)
      */
 
     private $echappement;
@@ -672,228 +673,228 @@ class Expertise
     /**
      * @var string
      *
-     * @ORM\Column(name="presence_corrosion", type="text", length=255)
+     * @ORM\Column(name="presenceCorrosion", type="text", length=255, nullable=true)
      */
 
-    private $presence_corrosion;
+    private $presenceCorrosion;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="corrosion_longerons", type="text", length=255)
+     * @ORM\Column(name="corrosionLongerons", type="text", length=255, nullable=true)
      */
 
-    private $corrosion_longerons;
+    private $corrosionLongerons;
 
 
     /**
      * @var string
      *
-     * @ORM\Column(name="origine_fuite", type="text", length=255)
+     * @ORM\Column(name="origineFuite", type="text", length=255, nullable=true)
      */
 
-    private $origine_fuite;
+    private $origineFuite;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="plaquettes_avants_usage", type="text", length=255)
+     * @ORM\Column(name="plaquettesAvantsUsage", type="text", length=255, nullable=true)
      */
     //en %
 
-    private $plaquettes_avants_usage;
+    private $plaquettesAvantsUsage;
 
 
     /**
      * @var string
      *
-     * @ORM\Column(name="marque_pneu_avant", type="text", length=255)
+     * @ORM\Column(name="marquePneuAvant", type="text", length=255, nullable=true)
      */
 
-    private $marque_pneu_avant;
+    private $marquePneuAvant;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="code_DOT_pneu_avant_gauche", type="text", length=255)
+     * @ORM\Column(name="codeDOTPneuAvantGauche", type="text", length=255, nullable=true)
      */
 
-    private $code_DOT_pneu_avant_gauche;
-
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="code_DOT_pneu_avant_droite", type="text", length=255)
-     */
-
-    private $code_DOT_pneu_avant_droite;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="usage_pneumatiques_avants", type="text", length=255)
-     */
-
-    private $usage_pneumatiques_avants;
+    private $codeDOTPneuAvantGauche;
 
 
     /**
      * @var string
      *
-     * @ORM\Column(name="usage_disques_avants", type="text", length=255)
+     * @ORM\Column(name="codeDOTPneuAvantDroite", type="text", length=255, nullable=true)
      */
 
-    private $usage_disques_avants;
+    private $codeDOTPneuAvantDroite;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="dimensions_pneumatique_avant", type="text", length=255)
+     * @ORM\Column(name="usagePneumatiquesAvants", type="text", length=255, nullable=true)
      */
 
-    private $dimensions_pneumatique_avant;
-
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="pneumatique_conforme_monte_origine", type="text", length=255)
-     */
-
-    private $pneumatique_conforme_monte_origine;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="plaquettes_arriere_usage", type="text", length=255)
-     */
-
-    private $plaquettes_arriere_usage;
+    private $usagePneumatiquesAvants;
 
 
     /**
      * @var string
      *
-     * @ORM\Column(name="marque_pneu_arriere", type="text", length=255)
+     * @ORM\Column(name="usageDisquesAvants", type="text", length=255, nullable=true)
      */
 
-    private $marque_pneu_arriere;
+    private $usageDisquesAvants;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="code_DOT_pneu_arriere_gauche", type="text", length=255)
+     * @ORM\Column(name="dimensionsPneumatiqueAvant", type="text", length=255, nullable=true)
      */
 
-    private $code_DOT_pneu_arriere_gauche;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="code_DOT_pneu_arriere_droite", type="text", length=255)
-     */
-
-    private $code_DOT_pneu_arriere_droite;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="usage_pneumatiques_arrieres", type="text", length=255)
-     */
-
-    private $usage_pneumatiques_arrieres;
+    private $dimensionsPneumatiqueAvant;
 
 
     /**
      * @var string
      *
-     * @ORM\Column(name="usage_disques_arriere", type="text", length=255)
+     * @ORM\Column(name="pneumatiqueConformeMonteOrigine", type="text", length=255, nullable=true)
      */
 
-    private $usage_disques_arriere;
+    private $pneumatiqueConformeMonteOrigine;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="dimensions_pneumatique_arriere", type="text", length=255)
+     * @ORM\Column(name="plaquettesArriereUsage", type="text", length=255, nullable=true)
      */
 
-    private $dimensions_pneumatique_arriere;
-
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="pneumatique_conforme_monte_origine_arriere", type="text", length=255)
-     */
-
-    private $pneumatique_conforme_monte_origine_arriere;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="niveau_huile", type="text", length=255)
-     */
-
-    private $niveau_huile;
+    private $plaquettesArriereUsage;
 
 
     /**
      * @var string
      *
-     * @ORM\Column(name="qualite_huile", type="text", length=255)
+     * @ORM\Column(name="marquePneuArriere", type="text", length=255, nullable=true)
      */
 
-    private $qualite_huile;
+    private $marquePneuArriere;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="souffle_bouchon_huile", type="text", length=255)
+     * @ORM\Column(name="codeDOTPneuArriereGauche", type="text", length=255, nullable=true)
      */
 
-    private $souffle_bouchon_huile;
+    private $codeDOTPneuArriereGauche;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="codeDOTPneuArriereDroite", type="text", length=255, nullable=true)
+     */
+
+    private $codeDOTPneuArriereDroite;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="usagePneumatiquesArrieres", type="text", length=255, nullable=true)
+     */
+
+    private $usagePneumatiquesArrieres;
 
 
     /**
      * @var string
      *
-     * @ORM\Column(name="niveau_liquide_refroidissement", type="text", length=255)
+     * @ORM\Column(name="usageDisquesArriere", type="text", length=255, nullable=true)
      */
 
-    private $niveau_liquide_refroidissement;
+    private $usageDisquesArriere;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="qualite_liquide_refroidissement", type="text", length=255)
+     * @ORM\Column(name="dimensionsPneumatiqueArriere", type="text", length=255, nullable=true)
      */
 
-    private $qualite_liquide_refroidissement;
+    private $dimensionsPneumatiqueArriere;
 
 
     /**
      * @var string
      *
-     * @ORM\Column(name="type_distribution", type="text", length=255)
+     * @ORM\Column(name="pneumatiqueConformeMonteOrigineArriere", type="text", length=255, nullable=true)
      */
 
-    private $type_distribution;
+    private $pneumatiqueConformeMonteOrigineArriere;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="Distribution", type="text", length=255)
+     * @ORM\Column(name="niveauHuile", type="text", length=255, nullable=true)
      */
-//Distribution à jour(si facture)
+
+    private $niveauHuile;
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="qualiteHuile", type="text", length=255, nullable=true)
+     */
+
+    private $qualiteHuile;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="souffleBouchonHuile", type="text", length=255, nullable=true)
+     */
+
+    private $souffleBouchonHuile;
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="niveauLiquideRefroidissement", type="text", length=255, nullable=true)
+     */
+
+    private $niveauLiquideRefroidissement;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="qualiteLiquideRefroidissement", type="text", length=255, nullable=true)
+     */
+
+    private $qualiteLiquideRefroidissement;
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="typeDistribution", type="text", length=255, nullable=true)
+     */
+
+    private $typeDistribution;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Distribution", type="text", length=255, nullable=true)
+     */
+//Distribution à jour(si facture, nullable=true)
     private $Distribution;
 
 
     /**
      * @var string
      *
-     * @ORM\Column(name="courroie", type="text", length=255)
+     * @ORM\Column(name="courroie", type="text", length=255, nullable=true)
      */
 
     private $courroie;
@@ -902,41 +903,41 @@ class Expertise
     /**
      * @var string
      *
-     * @ORM\Column(name="commentaire_consommables_moteur", type="text", length=255)
+     * @ORM\Column(name="commentaireConsommablesMoteur", type="text", length=255, nullable=true)
      */
 
-    private $commentaire_consommables_moteur;
+    private $commentaireConsommablesMoteur;
 
 
     /**
      * @var string
      *
-     * @ORM\Column(name="demarrage_vehicule_froid", type="text", length=255)
+     * @ORM\Column(name="demarrageVehiculeFroid", type="text", length=255, nullable=true)
      */
 
-    private $demarrage_vehicule_froid;
+    private $demarrageVehiculeFroid;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="bloc_compteur", type="text", length=255)
+     * @ORM\Column(name="blocCompteur", type="text", length=255, nullable=true)
      */
 
-    private $bloc_compteur;
-//Bloc compteur (jauges, cadrans...)
+    private $blocCompteur;
+//Bloc compteur (jauges, cadrans..., nullable=true)
 
     /**
      * @var string
      *
-     * @ORM\Column(name="presence_fumee_echappement", type="text", length=255)
+     * @ORM\Column(name="presenceFumeeEchappement", type="text", length=255, nullable=true)
      */
 
-    private $presence_fumee_echappement;
+    private $presenceFumeeEchappement;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="amortisseurs", type="text", length=255)
+     * @ORM\Column(name="amortisseurs", type="text", length=255, nullable=true)
      */
 
     private $amortisseurs;
@@ -944,207 +945,207 @@ class Expertise
     /**
      * @var string
      *
-     * @ORM\Column(name="sonorite_moteur", type="text", length=255)
+     * @ORM\Column(name="sonoriteMoteur", type="text", length=255, nullable=true)
      */
 
-    private $sonorite_moteur;
+    private $sonoriteMoteur;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="voyant_prechauffage", type="text", length=255)
+     * @ORM\Column(name="voyantPrechauffage", type="text", length=255, nullable=true)
      */
 
-    private $voyant_prechauffage;
-//Voyant préchauffage (Diesel)
+    private $voyantPrechauffage;
+//Voyant prechauffage (Diesel, nullable=true)
 
     /**
      * @var string
      *
-     * @ORM\Column(name="commentaire_test_static", type="text", length=255)
+     * @ORM\Column(name="commentaireTestStatic", type="text", length=255, nullable=true)
      */
 
-    private $commentaire_test_static;
+    private $commentaireTestStatic;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="test_routier_effectue", type="text", length=255)
+     * @ORM\Column(name="testRoutierEffectue", type="text", length=255, nullable=true)
      */
 
-    private $test_routier_effectue;
-
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="aucun_test_explication", type="text", length=255)
-     */
-
-    private $aucun_test_explication;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="condition_meteo", type="text", length=255)
-     */
-
-    private $condition_meteo;
+    private $testRoutierEffectue;
 
 
     /**
      * @var string
      *
-     * @ORM\Column(name="condition_essaie", type="text", length=255)
+     * @ORM\Column(name="aucunTestExplication", type="text", length=255, nullable=true)
      */
 
-    private $condition_essaie;
+    private $aucunTestExplication;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="course_pedale_embrayage", type="text", length=255)
+     * @ORM\Column(name="conditionMeteo", type="text", length=255, nullable=true)
      */
 
-    private $course_pedale_embrayage;
-
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="embrayage_patine", type="text", length=255)
-     */
-
-    private $embrayage_patine;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="butee_embrayage_bruyante", type="text", length=255)
-     */
-
-    private $butee_embrayage_bruyante;
+    private $conditionMeteo;
 
 
     /**
      * @var string
      *
-     * @ORM\Column(name="jeu_levier_vitesse", type="text", length=255)
+     * @ORM\Column(name="conditionEssaie", type="text", length=255, nullable=true)
      */
 
-    private $jeu_levier_vitesse;
+    private $conditionEssaie;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="passage_facile_vitesses", type="text", length=255)
+     * @ORM\Column(name="coursePedaleEmbrayage", type="text", length=255, nullable=true)
      */
 
-    private $passage_facile_vitesses;
-
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="accoups_BVA ", type="text", length=255)
-     */
-
-    private $accoups_BVA ;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="acceleration_franche", type="text", length=255)
-     */
-
-    private $acceleration_franche;
+    private $coursePedaleEmbrayage;
 
 
     /**
      * @var string
      *
-     * @ORM\Column(name="vitesse_atteinte", type="text", length=255)
+     * @ORM\Column(name="embrayagePatine", type="text", length=255, nullable=true)
      */
 
-    private $vitesse_atteinte;
-    //Vitesse atteinte (km/h)
+    private $embrayagePatine;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="vibrations_mecaniques", type="text", length=255)
+     * @ORM\Column(name="buteeEmbrayageBruyante", type="text", length=255, nullable=true)
      */
 
-    private $vibrations_mecaniques;
-    //Vibrations mécaniques (moteur, transmi., échap., tringleries...)
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="vitesse_vibration", type="text", length=255)
-     */
-
-    private $vitesse_vibration;
-    //Si vibrations, à quelle vitesse? (km/h)
+    private $buteeEmbrayageBruyante;
 
 
     /**
      * @var string
      *
-     * @ORM\Column(name="tenue_cap", type="text", length=255)
+     * @ORM\Column(name="jeuLevierVitesse", type="text", length=255, nullable=true)
      */
 
-    private $tenue_cap;
+    private $jeuLevierVitesse;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="freinage_ligne_droite", type="text", length=255)
+     * @ORM\Column(name="passageFacileVitesses", type="text", length=255, nullable=true)
      */
 
-    private $freinage_ligne_droite;
-
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="presence_bruits_etrangers", type="text", length=255)
-     */
-
-    private $presence_bruits_etrangers;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="regulateur_limiteur_vitesse", type="text", length=255)
-     */
-
-    private $regulateur_limiteur_vitesse;
+    private $passageFacileVitesses;
 
 
     /**
      * @var string
      *
-     * @ORM\Column(name="odeurs_exterieur", type="text", length=255)
+     * @ORM\Column(name="accoupsBVA ", type="text", length=255, nullable=true)
      */
 
-    private $odeurs_exterieur;
-    //Odeurs à l'extérieur (freins, huile, échap.)
+    private $accoupsBVA ;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="accelerationFranche", type="text", length=255, nullable=true)
+     */
+
+    private $accelerationFranche;
 
 
     /**
      * @var string
      *
-     * @ORM\Column(name="demarrage_vehicule_chaud", type="text", length=255)
+     * @ORM\Column(name="vitesseAtteinte", type="text", length=255, nullable=true)
      */
 
-    private $demarrage_vehicule_chaud;
+    private $vitesseAtteinte;
+    //Vitesse atteinte (km/h, nullable=true)
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="vibrationsMecaniques", type="text", length=255, nullable=true)
+     */
+
+    private $vibrationsMecaniques;
+    //Vibrations mecaniques (moteur, transmi., echap., tringleries..., nullable=true)
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="vitesseVibration", type="text", length=255, nullable=true)
+     */
+
+    private $vitesseVibration;
+    //Si vibrations, à quelle vitesse? (km/h, nullable=true)
 
 
     /**
      * @var string
      *
-     * @ORM\Column(name="ralenti", type="text", length=255)
+     * @ORM\Column(name="tenueCap", type="text", length=255, nullable=true)
+     */
+
+    private $tenueCap;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="freinageLigneDroite", type="text", length=255, nullable=true)
+     */
+
+    private $freinageLigneDroite;
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="presenceBruitsEtrangers", type="text", length=255, nullable=true)
+     */
+
+    private $presenceBruitsEtrangers;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="regulateurLimiteurVitesse", type="text", length=255, nullable=true)
+     */
+
+    private $regulateurLimiteurVitesse;
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="odeursExterieur", type="text", length=255, nullable=true)
+     */
+
+    private $odeursExterieur;
+    //Odeurs à l'exterieur (freins, huile, echap., nullable=true)
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="demarrageVehiculeChaud", type="text", length=255, nullable=true)
+     */
+
+    private $demarrageVehiculeChaud;
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ralenti", type="text", length=255, nullable=true)
      */
 
     private $ralenti;
@@ -1152,67 +1153,67 @@ class Expertise
     /**
      * @var string
      *
-     * @ORM\Column(name="voyants_allumes", type="text", length=255)
+     * @ORM\Column(name="voyantsAllumes", type="text", length=255, nullable=true)
      */
 
-    private $voyants_allumes;
+    private $voyantsAllumes;
 
 
     /**
      * @var string
      *
-     * @ORM\Column(name="nom_voyants_allumes", type="text", length=255)
+     * @ORM\Column(name="nomVoyantsAllumes", type="text", length=255, nullable=true)
      */
 
-    private $nom_voyants_allumes;
+    private $nomVoyantsAllumes;
     //Si oui, lesquels ?
 
 
     /**
      * @var string
      *
-     * @ORM\Column(name="commentaire_test_routier", type="text", length=255)
+     * @ORM\Column(name="commentaireTestRoutier", type="text", length=255, nullable=true)
      */
 
-    private $commentaire_test_routier;
+    private $commentaireTestRoutier;
 
 
     /**
      * @var string
      *
-     * @ORM\Column(name="notation_vendeur", type="text", length=255)
+     * @ORM\Column(name="notationVendeur", type="text", length=255, nullable=true)
      */
 
-    private $notation_vendeur;
+    private $notationVendeur;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="achat_securise", type="text", length=255)
+     * @ORM\Column(name="achatSecurise", type="text", length=255, nullable=true)
      */
 
-    private $achat_securise;
-    //L'achat semble sécurisé, je le recommande
-
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="kilometrage_coherent", type="text", length=255)
-     */
-
-    private $kilometrage_coherent;
-    //Kilométrage cohérent (entretien, usure...)
-
+    private $achatSecurise;
+    //L'achat semble securise, je le recommande
 
 
     /**
      * @var string
      *
-     * @ORM\Column(name="commentaire_conclusion", type="text", length=255)
+     * @ORM\Column(name="kilometrageCoherent", type="text", length=255, nullable=true)
      */
 
-    private $commentaire_conclusion;
+    private $kilometrageCoherent;
+    //Kilometrage coherent (entretien, usure..., nullable=true)
+
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="commentaireConclusion", type="text", length=255, nullable=true)
+     */
+
+    private $commentaireConclusion;
 
     /**
      * Get id
@@ -1329,7 +1330,7 @@ class Expertise
      */
     public function setDateCirculation($dateCirculation)
     {
-        $this->date_circulation = $dateCirculation;
+        $this->dateCirculation = $dateCirculation;
 
         return $this;
     }
@@ -1341,7 +1342,7 @@ class Expertise
      */
     public function getDateCirculation()
     {
-        return $this->date_circulation;
+        return $this->dateCirculation;
     }
 
     /**
@@ -1473,7 +1474,7 @@ class Expertise
      */
     public function setNumeroChassis($numeroChassis)
     {
-        $this->numero_chassis = $numeroChassis;
+        $this->numeroChassis = $numeroChassis;
 
         return $this;
     }
@@ -1485,7 +1486,7 @@ class Expertise
      */
     public function getNumeroChassis()
     {
-        return $this->numero_chassis;
+        return $this->numeroChassis;
     }
 
     /**
@@ -1497,7 +1498,7 @@ class Expertise
      */
     public function setBoiteVitesse($boiteVitesse)
     {
-        $this->boite_vitesse = $boiteVitesse;
+        $this->boiteVitesse = $boiteVitesse;
 
         return $this;
     }
@@ -1509,7 +1510,7 @@ class Expertise
      */
     public function getBoiteVitesse()
     {
-        return $this->boite_vitesse;
+        return $this->boiteVitesse;
     }
 
     /**
@@ -1569,7 +1570,7 @@ class Expertise
      */
     public function setControleTechnique($controleTechnique)
     {
-        $this->controle_technique = $controleTechnique;
+        $this->controleTechnique = $controleTechnique;
 
         return $this;
     }
@@ -1581,7 +1582,7 @@ class Expertise
      */
     public function getControleTechnique()
     {
-        return $this->controle_technique;
+        return $this->controleTechnique;
     }
 
     /**
@@ -1593,7 +1594,7 @@ class Expertise
      */
     public function setNombreCle($nombreCle)
     {
-        $this->nombre_cle = $nombreCle;
+        $this->nombreCle = $nombreCle;
 
         return $this;
     }
@@ -1605,7 +1606,7 @@ class Expertise
      */
     public function getNombreCle()
     {
-        return $this->nombre_cle;
+        return $this->nombreCle;
     }
 
     /**
@@ -1641,7 +1642,7 @@ class Expertise
      */
     public function setFactureEntretien($factureEntretien)
     {
-        $this->facture_entretien = $factureEntretien;
+        $this->factureEntretien = $factureEntretien;
 
         return $this;
     }
@@ -1653,7 +1654,7 @@ class Expertise
      */
     public function getFactureEntretien()
     {
-        return $this->facture_entretien;
+        return $this->factureEntretien;
     }
 
     /**
@@ -1665,7 +1666,7 @@ class Expertise
      */
     public function setCarnetEntretien($carnetEntretien)
     {
-        $this->carnet_entretien = $carnetEntretien;
+        $this->carnetEntretien = $carnetEntretien;
 
         return $this;
     }
@@ -1677,7 +1678,7 @@ class Expertise
      */
     public function getCarnetEntretien()
     {
-        return $this->carnet_entretien;
+        return $this->carnetEntretien;
     }
 
     /**
@@ -1689,7 +1690,7 @@ class Expertise
      */
     public function setCertificatConformiteEuropeen($certificatConformiteEuropeen)
     {
-        $this->certificat_conformite_europeen = $certificatConformiteEuropeen;
+        $this->certificatConformiteEuropeen = $certificatConformiteEuropeen;
 
         return $this;
     }
@@ -1701,7 +1702,7 @@ class Expertise
      */
     public function getCertificatConformiteEuropeen()
     {
-        return $this->certificat_conformite_europeen;
+        return $this->certificatConformiteEuropeen;
     }
 
     /**
@@ -1713,7 +1714,7 @@ class Expertise
      */
     public function setDateControleTechnique($dateControleTechnique)
     {
-        $this->date_controle_technique = $dateControleTechnique;
+        $this->dateControleTechnique = $dateControleTechnique;
 
         return $this;
     }
@@ -1725,7 +1726,7 @@ class Expertise
      */
     public function getDateControleTechnique()
     {
-        return $this->date_controle_technique;
+        return $this->dateControleTechnique;
     }
 
     /**
@@ -1761,7 +1762,7 @@ class Expertise
      */
     public function setFactureAchat($factureAchat)
     {
-        $this->facture_achat = $factureAchat;
+        $this->factureAchat = $factureAchat;
 
         return $this;
     }
@@ -1773,7 +1774,7 @@ class Expertise
      */
     public function getFactureAchat()
     {
-        return $this->facture_achat;
+        return $this->factureAchat;
     }
 
     /**
@@ -1809,7 +1810,7 @@ class Expertise
      */
     public function setCommentaireAdministratif($commentaireAdministratif)
     {
-        $this->commentaire_administratif = $commentaireAdministratif;
+        $this->commentaireAdministratif = $commentaireAdministratif;
 
         return $this;
     }
@@ -1821,7 +1822,7 @@ class Expertise
      */
     public function getCommentaireAdministratif()
     {
-        return $this->commentaire_administratif;
+        return $this->commentaireAdministratif;
     }
 
     /**
@@ -1833,7 +1834,7 @@ class Expertise
      */
     public function setSiegeAvant($siegeAvant)
     {
-        $this->siege_avant = $siegeAvant;
+        $this->siegeAvant = $siegeAvant;
 
         return $this;
     }
@@ -1845,7 +1846,7 @@ class Expertise
      */
     public function getSiegeAvant()
     {
-        return $this->siege_avant;
+        return $this->siegeAvant;
     }
 
     /**
@@ -1857,7 +1858,7 @@ class Expertise
      */
     public function setPlancheBord($plancheBord)
     {
-        $this->planche_bord = $plancheBord;
+        $this->plancheBord = $plancheBord;
 
         return $this;
     }
@@ -1869,7 +1870,7 @@ class Expertise
      */
     public function getPlancheBord()
     {
-        return $this->planche_bord;
+        return $this->plancheBord;
     }
 
     /**
@@ -1881,7 +1882,7 @@ class Expertise
      */
     public function setEtatRetroviseurInterieur($etatRetroviseurInterieur)
     {
-        $this->etat_retroviseur_interieur = $etatRetroviseurInterieur;
+        $this->etatRetroviseurInterieur = $etatRetroviseurInterieur;
 
         return $this;
     }
@@ -1893,7 +1894,7 @@ class Expertise
      */
     public function getEtatRetroviseurInterieur()
     {
-        return $this->etat_retroviseur_interieur;
+        return $this->etatRetroviseurInterieur;
     }
 
     /**
@@ -1905,7 +1906,7 @@ class Expertise
      */
     public function setPanneauxPortes($panneauxPortes)
     {
-        $this->panneaux_portes = $panneauxPortes;
+        $this->panneauxPortes = $panneauxPortes;
 
         return $this;
     }
@@ -1917,7 +1918,7 @@ class Expertise
      */
     public function getPanneauxPortes()
     {
-        return $this->panneaux_portes;
+        return $this->panneauxPortes;
     }
 
     /**
@@ -1929,7 +1930,7 @@ class Expertise
      */
     public function setSiegeArriere($siegeArriere)
     {
-        $this->siege_arriere = $siegeArriere;
+        $this->siegeArriere = $siegeArriere;
 
         return $this;
     }
@@ -1941,7 +1942,7 @@ class Expertise
      */
     public function getSiegeArriere()
     {
-        return $this->siege_arriere;
+        return $this->siegeArriere;
     }
 
     /**
@@ -1953,7 +1954,7 @@ class Expertise
      */
     public function setPlageArriere($plageArriere)
     {
-        $this->plage_arriere = $plageArriere;
+        $this->plageArriere = $plageArriere;
 
         return $this;
     }
@@ -1965,7 +1966,7 @@ class Expertise
      */
     public function getPlageArriere()
     {
-        return $this->plage_arriere;
+        return $this->plageArriere;
     }
 
     /**
@@ -2001,7 +2002,7 @@ class Expertise
      */
     public function setGarnitureCiel($garnitureCiel)
     {
-        $this->garniture_ciel = $garnitureCiel;
+        $this->garnitureCiel = $garnitureCiel;
 
         return $this;
     }
@@ -2013,7 +2014,7 @@ class Expertise
      */
     public function getGarnitureCiel()
     {
-        return $this->garniture_ciel;
+        return $this->garnitureCiel;
     }
 
     /**
@@ -2025,7 +2026,7 @@ class Expertise
      */
     public function setLevesVitres($levesVitres)
     {
-        $this->leves_vitres = $levesVitres;
+        $this->levesVitres = $levesVitres;
 
         return $this;
     }
@@ -2037,7 +2038,7 @@ class Expertise
      */
     public function getLevesVitres()
     {
-        return $this->leves_vitres;
+        return $this->levesVitres;
     }
 
     /**
@@ -2073,7 +2074,7 @@ class Expertise
      */
     public function setMoquettesAvants($moquettesAvants)
     {
-        $this->moquettes_avants = $moquettesAvants;
+        $this->moquettesAvants = $moquettesAvants;
 
         return $this;
     }
@@ -2085,7 +2086,7 @@ class Expertise
      */
     public function getMoquettesAvants()
     {
-        return $this->moquettes_avants;
+        return $this->moquettesAvants;
     }
 
     /**
@@ -2097,7 +2098,7 @@ class Expertise
      */
     public function setUsureCommande($usureCommande)
     {
-        $this->usure_commande = $usureCommande;
+        $this->usureCommande = $usureCommande;
 
         return $this;
     }
@@ -2109,7 +2110,7 @@ class Expertise
      */
     public function getUsureCommande()
     {
-        return $this->usure_commande;
+        return $this->usureCommande;
     }
 
     /**
@@ -2121,7 +2122,7 @@ class Expertise
      */
     public function setModeNuitRetroviseurInterieur($modeNuitRetroviseurInterieur)
     {
-        $this->mode_nuit_retroviseur_interieur = $modeNuitRetroviseurInterieur;
+        $this->modeNuitRetroviseurInterieur = $modeNuitRetroviseurInterieur;
 
         return $this;
     }
@@ -2133,7 +2134,7 @@ class Expertise
      */
     public function getModeNuitRetroviseurInterieur()
     {
-        return $this->mode_nuit_retroviseur_interieur;
+        return $this->modeNuitRetroviseurInterieur;
     }
 
     /**
@@ -2145,7 +2146,7 @@ class Expertise
      */
     public function setTapisSols($tapisSols)
     {
-        $this->tapis_sols = $tapisSols;
+        $this->tapisSols = $tapisSols;
 
         return $this;
     }
@@ -2157,7 +2158,7 @@ class Expertise
      */
     public function getTapisSols()
     {
-        return $this->tapis_sols;
+        return $this->tapisSols;
     }
 
     /**
@@ -2169,7 +2170,7 @@ class Expertise
      */
     public function setMoquettesArriere($moquettesArriere)
     {
-        $this->moquettes_arriere = $moquettesArriere;
+        $this->moquettesArriere = $moquettesArriere;
 
         return $this;
     }
@@ -2181,7 +2182,7 @@ class Expertise
      */
     public function getMoquettesArriere()
     {
-        return $this->moquettes_arriere;
+        return $this->moquettesArriere;
     }
 
     /**
@@ -2217,7 +2218,7 @@ class Expertise
      */
     public function setRoueSecours($roueSecours)
     {
-        $this->roue__secours = $roueSecours;
+        $this->roueSecours = $roueSecours;
 
         return $this;
     }
@@ -2229,7 +2230,7 @@ class Expertise
      */
     public function getRoueSecours()
     {
-        return $this->roue__secours;
+        return $this->roueSecours;
     }
 
     /**
@@ -2241,7 +2242,7 @@ class Expertise
      */
     public function setEcrouAntivol($ecrouAntivol)
     {
-        $this->ecrou_antivol = $ecrouAntivol;
+        $this->ecrouAntivol = $ecrouAntivol;
 
         return $this;
     }
@@ -2253,7 +2254,7 @@ class Expertise
      */
     public function getEcrouAntivol()
     {
-        return $this->ecrou_antivol;
+        return $this->ecrouAntivol;
     }
 
     /**
@@ -2265,7 +2266,7 @@ class Expertise
      */
     public function setFreinMain($freinMain)
     {
-        $this->frein_main = $freinMain;
+        $this->freinMain = $freinMain;
 
         return $this;
     }
@@ -2277,7 +2278,7 @@ class Expertise
      */
     public function getFreinMain()
     {
-        return $this->frein_main;
+        return $this->freinMain;
     }
 
     /**
@@ -2289,7 +2290,7 @@ class Expertise
      */
     public function setCommentaireInterieure($commentaireInterieure)
     {
-        $this->commentaire_interieure = $commentaireInterieure;
+        $this->commentaireInterieure = $commentaireInterieure;
 
         return $this;
     }
@@ -2301,7 +2302,7 @@ class Expertise
      */
     public function getCommentaireInterieure()
     {
-        return $this->commentaire_interieure;
+        return $this->commentaireInterieure;
     }
 
     /**
@@ -2337,7 +2338,7 @@ class Expertise
      */
     public function setCommandeVolant($commandeVolant)
     {
-        $this->commande_volant = $commandeVolant;
+        $this->commandeVolant = $commandeVolant;
 
         return $this;
     }
@@ -2349,7 +2350,7 @@ class Expertise
      */
     public function getCommandeVolant()
     {
-        return $this->commande_volant;
+        return $this->commandeVolant;
     }
 
     /**
@@ -2361,7 +2362,7 @@ class Expertise
      */
     public function setToitOuvrant($toitOuvrant)
     {
-        $this->toit_ouvrant = $toitOuvrant;
+        $this->toitOuvrant = $toitOuvrant;
 
         return $this;
     }
@@ -2373,7 +2374,7 @@ class Expertise
      */
     public function getToitOuvrant()
     {
-        return $this->toit_ouvrant;
+        return $this->toitOuvrant;
     }
 
     /**
@@ -2385,7 +2386,7 @@ class Expertise
      */
     public function setFermetureCentralisee($fermetureCentralisee)
     {
-        $this->fermeture_centralisee = $fermetureCentralisee;
+        $this->fermetureCentralisee = $fermetureCentralisee;
 
         return $this;
     }
@@ -2397,7 +2398,7 @@ class Expertise
      */
     public function getFermetureCentralisee()
     {
-        return $this->fermeture_centralisee;
+        return $this->fermetureCentralisee;
     }
 
     /**
@@ -2433,7 +2434,7 @@ class Expertise
      */
     public function setRadarsRecul($radarsRecul)
     {
-        $this->radars_recul = $radarsRecul;
+        $this->radarsRecul = $radarsRecul;
 
         return $this;
     }
@@ -2445,7 +2446,7 @@ class Expertise
      */
     public function getRadarsRecul()
     {
-        return $this->radars_recul;
+        return $this->radarsRecul;
     }
 
     /**
@@ -2457,7 +2458,7 @@ class Expertise
      */
     public function setOuvertureSansCle($ouvertureSansCle)
     {
-        $this->ouverture_sans_cle = $ouvertureSansCle;
+        $this->ouvertureSansCle = $ouvertureSansCle;
 
         return $this;
     }
@@ -2469,7 +2470,7 @@ class Expertise
      */
     public function getOuvertureSansCle()
     {
-        return $this->ouverture_sans_cle;
+        return $this->ouvertureSansCle;
     }
 
     /**
@@ -2481,7 +2482,7 @@ class Expertise
      */
     public function setPresenceMarqueReparation($presenceMarqueReparation)
     {
-        $this->presence_marque_reparation = $presenceMarqueReparation;
+        $this->presenceMarqueReparation = $presenceMarqueReparation;
 
         return $this;
     }
@@ -2493,7 +2494,7 @@ class Expertise
      */
     public function getPresenceMarqueReparation()
     {
-        return $this->presence_marque_reparation;
+        return $this->presenceMarqueReparation;
     }
 
     /**
@@ -2505,7 +2506,7 @@ class Expertise
      */
     public function setEtatPareBriseAvant($etatPareBriseAvant)
     {
-        $this->etat_pare_brise_avant = $etatPareBriseAvant;
+        $this->etatPareBriseAvant = $etatPareBriseAvant;
 
         return $this;
     }
@@ -2517,7 +2518,7 @@ class Expertise
      */
     public function getEtatPareBriseAvant()
     {
-        return $this->etat_pare_brise_avant;
+        return $this->etatPareBriseAvant;
     }
 
     /**
@@ -2529,7 +2530,7 @@ class Expertise
      */
     public function setEtatEssuieGlaces($etatEssuieGlaces)
     {
-        $this->etat_essuie_glaces = $etatEssuieGlaces;
+        $this->etatEssuieGlaces = $etatEssuieGlaces;
 
         return $this;
     }
@@ -2541,7 +2542,7 @@ class Expertise
      */
     public function getEtatEssuieGlaces()
     {
-        return $this->etat_essuie_glaces;
+        return $this->etatEssuieGlaces;
     }
 
     /**
@@ -2553,7 +2554,7 @@ class Expertise
      */
     public function setEtatRetroviseurGauche($etatRetroviseurGauche)
     {
-        $this->etat_retroviseur_gauche = $etatRetroviseurGauche;
+        $this->etatRetroviseurGauche = $etatRetroviseurGauche;
 
         return $this;
     }
@@ -2565,7 +2566,7 @@ class Expertise
      */
     public function getEtatRetroviseurGauche()
     {
-        return $this->etat_retroviseur_gauche;
+        return $this->etatRetroviseurGauche;
     }
 
     /**
@@ -2577,7 +2578,7 @@ class Expertise
      */
     public function setEtatVitresLaterales($etatVitresLaterales)
     {
-        $this->etat_vitres_laterales = $etatVitresLaterales;
+        $this->etatVitresLaterales = $etatVitresLaterales;
 
         return $this;
     }
@@ -2589,31 +2590,31 @@ class Expertise
      */
     public function getEtatVitresLaterales()
     {
-        return $this->etat_vitres_laterales;
+        return $this->etatVitresLaterales;
     }
 
     /**
-     * Set etatPareBriseArrière
+     * Set etatPareBriseArriere
      *
-     * @param text $etatPareBriseArrière
+     * @param text $etatPareBriseArriere
      *
      * @return Expertise
      */
-    public function setEtatPareBriseArrière($etatPareBriseArrière)
+    public function setEtatPareBriseArriere($etatPareBriseArriere)
     {
-        $this->etat_pare_brise_arrière = $etatPareBriseArrière;
+        $this->etatPareBriseArriere = $etatPareBriseArriere;
 
         return $this;
     }
 
     /**
-     * Get etatPareBriseArrière
+     * Get etatPareBriseArriere
      *
      * @return text
      */
-    public function getEtatPareBriseArrière()
+    public function getEtatPareBriseArriere()
     {
-        return $this->etat_pare_brise_arrière;
+        return $this->etatPareBriseArriere;
     }
 
     /**
@@ -2625,7 +2626,7 @@ class Expertise
      */
     public function setFeuxStop($feuxStop)
     {
-        $this->feux_stop = $feuxStop;
+        $this->feuxStop = $feuxStop;
 
         return $this;
     }
@@ -2637,7 +2638,7 @@ class Expertise
      */
     public function getFeuxStop()
     {
-        return $this->feux_stop;
+        return $this->feuxStop;
     }
 
     /**
@@ -2649,7 +2650,7 @@ class Expertise
      */
     public function setFeuRecul($feuRecul)
     {
-        $this->feu_recul = $feuRecul;
+        $this->feuRecul = $feuRecul;
 
         return $this;
     }
@@ -2661,7 +2662,7 @@ class Expertise
      */
     public function getFeuRecul()
     {
-        return $this->feu_recul;
+        return $this->feuRecul;
     }
 
     /**
@@ -2697,7 +2698,7 @@ class Expertise
      */
     public function setAlignementElements($alignementElements)
     {
-        $this->alignement_elements = $alignementElements;
+        $this->alignementElements = $alignementElements;
 
         return $this;
     }
@@ -2709,7 +2710,7 @@ class Expertise
      */
     public function getAlignementElements()
     {
-        return $this->alignement_elements;
+        return $this->alignementElements;
     }
 
     /**
@@ -2721,7 +2722,7 @@ class Expertise
      */
     public function setPresenceRouille($presenceRouille)
     {
-        $this->presence_rouille = $presenceRouille;
+        $this->presenceRouille = $presenceRouille;
 
         return $this;
     }
@@ -2733,7 +2734,7 @@ class Expertise
      */
     public function getPresenceRouille()
     {
-        return $this->presence_rouille;
+        return $this->presenceRouille;
     }
 
     /**
@@ -2745,7 +2746,7 @@ class Expertise
      */
     public function setDifferencesTeintesCarrosserie($differencesTeintesCarrosserie)
     {
-        $this->differences_teintes_carrosserie = $differencesTeintesCarrosserie;
+        $this->differencesTeintesCarrosserie = $differencesTeintesCarrosserie;
 
         return $this;
     }
@@ -2757,7 +2758,7 @@ class Expertise
      */
     public function getDifferencesTeintesCarrosserie()
     {
-        return $this->differences_teintes_carrosserie;
+        return $this->differencesTeintesCarrosserie;
     }
 
     /**
@@ -2769,7 +2770,7 @@ class Expertise
      */
     public function setImpactsChampVision($impactsChampVision)
     {
-        $this->impacts_champ_vision = $impactsChampVision;
+        $this->impactsChampVision = $impactsChampVision;
 
         return $this;
     }
@@ -2781,7 +2782,7 @@ class Expertise
      */
     public function getImpactsChampVision()
     {
-        return $this->impacts_champ_vision;
+        return $this->impactsChampVision;
     }
 
     /**
@@ -2793,7 +2794,7 @@ class Expertise
      */
     public function setFeuxAvants($feuxAvants)
     {
-        $this->feux_avants = $feuxAvants;
+        $this->feuxAvants = $feuxAvants;
 
         return $this;
     }
@@ -2805,7 +2806,7 @@ class Expertise
      */
     public function getFeuxAvants()
     {
-        return $this->feux_avants;
+        return $this->feuxAvants;
     }
 
     /**
@@ -2817,7 +2818,7 @@ class Expertise
      */
     public function setEtatRetroviseurDroite($etatRetroviseurDroite)
     {
-        $this->etat_retroviseur_droite = $etatRetroviseurDroite;
+        $this->etatRetroviseurDroite = $etatRetroviseurDroite;
 
         return $this;
     }
@@ -2829,7 +2830,7 @@ class Expertise
      */
     public function getEtatRetroviseurDroite()
     {
-        return $this->etat_retroviseur_droite;
+        return $this->etatRetroviseurDroite;
     }
 
     /**
@@ -2841,7 +2842,7 @@ class Expertise
      */
     public function setVitresSurteintees($vitresSurteintees)
     {
-        $this->vitres_surteintees = $vitresSurteintees;
+        $this->vitresSurteintees = $vitresSurteintees;
 
         return $this;
     }
@@ -2853,7 +2854,7 @@ class Expertise
      */
     public function getVitresSurteintees()
     {
-        return $this->vitres_surteintees;
+        return $this->vitresSurteintees;
     }
 
     /**
@@ -2865,7 +2866,7 @@ class Expertise
      */
     public function setFeuxArrieres($feuxArrieres)
     {
-        $this->feux_arrieres = $feuxArrieres;
+        $this->feuxArrieres = $feuxArrieres;
 
         return $this;
     }
@@ -2877,7 +2878,7 @@ class Expertise
      */
     public function getFeuxArrieres()
     {
-        return $this->feux_arrieres;
+        return $this->feuxArrieres;
     }
 
     /**
@@ -2889,7 +2890,7 @@ class Expertise
      */
     public function setFeuxAntibrouillards($feuxAntibrouillards)
     {
-        $this->feux_antibrouillards = $feuxAntibrouillards;
+        $this->feuxAntibrouillards = $feuxAntibrouillards;
 
         return $this;
     }
@@ -2901,7 +2902,7 @@ class Expertise
      */
     public function getFeuxAntibrouillards()
     {
-        return $this->feux_antibrouillards;
+        return $this->feuxAntibrouillards;
     }
 
     /**
@@ -2913,7 +2914,7 @@ class Expertise
      */
     public function setFeuxDetresse($feuxDetresse)
     {
-        $this->feux_detresse = $feuxDetresse;
+        $this->feuxDetresse = $feuxDetresse;
 
         return $this;
     }
@@ -2925,7 +2926,7 @@ class Expertise
      */
     public function getFeuxDetresse()
     {
-        return $this->feux_detresse;
+        return $this->feuxDetresse;
     }
 
     /**
@@ -2937,7 +2938,7 @@ class Expertise
      */
     public function setEtatJoints($etatJoints)
     {
-        $this->etat_joints = $etatJoints;
+        $this->etatJoints = $etatJoints;
 
         return $this;
     }
@@ -2949,7 +2950,7 @@ class Expertise
      */
     public function getEtatJoints()
     {
-        return $this->etat_joints;
+        return $this->etatJoints;
     }
 
     /**
@@ -2961,7 +2962,7 @@ class Expertise
      */
     public function setEtatJantes($etatJantes)
     {
-        $this->etat_jantes = $etatJantes;
+        $this->etatJantes = $etatJantes;
 
         return $this;
     }
@@ -2973,7 +2974,7 @@ class Expertise
      */
     public function getEtatJantes()
     {
-        return $this->etat_jantes;
+        return $this->etatJantes;
     }
 
     /**
@@ -2985,7 +2986,7 @@ class Expertise
      */
     public function setCommentaireExterieur($commentaireExterieur)
     {
-        $this->commentaire_exterieur = $commentaireExterieur;
+        $this->commentaireExterieur = $commentaireExterieur;
 
         return $this;
     }
@@ -2997,7 +2998,7 @@ class Expertise
      */
     public function getCommentaireExterieur()
     {
-        return $this->commentaire_exterieur;
+        return $this->commentaireExterieur;
     }
 
     /**
@@ -3009,7 +3010,7 @@ class Expertise
      */
     public function setVehiculeVu($vehiculeVu)
     {
-        $this->vehicule_vu = $vehiculeVu;
+        $this->vehiculeVu = $vehiculeVu;
 
         return $this;
     }
@@ -3021,7 +3022,7 @@ class Expertise
      */
     public function getVehiculeVu()
     {
-        return $this->vehicule_vu;
+        return $this->vehiculeVu;
     }
 
     /**
@@ -3033,7 +3034,7 @@ class Expertise
      */
     public function setCorrosionPerforante($corrosionPerforante)
     {
-        $this->corrosion_perforante = $corrosionPerforante;
+        $this->corrosionPerforante = $corrosionPerforante;
 
         return $this;
     }
@@ -3045,7 +3046,7 @@ class Expertise
      */
     public function getCorrosionPerforante()
     {
-        return $this->corrosion_perforante;
+        return $this->corrosionPerforante;
     }
 
     /**
@@ -3057,7 +3058,7 @@ class Expertise
      */
     public function setPresenceFuiteHuile($presenceFuiteHuile)
     {
-        $this->presence_fuite_huile = $presenceFuiteHuile;
+        $this->presenceFuiteHuile = $presenceFuiteHuile;
 
         return $this;
     }
@@ -3069,7 +3070,7 @@ class Expertise
      */
     public function getPresenceFuiteHuile()
     {
-        return $this->presence_fuite_huile;
+        return $this->presenceFuiteHuile;
     }
 
     /**
@@ -3105,7 +3106,7 @@ class Expertise
      */
     public function setPresenceCorrosion($presenceCorrosion)
     {
-        $this->presence_corrosion = $presenceCorrosion;
+        $this->presenceCorrosion = $presenceCorrosion;
 
         return $this;
     }
@@ -3117,7 +3118,7 @@ class Expertise
      */
     public function getPresenceCorrosion()
     {
-        return $this->presence_corrosion;
+        return $this->presenceCorrosion;
     }
 
     /**
@@ -3129,7 +3130,7 @@ class Expertise
      */
     public function setCorrosionLongerons($corrosionLongerons)
     {
-        $this->corrosion_longerons = $corrosionLongerons;
+        $this->corrosionLongerons = $corrosionLongerons;
 
         return $this;
     }
@@ -3141,7 +3142,7 @@ class Expertise
      */
     public function getCorrosionLongerons()
     {
-        return $this->corrosion_longerons;
+        return $this->corrosionLongerons;
     }
 
     /**
@@ -3153,7 +3154,7 @@ class Expertise
      */
     public function setOrigineFuite($origineFuite)
     {
-        $this->origine_fuite = $origineFuite;
+        $this->origineFuite = $origineFuite;
 
         return $this;
     }
@@ -3165,7 +3166,7 @@ class Expertise
      */
     public function getOrigineFuite()
     {
-        return $this->origine_fuite;
+        return $this->origineFuite;
     }
 
     /**
@@ -3177,7 +3178,7 @@ class Expertise
      */
     public function setPlaquettesAvantsUsage($plaquettesAvantsUsage)
     {
-        $this->plaquettes_avants_usage = $plaquettesAvantsUsage;
+        $this->plaquettesAvantsUsage = $plaquettesAvantsUsage;
 
         return $this;
     }
@@ -3189,7 +3190,7 @@ class Expertise
      */
     public function getPlaquettesAvantsUsage()
     {
-        return $this->plaquettes_avants_usage;
+        return $this->plaquettesAvantsUsage;
     }
 
     /**
@@ -3201,7 +3202,7 @@ class Expertise
      */
     public function setMarquePneuAvant($marquePneuAvant)
     {
-        $this->marque_pneu_avant = $marquePneuAvant;
+        $this->marquePneuAvant = $marquePneuAvant;
 
         return $this;
     }
@@ -3213,7 +3214,7 @@ class Expertise
      */
     public function getMarquePneuAvant()
     {
-        return $this->marque_pneu_avant;
+        return $this->marquePneuAvant;
     }
 
     /**
@@ -3225,7 +3226,7 @@ class Expertise
      */
     public function setCodeDOTPneuAvantGauche($codeDOTPneuAvantGauche)
     {
-        $this->code_DOT_pneu_avant_gauche = $codeDOTPneuAvantGauche;
+        $this->codeDOTPneuAvantGauche = $codeDOTPneuAvantGauche;
 
         return $this;
     }
@@ -3237,7 +3238,7 @@ class Expertise
      */
     public function getCodeDOTPneuAvantGauche()
     {
-        return $this->code_DOT_pneu_avant_gauche;
+        return $this->codeDOTPneuAvantGauche;
     }
 
     /**
@@ -3249,7 +3250,7 @@ class Expertise
      */
     public function setCodeDOTPneuAvantDroite($codeDOTPneuAvantDroite)
     {
-        $this->code_DOT_pneu_avant_droite = $codeDOTPneuAvantDroite;
+        $this->codeDOTPneuAvantDroite = $codeDOTPneuAvantDroite;
 
         return $this;
     }
@@ -3261,7 +3262,7 @@ class Expertise
      */
     public function getCodeDOTPneuAvantDroite()
     {
-        return $this->code_DOT_pneu_avant_droite;
+        return $this->codeDOTPneuAvantDroite;
     }
 
     /**
@@ -3273,7 +3274,7 @@ class Expertise
      */
     public function setUsagePneumatiquesAvants($usagePneumatiquesAvants)
     {
-        $this->usage_pneumatiques_avants = $usagePneumatiquesAvants;
+        $this->usagePneumatiquesAvants = $usagePneumatiquesAvants;
 
         return $this;
     }
@@ -3285,7 +3286,7 @@ class Expertise
      */
     public function getUsagePneumatiquesAvants()
     {
-        return $this->usage_pneumatiques_avants;
+        return $this->usagePneumatiquesAvants;
     }
 
     /**
@@ -3297,7 +3298,7 @@ class Expertise
      */
     public function setUsageDisquesAvants($usageDisquesAvants)
     {
-        $this->usage_disques_avants = $usageDisquesAvants;
+        $this->usageDisquesAvants = $usageDisquesAvants;
 
         return $this;
     }
@@ -3309,7 +3310,7 @@ class Expertise
      */
     public function getUsageDisquesAvants()
     {
-        return $this->usage_disques_avants;
+        return $this->usageDisquesAvants;
     }
 
     /**
@@ -3321,7 +3322,7 @@ class Expertise
      */
     public function setDimensionsPneumatiqueAvant($dimensionsPneumatiqueAvant)
     {
-        $this->dimensions_pneumatique_avant = $dimensionsPneumatiqueAvant;
+        $this->dimensionsPneumatiqueAvant = $dimensionsPneumatiqueAvant;
 
         return $this;
     }
@@ -3333,7 +3334,7 @@ class Expertise
      */
     public function getDimensionsPneumatiqueAvant()
     {
-        return $this->dimensions_pneumatique_avant;
+        return $this->dimensionsPneumatiqueAvant;
     }
 
     /**
@@ -3345,7 +3346,7 @@ class Expertise
      */
     public function setPneumatiqueConformeMonteOrigine($pneumatiqueConformeMonteOrigine)
     {
-        $this->pneumatique_conforme_monte_origine = $pneumatiqueConformeMonteOrigine;
+        $this->pneumatiqueConformeMonteOrigine = $pneumatiqueConformeMonteOrigine;
 
         return $this;
     }
@@ -3357,7 +3358,7 @@ class Expertise
      */
     public function getPneumatiqueConformeMonteOrigine()
     {
-        return $this->pneumatique_conforme_monte_origine;
+        return $this->pneumatiqueConformeMonteOrigine;
     }
 
     /**
@@ -3369,7 +3370,7 @@ class Expertise
      */
     public function setPlaquettesArriereUsage($plaquettesArriereUsage)
     {
-        $this->plaquettes_arriere_usage = $plaquettesArriereUsage;
+        $this->plaquettesArriereUsage = $plaquettesArriereUsage;
 
         return $this;
     }
@@ -3381,7 +3382,7 @@ class Expertise
      */
     public function getPlaquettesArriereUsage()
     {
-        return $this->plaquettes_arriere_usage;
+        return $this->plaquettesArriereUsage;
     }
 
     /**
@@ -3393,7 +3394,7 @@ class Expertise
      */
     public function setMarquePneuArriere($marquePneuArriere)
     {
-        $this->marque_pneu_arriere = $marquePneuArriere;
+        $this->marquePneuArriere = $marquePneuArriere;
 
         return $this;
     }
@@ -3405,7 +3406,7 @@ class Expertise
      */
     public function getMarquePneuArriere()
     {
-        return $this->marque_pneu_arriere;
+        return $this->marquePneuArriere;
     }
 
     /**
@@ -3417,7 +3418,7 @@ class Expertise
      */
     public function setCodeDOTPneuArriereGauche($codeDOTPneuArriereGauche)
     {
-        $this->code_DOT_pneu_arriere_gauche = $codeDOTPneuArriereGauche;
+        $this->codeDOTPneuArriereGauche = $codeDOTPneuArriereGauche;
 
         return $this;
     }
@@ -3429,7 +3430,7 @@ class Expertise
      */
     public function getCodeDOTPneuArriereGauche()
     {
-        return $this->code_DOT_pneu_arriere_gauche;
+        return $this->codeDOTPneuArriereGauche;
     }
 
     /**
@@ -3441,7 +3442,7 @@ class Expertise
      */
     public function setCodeDOTPneuArriereDroite($codeDOTPneuArriereDroite)
     {
-        $this->code_DOT_pneu_arriere_droite = $codeDOTPneuArriereDroite;
+        $this->codeDOTPneuArriereDroite = $codeDOTPneuArriereDroite;
 
         return $this;
     }
@@ -3453,7 +3454,7 @@ class Expertise
      */
     public function getCodeDOTPneuArriereDroite()
     {
-        return $this->code_DOT_pneu_arriere_droite;
+        return $this->codeDOTPneuArriereDroite;
     }
 
     /**
@@ -3465,7 +3466,7 @@ class Expertise
      */
     public function setUsagePneumatiquesArrieres($usagePneumatiquesArrieres)
     {
-        $this->usage_pneumatiques_arrieres = $usagePneumatiquesArrieres;
+        $this->usagePneumatiquesArrieres = $usagePneumatiquesArrieres;
 
         return $this;
     }
@@ -3477,7 +3478,7 @@ class Expertise
      */
     public function getUsagePneumatiquesArrieres()
     {
-        return $this->usage_pneumatiques_arrieres;
+        return $this->usagePneumatiquesArrieres;
     }
 
     /**
@@ -3489,7 +3490,7 @@ class Expertise
      */
     public function setUsageDisquesArriere($usageDisquesArriere)
     {
-        $this->usage_disques_arriere = $usageDisquesArriere;
+        $this->usageDisquesArriere = $usageDisquesArriere;
 
         return $this;
     }
@@ -3501,7 +3502,7 @@ class Expertise
      */
     public function getUsageDisquesArriere()
     {
-        return $this->usage_disques_arriere;
+        return $this->usageDisquesArriere;
     }
 
     /**
@@ -3513,7 +3514,7 @@ class Expertise
      */
     public function setDimensionsPneumatiqueArriere($dimensionsPneumatiqueArriere)
     {
-        $this->dimensions_pneumatique_arriere = $dimensionsPneumatiqueArriere;
+        $this->dimensionsPneumatiqueArriere = $dimensionsPneumatiqueArriere;
 
         return $this;
     }
@@ -3525,7 +3526,7 @@ class Expertise
      */
     public function getDimensionsPneumatiqueArriere()
     {
-        return $this->dimensions_pneumatique_arriere;
+        return $this->dimensionsPneumatiqueArriere;
     }
 
     /**
@@ -3537,7 +3538,7 @@ class Expertise
      */
     public function setPneumatiqueConformeMonteOrigineArriere($pneumatiqueConformeMonteOrigineArriere)
     {
-        $this->pneumatique_conforme_monte_origine_arriere = $pneumatiqueConformeMonteOrigineArriere;
+        $this->pneumatiqueConformeMonteOrigineArriere = $pneumatiqueConformeMonteOrigineArriere;
 
         return $this;
     }
@@ -3549,7 +3550,7 @@ class Expertise
      */
     public function getPneumatiqueConformeMonteOrigineArriere()
     {
-        return $this->pneumatique_conforme_monte_origine_arriere;
+        return $this->pneumatiqueConformeMonteOrigineArriere;
     }
 
     /**
@@ -3561,7 +3562,7 @@ class Expertise
      */
     public function setNiveauHuile($niveauHuile)
     {
-        $this->niveau_huile = $niveauHuile;
+        $this->niveauHuile = $niveauHuile;
 
         return $this;
     }
@@ -3573,7 +3574,7 @@ class Expertise
      */
     public function getNiveauHuile()
     {
-        return $this->niveau_huile;
+        return $this->niveauHuile;
     }
 
     /**
@@ -3585,7 +3586,7 @@ class Expertise
      */
     public function setQualiteHuile($qualiteHuile)
     {
-        $this->qualite_huile = $qualiteHuile;
+        $this->qualiteHuile = $qualiteHuile;
 
         return $this;
     }
@@ -3597,7 +3598,7 @@ class Expertise
      */
     public function getQualiteHuile()
     {
-        return $this->qualite_huile;
+        return $this->qualiteHuile;
     }
 
     /**
@@ -3609,7 +3610,7 @@ class Expertise
      */
     public function setSouffleBouchonHuile($souffleBouchonHuile)
     {
-        $this->souffle_bouchon_huile = $souffleBouchonHuile;
+        $this->souffleBouchonHuile = $souffleBouchonHuile;
 
         return $this;
     }
@@ -3621,7 +3622,7 @@ class Expertise
      */
     public function getSouffleBouchonHuile()
     {
-        return $this->souffle_bouchon_huile;
+        return $this->souffleBouchonHuile;
     }
 
     /**
@@ -3633,7 +3634,7 @@ class Expertise
      */
     public function setNiveauLiquideRefroidissement($niveauLiquideRefroidissement)
     {
-        $this->niveau_liquide_refroidissement = $niveauLiquideRefroidissement;
+        $this->niveauLiquideRefroidissement = $niveauLiquideRefroidissement;
 
         return $this;
     }
@@ -3645,7 +3646,7 @@ class Expertise
      */
     public function getNiveauLiquideRefroidissement()
     {
-        return $this->niveau_liquide_refroidissement;
+        return $this->niveauLiquideRefroidissement;
     }
 
     /**
@@ -3657,7 +3658,7 @@ class Expertise
      */
     public function setQualiteLiquideRefroidissement($qualiteLiquideRefroidissement)
     {
-        $this->qualite_liquide_refroidissement = $qualiteLiquideRefroidissement;
+        $this->qualiteLiquideRefroidissement = $qualiteLiquideRefroidissement;
 
         return $this;
     }
@@ -3669,7 +3670,7 @@ class Expertise
      */
     public function getQualiteLiquideRefroidissement()
     {
-        return $this->qualite_liquide_refroidissement;
+        return $this->qualiteLiquideRefroidissement;
     }
 
     /**
@@ -3681,7 +3682,7 @@ class Expertise
      */
     public function setTypeDistribution($typeDistribution)
     {
-        $this->type_distribution = $typeDistribution;
+        $this->typeDistribution = $typeDistribution;
 
         return $this;
     }
@@ -3693,7 +3694,7 @@ class Expertise
      */
     public function getTypeDistribution()
     {
-        return $this->type_distribution;
+        return $this->typeDistribution;
     }
 
     /**
@@ -3753,7 +3754,7 @@ class Expertise
      */
     public function setCommentaireConsommablesMoteur($commentaireConsommablesMoteur)
     {
-        $this->commentaire_consommables_moteur = $commentaireConsommablesMoteur;
+        $this->commentaireConsommablesMoteur = $commentaireConsommablesMoteur;
 
         return $this;
     }
@@ -3765,7 +3766,7 @@ class Expertise
      */
     public function getCommentaireConsommablesMoteur()
     {
-        return $this->commentaire_consommables_moteur;
+        return $this->commentaireConsommablesMoteur;
     }
 
     /**
@@ -3777,7 +3778,7 @@ class Expertise
      */
     public function setDemarrageVehiculeFroid($demarrageVehiculeFroid)
     {
-        $this->demarrage_vehicule_froid = $demarrageVehiculeFroid;
+        $this->demarrageVehiculeFroid = $demarrageVehiculeFroid;
 
         return $this;
     }
@@ -3789,7 +3790,7 @@ class Expertise
      */
     public function getDemarrageVehiculeFroid()
     {
-        return $this->demarrage_vehicule_froid;
+        return $this->demarrageVehiculeFroid;
     }
 
     /**
@@ -3801,7 +3802,7 @@ class Expertise
      */
     public function setBlocCompteur($blocCompteur)
     {
-        $this->bloc_compteur = $blocCompteur;
+        $this->blocCompteur = $blocCompteur;
 
         return $this;
     }
@@ -3813,7 +3814,7 @@ class Expertise
      */
     public function getBlocCompteur()
     {
-        return $this->bloc_compteur;
+        return $this->blocCompteur;
     }
 
     /**
@@ -3825,7 +3826,7 @@ class Expertise
      */
     public function setPresenceFumeeEchappement($presenceFumeeEchappement)
     {
-        $this->presence_fumee_echappement = $presenceFumeeEchappement;
+        $this->presenceFumeeEchappement = $presenceFumeeEchappement;
 
         return $this;
     }
@@ -3837,7 +3838,7 @@ class Expertise
      */
     public function getPresenceFumeeEchappement()
     {
-        return $this->presence_fumee_echappement;
+        return $this->presenceFumeeEchappement;
     }
 
     /**
@@ -3873,7 +3874,7 @@ class Expertise
      */
     public function setSonoriteMoteur($sonoriteMoteur)
     {
-        $this->sonorite_moteur = $sonoriteMoteur;
+        $this->sonoriteMoteur = $sonoriteMoteur;
 
         return $this;
     }
@@ -3885,7 +3886,7 @@ class Expertise
      */
     public function getSonoriteMoteur()
     {
-        return $this->sonorite_moteur;
+        return $this->sonoriteMoteur;
     }
 
     /**
@@ -3897,7 +3898,7 @@ class Expertise
      */
     public function setVoyantPrechauffage($voyantPrechauffage)
     {
-        $this->voyant_prechauffage = $voyantPrechauffage;
+        $this->voyantPrechauffage = $voyantPrechauffage;
 
         return $this;
     }
@@ -3909,7 +3910,7 @@ class Expertise
      */
     public function getVoyantPrechauffage()
     {
-        return $this->voyant_prechauffage;
+        return $this->voyantPrechauffage;
     }
 
     /**
@@ -3921,7 +3922,7 @@ class Expertise
      */
     public function setCommentaireTestStatic($commentaireTestStatic)
     {
-        $this->commentaire_test_static = $commentaireTestStatic;
+        $this->commentaireTestStatic = $commentaireTestStatic;
 
         return $this;
     }
@@ -3933,7 +3934,7 @@ class Expertise
      */
     public function getCommentaireTestStatic()
     {
-        return $this->commentaire_test_static;
+        return $this->commentaireTestStatic;
     }
 
     /**
@@ -3945,7 +3946,7 @@ class Expertise
      */
     public function setTestRoutierEffectue($testRoutierEffectue)
     {
-        $this->test_routier_effectue = $testRoutierEffectue;
+        $this->testRoutierEffectue = $testRoutierEffectue;
 
         return $this;
     }
@@ -3957,7 +3958,7 @@ class Expertise
      */
     public function getTestRoutierEffectue()
     {
-        return $this->test_routier_effectue;
+        return $this->testRoutierEffectue;
     }
 
     /**
@@ -3969,7 +3970,7 @@ class Expertise
      */
     public function setAucunTestExplication($aucunTestExplication)
     {
-        $this->aucun_test_explication = $aucunTestExplication;
+        $this->aucunTestExplication = $aucunTestExplication;
 
         return $this;
     }
@@ -3981,7 +3982,7 @@ class Expertise
      */
     public function getAucunTestExplication()
     {
-        return $this->aucun_test_explication;
+        return $this->aucunTestExplication;
     }
 
     /**
@@ -3993,7 +3994,7 @@ class Expertise
      */
     public function setConditionMeteo($conditionMeteo)
     {
-        $this->condition_meteo = $conditionMeteo;
+        $this->conditionMeteo = $conditionMeteo;
 
         return $this;
     }
@@ -4005,7 +4006,7 @@ class Expertise
      */
     public function getConditionMeteo()
     {
-        return $this->condition_meteo;
+        return $this->conditionMeteo;
     }
 
     /**
@@ -4017,7 +4018,7 @@ class Expertise
      */
     public function setConditionEssaie($conditionEssaie)
     {
-        $this->condition_essaie = $conditionEssaie;
+        $this->conditionEssaie = $conditionEssaie;
 
         return $this;
     }
@@ -4029,7 +4030,7 @@ class Expertise
      */
     public function getConditionEssaie()
     {
-        return $this->condition_essaie;
+        return $this->conditionEssaie;
     }
 
     /**
@@ -4041,7 +4042,7 @@ class Expertise
      */
     public function setCoursePedaleEmbrayage($coursePedaleEmbrayage)
     {
-        $this->course_pedale_embrayage = $coursePedaleEmbrayage;
+        $this->coursePedaleEmbrayage = $coursePedaleEmbrayage;
 
         return $this;
     }
@@ -4053,7 +4054,7 @@ class Expertise
      */
     public function getCoursePedaleEmbrayage()
     {
-        return $this->course_pedale_embrayage;
+        return $this->coursePedaleEmbrayage;
     }
 
     /**
@@ -4065,7 +4066,7 @@ class Expertise
      */
     public function setEmbrayagePatine($embrayagePatine)
     {
-        $this->embrayage_patine = $embrayagePatine;
+        $this->embrayagePatine = $embrayagePatine;
 
         return $this;
     }
@@ -4077,7 +4078,7 @@ class Expertise
      */
     public function getEmbrayagePatine()
     {
-        return $this->embrayage_patine;
+        return $this->embrayagePatine;
     }
 
     /**
@@ -4089,7 +4090,7 @@ class Expertise
      */
     public function setButeeEmbrayageBruyante($buteeEmbrayageBruyante)
     {
-        $this->butee_embrayage_bruyante = $buteeEmbrayageBruyante;
+        $this->buteeEmbrayageBruyante = $buteeEmbrayageBruyante;
 
         return $this;
     }
@@ -4101,7 +4102,7 @@ class Expertise
      */
     public function getButeeEmbrayageBruyante()
     {
-        return $this->butee_embrayage_bruyante;
+        return $this->buteeEmbrayageBruyante;
     }
 
     /**
@@ -4113,7 +4114,7 @@ class Expertise
      */
     public function setJeuLevierVitesse($jeuLevierVitesse)
     {
-        $this->jeu_levier_vitesse = $jeuLevierVitesse;
+        $this->jeuLevierVitesse = $jeuLevierVitesse;
 
         return $this;
     }
@@ -4125,7 +4126,7 @@ class Expertise
      */
     public function getJeuLevierVitesse()
     {
-        return $this->jeu_levier_vitesse;
+        return $this->jeuLevierVitesse;
     }
 
     /**
@@ -4137,7 +4138,7 @@ class Expertise
      */
     public function setPassageFacileVitesses($passageFacileVitesses)
     {
-        $this->passage_facile_vitesses = $passageFacileVitesses;
+        $this->passageFacileVitesses = $passageFacileVitesses;
 
         return $this;
     }
@@ -4149,7 +4150,7 @@ class Expertise
      */
     public function getPassageFacileVitesses()
     {
-        return $this->passage_facile_vitesses;
+        return $this->passageFacileVitesses;
     }
 
     /**
@@ -4161,7 +4162,7 @@ class Expertise
      */
     public function setAccoupsBVA($accoupsBVA)
     {
-        $this->accoups_BVA = $accoupsBVA;
+        $this->accoupsBVA = $accoupsBVA;
 
         return $this;
     }
@@ -4173,7 +4174,7 @@ class Expertise
      */
     public function getAccoupsBVA()
     {
-        return $this->accoups_BVA;
+        return $this->accoupsBVA;
     }
 
     /**
@@ -4185,7 +4186,7 @@ class Expertise
      */
     public function setAccelerationFranche($accelerationFranche)
     {
-        $this->acceleration_franche = $accelerationFranche;
+        $this->accelerationFranche = $accelerationFranche;
 
         return $this;
     }
@@ -4197,7 +4198,7 @@ class Expertise
      */
     public function getAccelerationFranche()
     {
-        return $this->acceleration_franche;
+        return $this->accelerationFranche;
     }
 
     /**
@@ -4209,7 +4210,7 @@ class Expertise
      */
     public function setVitesseAtteinte($vitesseAtteinte)
     {
-        $this->vitesse_atteinte = $vitesseAtteinte;
+        $this->vitesseAtteinte = $vitesseAtteinte;
 
         return $this;
     }
@@ -4221,7 +4222,7 @@ class Expertise
      */
     public function getVitesseAtteinte()
     {
-        return $this->vitesse_atteinte;
+        return $this->vitesseAtteinte;
     }
 
     /**
@@ -4233,7 +4234,7 @@ class Expertise
      */
     public function setVibrationsMecaniques($vibrationsMecaniques)
     {
-        $this->vibrations_mecaniques = $vibrationsMecaniques;
+        $this->vibrationsMecaniques = $vibrationsMecaniques;
 
         return $this;
     }
@@ -4245,7 +4246,7 @@ class Expertise
      */
     public function getVibrationsMecaniques()
     {
-        return $this->vibrations_mecaniques;
+        return $this->vibrationsMecaniques;
     }
 
     /**
@@ -4257,7 +4258,7 @@ class Expertise
      */
     public function setVitesseVibration($vitesseVibration)
     {
-        $this->vitesse_vibration = $vitesseVibration;
+        $this->vitesseVibration = $vitesseVibration;
 
         return $this;
     }
@@ -4269,7 +4270,7 @@ class Expertise
      */
     public function getVitesseVibration()
     {
-        return $this->vitesse_vibration;
+        return $this->vitesseVibration;
     }
 
     /**
@@ -4281,7 +4282,7 @@ class Expertise
      */
     public function setTenueCap($tenueCap)
     {
-        $this->tenue_cap = $tenueCap;
+        $this->tenueCap = $tenueCap;
 
         return $this;
     }
@@ -4293,7 +4294,7 @@ class Expertise
      */
     public function getTenueCap()
     {
-        return $this->tenue_cap;
+        return $this->tenueCap;
     }
 
     /**
@@ -4305,7 +4306,7 @@ class Expertise
      */
     public function setFreinageLigneDroite($freinageLigneDroite)
     {
-        $this->freinage_ligne_droite = $freinageLigneDroite;
+        $this->freinageLigneDroite = $freinageLigneDroite;
 
         return $this;
     }
@@ -4317,7 +4318,7 @@ class Expertise
      */
     public function getFreinageLigneDroite()
     {
-        return $this->freinage_ligne_droite;
+        return $this->freinageLigneDroite;
     }
 
     /**
@@ -4329,7 +4330,7 @@ class Expertise
      */
     public function setPresenceBruitsEtrangers($presenceBruitsEtrangers)
     {
-        $this->presence_bruits_etrangers = $presenceBruitsEtrangers;
+        $this->presenceBruitsEtrangers = $presenceBruitsEtrangers;
 
         return $this;
     }
@@ -4341,7 +4342,7 @@ class Expertise
      */
     public function getPresenceBruitsEtrangers()
     {
-        return $this->presence_bruits_etrangers;
+        return $this->presenceBruitsEtrangers;
     }
 
     /**
@@ -4353,7 +4354,7 @@ class Expertise
      */
     public function setRegulateurLimiteurVitesse($regulateurLimiteurVitesse)
     {
-        $this->regulateur_limiteur_vitesse = $regulateurLimiteurVitesse;
+        $this->regulateurLimiteurVitesse = $regulateurLimiteurVitesse;
 
         return $this;
     }
@@ -4365,7 +4366,7 @@ class Expertise
      */
     public function getRegulateurLimiteurVitesse()
     {
-        return $this->regulateur_limiteur_vitesse;
+        return $this->regulateurLimiteurVitesse;
     }
 
     /**
@@ -4377,7 +4378,7 @@ class Expertise
      */
     public function setOdeursExterieur($odeursExterieur)
     {
-        $this->odeurs_exterieur = $odeursExterieur;
+        $this->odeursExterieur = $odeursExterieur;
 
         return $this;
     }
@@ -4389,7 +4390,7 @@ class Expertise
      */
     public function getOdeursExterieur()
     {
-        return $this->odeurs_exterieur;
+        return $this->odeursExterieur;
     }
 
     /**
@@ -4401,7 +4402,7 @@ class Expertise
      */
     public function setDemarrageVehiculeChaud($demarrageVehiculeChaud)
     {
-        $this->demarrage_vehicule_chaud = $demarrageVehiculeChaud;
+        $this->demarrageVehiculeChaud = $demarrageVehiculeChaud;
 
         return $this;
     }
@@ -4413,7 +4414,7 @@ class Expertise
      */
     public function getDemarrageVehiculeChaud()
     {
-        return $this->demarrage_vehicule_chaud;
+        return $this->demarrageVehiculeChaud;
     }
 
     /**
@@ -4449,7 +4450,7 @@ class Expertise
      */
     public function setVoyantsAllumes($voyantsAllumes)
     {
-        $this->voyants_allumes = $voyantsAllumes;
+        $this->voyantsAllumes = $voyantsAllumes;
 
         return $this;
     }
@@ -4461,7 +4462,7 @@ class Expertise
      */
     public function getVoyantsAllumes()
     {
-        return $this->voyants_allumes;
+        return $this->voyantsAllumes;
     }
 
     /**
@@ -4473,7 +4474,7 @@ class Expertise
      */
     public function setNomVoyantsAllumes($nomVoyantsAllumes)
     {
-        $this->nom_voyants_allumes = $nomVoyantsAllumes;
+        $this->nomVoyantsAllumes = $nomVoyantsAllumes;
 
         return $this;
     }
@@ -4485,7 +4486,7 @@ class Expertise
      */
     public function getNomVoyantsAllumes()
     {
-        return $this->nom_voyants_allumes;
+        return $this->nomVoyantsAllumes;
     }
 
     /**
@@ -4497,7 +4498,7 @@ class Expertise
      */
     public function setCommentaireTestRoutier($commentaireTestRoutier)
     {
-        $this->commentaire_test_routier = $commentaireTestRoutier;
+        $this->commentaireTestRoutier = $commentaireTestRoutier;
 
         return $this;
     }
@@ -4509,7 +4510,7 @@ class Expertise
      */
     public function getCommentaireTestRoutier()
     {
-        return $this->commentaire_test_routier;
+        return $this->commentaireTestRoutier;
     }
 
     /**
@@ -4521,7 +4522,7 @@ class Expertise
      */
     public function setNotationVendeur($notationVendeur)
     {
-        $this->notation_vendeur = $notationVendeur;
+        $this->notationVendeur = $notationVendeur;
 
         return $this;
     }
@@ -4533,7 +4534,7 @@ class Expertise
      */
     public function getNotationVendeur()
     {
-        return $this->notation_vendeur;
+        return $this->notationVendeur;
     }
 
     /**
@@ -4545,7 +4546,7 @@ class Expertise
      */
     public function setAchatSecurise($achatSecurise)
     {
-        $this->achat_securise = $achatSecurise;
+        $this->achatSecurise = $achatSecurise;
 
         return $this;
     }
@@ -4557,7 +4558,7 @@ class Expertise
      */
     public function getAchatSecurise()
     {
-        return $this->achat_securise;
+        return $this->achatSecurise;
     }
 
     /**
@@ -4569,7 +4570,7 @@ class Expertise
      */
     public function setKilometrageCoherent($kilometrageCoherent)
     {
-        $this->kilometrage_coherent = $kilometrageCoherent;
+        $this->kilometrageCoherent = $kilometrageCoherent;
 
         return $this;
     }
@@ -4581,7 +4582,7 @@ class Expertise
      */
     public function getKilometrageCoherent()
     {
-        return $this->kilometrage_coherent;
+        return $this->kilometrageCoherent;
     }
 
     /**
@@ -4593,7 +4594,7 @@ class Expertise
      */
     public function setCommentaireConclusion($commentaireConclusion)
     {
-        $this->commentaire_conclusion = $commentaireConclusion;
+        $this->commentaireConclusion = $commentaireConclusion;
 
         return $this;
     }
@@ -4605,6 +4606,11 @@ class Expertise
      */
     public function getCommentaireConclusion()
     {
-        return $this->commentaire_conclusion;
+        return $this->commentaireConclusion;
     }
+
+    public function  __toString(){
+        return $this->getAdvert()->getId();
+    }
+
 }

@@ -1,0 +1,317 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Expertises list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Status</th>
+                <th>Marque</th>
+                <th>Motorisation</th>
+                <th>Datecirculation</th>
+                <th>Carburant</th>
+                <th>Puissance</th>
+                <th>Couleur</th>
+                <th>Modele</th>
+                <th>Finition</th>
+                <th>Numerochassis</th>
+                <th>Boitevitesse</th>
+                <th>Kilometrage</th>
+                <th>Pays</th>
+                <th>Controletechnique</th>
+                <th>Nombrecle</th>
+                <th>Notice</th>
+                <th>Factureentretien</th>
+                <th>Carnetentretien</th>
+                <th>Certificatconformiteeuropeen</th>
+                <th>Datecontroletechnique</th>
+                <th>Importation</th>
+                <th>Factureachat</th>
+                <th>Location</th>
+                <th>Commentaireadministratif</th>
+                <th>Siegeavant</th>
+                <th>Planchebord</th>
+                <th>Etatretroviseurinterieur</th>
+                <th>Panneauxportes</th>
+                <th>Siegearriere</th>
+                <th>Plagearriere</th>
+                <th>Cric</th>
+                <th>Garnitureciel</th>
+                <th>Levesvitres</th>
+                <th>Ceintures</th>
+                <th>Moquettesavants</th>
+                <th>Usurecommande</th>
+                <th>Modenuitretroviseurinterieur</th>
+                <th>Tapissols</th>
+                <th>Moquettesarriere</th>
+                <th>Coffre</th>
+                <th>Rouesecours</th>
+                <th>Ecrouantivol</th>
+                <th>Freinmain</th>
+                <th>Commentaireinterieure</th>
+                <th>Gps</th>
+                <th>Commandevolant</th>
+                <th>Toitouvrant</th>
+                <th>Fermeturecentralisee</th>
+                <th>Autoradio</th>
+                <th>Radarsrecul</th>
+                <th>Ouverturesanscle</th>
+                <th>Presencemarquereparation</th>
+                <th>Etatparebriseavant</th>
+                <th>Etatessuieglaces</th>
+                <th>Etatretroviseurgauche</th>
+                <th>Etatvitreslaterales</th>
+                <th>Etatparebrisearriere</th>
+                <th>Feuxstop</th>
+                <th>Feurecul</th>
+                <th>Repetiteurs</th>
+                <th>Alignementelements</th>
+                <th>Presencerouille</th>
+                <th>Differencesteintescarrosserie</th>
+                <th>Impactschampvision</th>
+                <th>Feuxavants</th>
+                <th>Etatretroviseurdroite</th>
+                <th>Vitressurteintees</th>
+                <th>Feuxarrieres</th>
+                <th>Feuxantibrouillards</th>
+                <th>Feuxdetresse</th>
+                <th>Etatjoints</th>
+                <th>Etatjantes</th>
+                <th>Commentaireexterieur</th>
+                <th>Vehiculevu</th>
+                <th>Corrosionperforante</th>
+                <th>Presencefuitehuile</th>
+                <th>Echappement</th>
+                <th>Presencecorrosion</th>
+                <th>Corrosionlongerons</th>
+                <th>Originefuite</th>
+                <th>Plaquettesavantsusage</th>
+                <th>Marquepneuavant</th>
+                <th>Codedotpneuavantgauche</th>
+                <th>Codedotpneuavantdroite</th>
+                <th>Usagepneumatiquesavants</th>
+                <th>Usagedisquesavants</th>
+                <th>Dimensionspneumatiqueavant</th>
+                <th>Pneumatiqueconformemonteorigine</th>
+                <th>Plaquettesarriereusage</th>
+                <th>Marquepneuarriere</th>
+                <th>Codedotpneuarrieregauche</th>
+                <th>Codedotpneuarrieredroite</th>
+                <th>Usagepneumatiquesarrieres</th>
+                <th>Usagedisquesarriere</th>
+                <th>Dimensionspneumatiquearriere</th>
+                <th>Pneumatiqueconformemonteoriginearriere</th>
+                <th>Niveauhuile</th>
+                <th>Qualitehuile</th>
+                <th>Soufflebouchonhuile</th>
+                <th>Niveauliquiderefroidissement</th>
+                <th>Qualiteliquiderefroidissement</th>
+                <th>Typedistribution</th>
+                <th>Distribution</th>
+                <th>Courroie</th>
+                <th>Commentaireconsommablesmoteur</th>
+                <th>Demarragevehiculefroid</th>
+                <th>Bloccompteur</th>
+                <th>Presencefumeeechappement</th>
+                <th>Amortisseurs</th>
+                <th>Sonoritemoteur</th>
+                <th>Voyantprechauffage</th>
+                <th>Commentaireteststatic</th>
+                <th>Testroutiereffectue</th>
+                <th>Aucuntestexplication</th>
+                <th>Conditionmeteo</th>
+                <th>Conditionessaie</th>
+                <th>Coursepedaleembrayage</th>
+                <th>Embrayagepatine</th>
+                <th>Buteeembrayagebruyante</th>
+                <th>Jeuleviervitesse</th>
+                <th>Passagefacilevitesses</th>
+                <th>Accoupsbva</th>
+                <th>Accelerationfranche</th>
+                <th>Vitesseatteinte</th>
+                <th>Vibrationsmecaniques</th>
+                <th>Vitessevibration</th>
+                <th>Tenuecap</th>
+                <th>Freinagelignedroite</th>
+                <th>Presencebruitsetrangers</th>
+                <th>Regulateurlimiteurvitesse</th>
+                <th>Odeursexterieur</th>
+                <th>Demarragevehiculechaud</th>
+                <th>Ralenti</th>
+                <th>Voyantsallumes</th>
+                <th>Nomvoyantsallumes</th>
+                <th>Commentairetestroutier</th>
+                <th>Notationvendeur</th>
+                <th>Achatsecurise</th>
+                <th>Kilometragecoherent</th>
+                <th>Commentaireconclusion</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for expertise in expertises %}
+            <tr>
+                <td><a href="{{ path('expertise_show', { 'id': expertise.id }) }}">{{ expertise.id }}</a></td>
+                <td>{{ expertise.status }}</td>
+                <td>{{ expertise.marque }}</td>
+                <td>{{ expertise.motorisation }}</td>
+                <td>{{ expertise.dateCirculation }}</td>
+                <td>{{ expertise.carburant }}</td>
+                <td>{{ expertise.puissance }}</td>
+                <td>{{ expertise.couleur }}</td>
+                <td>{{ expertise.modele }}</td>
+                <td>{{ expertise.finition }}</td>
+                <td>{{ expertise.numeroChassis }}</td>
+                <td>{{ expertise.boiteVitesse }}</td>
+                <td>{{ expertise.kilometrage }}</td>
+                <td>{{ expertise.pays }}</td>
+                <td>{{ expertise.controleTechnique }}</td>
+                <td>{{ expertise.nombreCle }}</td>
+                <td>{{ expertise.notice }}</td>
+                <td>{{ expertise.factureEntretien }}</td>
+                <td>{{ expertise.carnetEntretien }}</td>
+                <td>{{ expertise.certificatConformiteEuropeen }}</td>
+                <td>{{ expertise.dateControleTechnique }}</td>
+                <td>{{ expertise.importation }}</td>
+                <td>{{ expertise.factureAchat }}</td>
+                <td>{{ expertise.location }}</td>
+                <td>{{ expertise.commentaireAdministratif }}</td>
+                <td>{{ expertise.siegeAvant }}</td>
+                <td>{{ expertise.plancheBord }}</td>
+                <td>{{ expertise.etatRetroviseurInterieur }}</td>
+                <td>{{ expertise.panneauxPortes }}</td>
+                <td>{{ expertise.siegeArriere }}</td>
+                <td>{{ expertise.plageArriere }}</td>
+                <td>{{ expertise.cric }}</td>
+                <td>{{ expertise.garnitureCiel }}</td>
+                <td>{{ expertise.levesVitres }}</td>
+                <td>{{ expertise.ceintures }}</td>
+                <td>{{ expertise.moquettesAvants }}</td>
+                <td>{{ expertise.usureCommande }}</td>
+                <td>{{ expertise.modeNuitRetroviseurInterieur }}</td>
+                <td>{{ expertise.tapisSols }}</td>
+                <td>{{ expertise.moquettesArriere }}</td>
+                <td>{{ expertise.coffre }}</td>
+                <td>{{ expertise.roueSecours }}</td>
+                <td>{{ expertise.ecrouAntivol }}</td>
+                <td>{{ expertise.freinMain }}</td>
+                <td>{{ expertise.commentaireInterieure }}</td>
+                <td>{{ expertise.gps }}</td>
+                <td>{{ expertise.commandeVolant }}</td>
+                <td>{{ expertise.toitOuvrant }}</td>
+                <td>{{ expertise.fermetureCentralisee }}</td>
+                <td>{{ expertise.autoradio }}</td>
+                <td>{{ expertise.radarsRecul }}</td>
+                <td>{{ expertise.ouvertureSansCle }}</td>
+                <td>{{ expertise.presenceMarqueReparation }}</td>
+                <td>{{ expertise.etatPareBriseAvant }}</td>
+                <td>{{ expertise.etatEssuieGlaces }}</td>
+                <td>{{ expertise.etatRetroviseurGauche }}</td>
+                <td>{{ expertise.etatVitresLaterales }}</td>
+                <td>{{ expertise.etatPareBriseArriere }}</td>
+                <td>{{ expertise.feuxStop }}</td>
+                <td>{{ expertise.feuRecul }}</td>
+                <td>{{ expertise.repetiteurs }}</td>
+                <td>{{ expertise.alignementElements }}</td>
+                <td>{{ expertise.presenceRouille }}</td>
+                <td>{{ expertise.differencesTeintesCarrosserie }}</td>
+                <td>{{ expertise.impactsChampVision }}</td>
+                <td>{{ expertise.feuxAvants }}</td>
+                <td>{{ expertise.etatRetroviseurDroite }}</td>
+                <td>{{ expertise.vitresSurteintees }}</td>
+                <td>{{ expertise.feuxArrieres }}</td>
+                <td>{{ expertise.feuxAntibrouillards }}</td>
+                <td>{{ expertise.feuxDetresse }}</td>
+                <td>{{ expertise.etatJoints }}</td>
+                <td>{{ expertise.etatJantes }}</td>
+                <td>{{ expertise.commentaireExterieur }}</td>
+                <td>{{ expertise.vehiculeVu }}</td>
+                <td>{{ expertise.corrosionPerforante }}</td>
+                <td>{{ expertise.presenceFuiteHuile }}</td>
+                <td>{{ expertise.echappement }}</td>
+                <td>{{ expertise.presenceCorrosion }}</td>
+                <td>{{ expertise.corrosionLongerons }}</td>
+                <td>{{ expertise.origineFuite }}</td>
+                <td>{{ expertise.plaquettesAvantsUsage }}</td>
+                <td>{{ expertise.marquePneuAvant }}</td>
+                <td>{{ expertise.codeDOTPneuAvantGauche }}</td>
+                <td>{{ expertise.codeDOTPneuAvantDroite }}</td>
+                <td>{{ expertise.usagePneumatiquesAvants }}</td>
+                <td>{{ expertise.usageDisquesAvants }}</td>
+                <td>{{ expertise.dimensionsPneumatiqueAvant }}</td>
+                <td>{{ expertise.pneumatiqueConformeMonteOrigine }}</td>
+                <td>{{ expertise.plaquettesArriereUsage }}</td>
+                <td>{{ expertise.marquePneuArriere }}</td>
+                <td>{{ expertise.codeDOTPneuArriereGauche }}</td>
+                <td>{{ expertise.codeDOTPneuArriereDroite }}</td>
+                <td>{{ expertise.usagePneumatiquesArrieres }}</td>
+                <td>{{ expertise.usageDisquesArriere }}</td>
+                <td>{{ expertise.dimensionsPneumatiqueArriere }}</td>
+                <td>{{ expertise.pneumatiqueConformeMonteOrigineArriere }}</td>
+                <td>{{ expertise.niveauHuile }}</td>
+                <td>{{ expertise.qualiteHuile }}</td>
+                <td>{{ expertise.souffleBouchonHuile }}</td>
+                <td>{{ expertise.niveauLiquideRefroidissement }}</td>
+                <td>{{ expertise.qualiteLiquideRefroidissement }}</td>
+                <td>{{ expertise.typeDistribution }}</td>
+                <td>{{ expertise.Distribution }}</td>
+                <td>{{ expertise.courroie }}</td>
+                <td>{{ expertise.commentaireConsommablesMoteur }}</td>
+                <td>{{ expertise.demarrageVehiculeFroid }}</td>
+                <td>{{ expertise.blocCompteur }}</td>
+                <td>{{ expertise.presenceFumeeEchappement }}</td>
+                <td>{{ expertise.amortisseurs }}</td>
+                <td>{{ expertise.sonoriteMoteur }}</td>
+                <td>{{ expertise.voyantPrechauffage }}</td>
+                <td>{{ expertise.commentaireTestStatic }}</td>
+                <td>{{ expertise.testRoutierEffectue }}</td>
+                <td>{{ expertise.aucunTestExplication }}</td>
+                <td>{{ expertise.conditionMeteo }}</td>
+                <td>{{ expertise.conditionEssaie }}</td>
+                <td>{{ expertise.coursePedaleEmbrayage }}</td>
+                <td>{{ expertise.embrayagePatine }}</td>
+                <td>{{ expertise.buteeEmbrayageBruyante }}</td>
+                <td>{{ expertise.jeuLevierVitesse }}</td>
+                <td>{{ expertise.passageFacileVitesses }}</td>
+                <td>{{ expertise.accoupsBVA }}</td>
+                <td>{{ expertise.accelerationFranche }}</td>
+                <td>{{ expertise.vitesseAtteinte }}</td>
+                <td>{{ expertise.vibrationsMecaniques }}</td>
+                <td>{{ expertise.vitesseVibration }}</td>
+                <td>{{ expertise.tenueCap }}</td>
+                <td>{{ expertise.freinageLigneDroite }}</td>
+                <td>{{ expertise.presenceBruitsEtrangers }}</td>
+                <td>{{ expertise.regulateurLimiteurVitesse }}</td>
+                <td>{{ expertise.odeursExterieur }}</td>
+                <td>{{ expertise.demarrageVehiculeChaud }}</td>
+                <td>{{ expertise.ralenti }}</td>
+                <td>{{ expertise.voyantsAllumes }}</td>
+                <td>{{ expertise.nomVoyantsAllumes }}</td>
+                <td>{{ expertise.commentaireTestRoutier }}</td>
+                <td>{{ expertise.notationVendeur }}</td>
+                <td>{{ expertise.achatSecurise }}</td>
+                <td>{{ expertise.kilometrageCoherent }}</td>
+                <td>{{ expertise.commentaireConclusion }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('expertise_show', { 'id': expertise.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('expertise_edit', { 'id': expertise.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('expertise_new') }}">Create a new expertise</a>
+        </li>
+    </ul>
+{% endblock %}
