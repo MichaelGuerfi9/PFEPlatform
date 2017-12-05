@@ -39,6 +39,1181 @@ class Expertise
 
     private $status;
 
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="marque", type="string", length=255)
+     */
+
+    private $marque;
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="motorisation", type="string", length=255)
+     */
+
+    private $motorisation;
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="date_circulation", type="string", length=255)
+     */
+
+    private $date_circulation;
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="carburant", type="string", length=255)
+     */
+
+    private $carburant;
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="puissance", type="string", length=255)
+     */
+
+    private $puissance;
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="couleur", type="string", length=255)
+     */
+
+    private $couleur;
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="modele", type="string", length=255)
+     */
+
+    private $modele;
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="finition", type="string", length=255)
+     */
+
+    private $finition;
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="numero_chassis", type="string", length=255)
+     */
+
+    private $numero_chassis;
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="boite_vitesse", type="string", length=255)
+     */
+
+    private $boite_vitesse;
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="kilometrage", type="string", length=255)
+     */
+
+    private $kilometrage;
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="pays", type="string", length=255)
+     */
+
+    private $pays;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="controle_technique", type="string", length=255)
+     */
+
+    private $controle_technique;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nombre_cle", type="string", length=255)
+     */
+
+    private $nombre_cle;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="notice", type="string", length=255)
+     */
+
+    private $notice;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="facture_entretien", type="string", length=255)
+     */
+
+    private $facture_entretien;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="carnet_entretien", type="string", length=255)
+     */
+
+    private $carnet_entretien;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="certificat_conformite_europeen", type="string", length=255)
+     */
+
+    private $certificat_conformite_europeen;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="date_controle_technique", type="string", length=255)
+     */
+
+    private $date_controle_technique;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="importation", type="string", length=255)
+     */
+
+    private $importation;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="facture_achat", type="string", length=255)
+     */
+
+    private $facture_achat;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="location", type="string", length=255)
+     */
+
+    private $location;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="commentaire_administratif", type="string", length=255)
+     */
+
+    private $commentaire_administratif;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="siege_avant", type="string", length=255)
+     */
+
+    private $siege_avant;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="planche_bord", type="string", length=255)
+     */
+
+    private $planche_bord;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="etat_retroviseur_interieur", type="string", length=255)
+     */
+
+    private $etat_retroviseur_interieur;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="panneaux_portes", type="string", length=255)
+     */
+
+    private $panneaux_portes;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="siege_arriere", type="string", length=255)
+     */
+
+    private $siege_arriere;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="plage_arriere", type="string", length=255)
+     */
+
+    private $plage_arriere;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="cric", type="string", length=255)
+     */
+
+    private $cric;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="garniture_ciel", type="string", length=255)
+     */
+
+    private $garniture_ciel;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="leves_vitres", type="string", length=255)
+     */
+
+    private $leves_vitres;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ceintures", type="string", length=255)
+     */
+
+    private $ceintures;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="moquettes_avants", type="string", length=255)
+     */
+
+    private $moquettes_avants;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="usure_commande", type="string", length=255)
+     */
+
+    private $usure_commande;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="mode_nuit_retroviseur_interieur", type="string", length=255)
+     */
+
+    private $mode_nuit_retroviseur_interieur;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="tapis_sols", type="string", length=255)
+     */
+
+    private $tapis_sols;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="moquettes_arriere", type="string", length=255)
+     */
+
+    private $moquettes_arriere;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="coffre", type="string", length=255)
+     */
+
+    private $coffre;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="roue__secours", type="string", length=255)
+     */
+
+    private $roue__secours;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ecrou_antivol", type="string", length=255)
+     */
+
+    private $ecrou_antivol;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="frein_main", type="string", length=255)
+     */
+
+    private $frein_main;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="commentaire_interieure", type="string", length=255)
+     */
+
+    private $commentaire_interieure;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="gps", type="string", length=255)
+     */
+
+    private $gps;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="commande_volant", type="string", length=255)
+     */
+
+    private $commande_volant;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="toit_ouvrant", type="string", length=255)
+     */
+
+    private $toit_ouvrant;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="fermeture_centralisee", type="string", length=255)
+     */
+
+    private $fermeture_centralisee;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="autoradio", type="string", length=255)
+     */
+
+    private $autoradio;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="radars_recul", type="string", length=255)
+     */
+
+    private $radars_recul;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ouverture_sans_cle", type="string", length=255)
+     */
+
+    private $ouverture_sans_cle;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="presence_marque_reparation", type="string", length=255)
+     */
+
+    private $presence_marque_reparation;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="etat_pare_brise_avant", type="string", length=255)
+     */
+
+    private $etat_pare_brise_avant;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="etat_essuie_glaces", type="string", length=255)
+     */
+
+    private $etat_essuie_glaces;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="etat_retroviseur_gauche", type="string", length=255)
+     */
+
+    private $etat_retroviseur_gauche;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="etat_vitres_laterales", type="string", length=255)
+     */
+
+    private $etat_vitres_laterales;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="etat_pare_brise_arrière", type="string", length=255)
+     */
+
+    private $etat_pare_brise_arrière;
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="feux_stop", type="string", length=255)
+     */
+
+    private $feux_stop;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="feu_recul", type="string", length=255)
+     */
+
+    private $feu_recul;
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="repetiteurs", type="string", length=255)
+     */
+
+    private $repetiteurs;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="alignement_elements", type="string", length=255)
+     */
+
+    private $alignement_elements;
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="presence_rouille", type="string", length=255)
+     */
+
+    private $presence_rouille;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="differences_teintes_carrosserie", type="string", length=255)
+     */
+
+    private $differences_teintes_carrosserie;
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="impacts_champ_vision", type="string", length=255)
+     */
+
+    private $impacts_champ_vision;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="feux_avants", type="string", length=255)
+     */
+
+    private $feux_avants;
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="etat_retroviseur_droite", type="string", length=255)
+     */
+
+    private $etat_retroviseur_droite;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="vitres_surteintees", type="string", length=255)
+     */
+
+    private $vitres_surteintees;
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="feux_arrieres", type="string", length=255)
+     */
+
+    private $feux_arrieres;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="feux_antibrouillards", type="string", length=255)
+     */
+
+    private $feux_antibrouillards;
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="feux_detresse", type="string", length=255)
+     */
+
+    private $feux_detresse;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="etat_joints", type="string", length=255)
+     */
+
+    private $etat_joints;
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="etat_jantes", type="string", length=255)
+     */
+
+    private $etat_jantes;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="commentaire_exterieur", type="string", length=255)
+     */
+
+    private $commentaire_exterieur;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="vehicule_vu", type="string", length=255)
+     */
+
+    private $vehicule_vu;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="corrosion_perforante", type="string", length=255)
+     */
+
+    private $corrosion_perforante;
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="presence_fuite_huile", type="string", length=255)
+     */
+
+    private $presence_fuite_huile;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="echappement", type="string", length=255)
+     */
+
+    private $echappement;
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="presence_corrosion", type="string", length=255)
+     */
+
+    private $presence_corrosion;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="corrosion_longerons", type="string", length=255)
+     */
+
+    private $corrosion_longerons;
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="origine_fuite", type="string", length=255)
+     */
+
+    private $origine_fuite;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="plaquettes_avants_usage", type="string", length=255)
+     */
+    //en %
+
+    private $plaquettes_avants_usage;
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="marque_pneu_avant", type="string", length=255)
+     */
+
+    private $marque_pneu_avant;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="code_DOT_pneu_avant_gauche", type="string", length=255)
+     */
+
+    private $code_DOT_pneu_avant_gauche;
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="code_DOT_pneu_avant_droite", type="string", length=255)
+     */
+
+    private $code_DOT_pneu_avant_droite;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="usage_pneumatiques_avants", type="string", length=255)
+     */
+
+    private $usage_pneumatiques_avants;
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="usage_disques_avants", type="string", length=255)
+     */
+
+    private $usage_disques_avants;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="dimensions_pneumatique_avant", type="string", length=255)
+     */
+
+    private $dimensions_pneumatique_avant;
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="pneumatique_conforme_monte_origine", type="string", length=255)
+     */
+
+    private $pneumatique_conforme_monte_origine;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="plaquettes_arriere_usage", type="string", length=255)
+     */
+
+    private $plaquettes_arriere_usage;
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="marque_pneu_arriere", type="string", length=255)
+     */
+
+    private $marque_pneu_arriere;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="code_DOT_pneu_arriere_gauche", type="string", length=255)
+     */
+
+    private $code_DOT_pneu_arriere_gauche;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="code_DOT_pneu_arriere_droite", type="string", length=255)
+     */
+
+    private $code_DOT_pneu_arriere_droite;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="usage_pneumatiques_arrieres", type="string", length=255)
+     */
+
+    private $usage_pneumatiques_arrieres;
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="usage_disques_arriere", type="string", length=255)
+     */
+
+    private $usage_disques_arriere;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="dimensions_pneumatique_arriere", type="string", length=255)
+     */
+
+    private $dimensions_pneumatique_arriere;
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="pneumatique_conforme_monte_origine_arriere", type="string", length=255)
+     */
+
+    private $pneumatique_conforme_monte_origine_arriere;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="niveau_huile", type="string", length=255)
+     */
+
+    private $niveau_huile;
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="qualite_huile", type="string", length=255)
+     */
+
+    private $qualite_huile;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="souffle_bouchon_huile", type="string", length=255)
+     */
+
+    private $souffle_bouchon_huile;
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="niveau_liquide_refroidissement", type="string", length=255)
+     */
+
+    private $niveau_liquide_refroidissement;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="qualite_liquide_refroidissement", type="string", length=255)
+     */
+
+    private $qualite_liquide_refroidissement;
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="type_distribution", type="string", length=255)
+     */
+
+    private $type_distribution;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Distribution", type="string", length=255)
+     */
+//Distribution à jour(si facture)
+    private $Distribution;
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="courroie", type="string", length=255)
+     */
+
+    private $courroie;
+//Courroie accessoire
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="commentaire_consommables_moteur", type="string", length=255)
+     */
+
+    private $commentaire_consommables_moteur;
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="demarrage_vehicule_froid", type="string", length=255)
+     */
+
+    private $demarrage_vehicule_froid;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="bloc_compteur", type="string", length=255)
+     */
+
+    private $bloc_compteur;
+//Bloc compteur (jauges, cadrans...)
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="presence_fumee_echappement", type="string", length=255)
+     */
+
+    private $presence_fumee_echappement;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="amortisseurs", type="string", length=255)
+     */
+
+    private $amortisseurs;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="sonorite_moteur", type="string", length=255)
+     */
+
+    private $sonorite_moteur;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="voyant_prechauffage", type="string", length=255)
+     */
+
+    private $voyant_prechauffage;
+//Voyant préchauffage (Diesel)
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="commentaire_test_static", type="string", length=255)
+     */
+
+    private $commentaire_test_static;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="test_routier_effectue", type="string", length=255)
+     */
+
+    private $test_routier_effectue;
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="aucun_test_explication", type="string", length=255)
+     */
+
+    private $aucun_test_explication;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="condition_meteo", type="string", length=255)
+     */
+
+    private $condition_meteo;
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="condition_essaie", type="string", length=255)
+     */
+
+    private $condition_essaie;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="course_pedale_embrayage", type="string", length=255)
+     */
+
+    private $course_pedale_embrayage;
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="embrayage_patine", type="string", length=255)
+     */
+
+    private $embrayage_patine;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="butee_embrayage_bruyante", type="string", length=255)
+     */
+
+    private $butee_embrayage_bruyante;
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="jeu_levier_vitesse", type="string", length=255)
+     */
+
+    private $jeu_levier_vitesse;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="passage_facile_vitesses", type="string", length=255)
+     */
+
+    private $passage_facile_vitesses;
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="accoups_BVA ", type="string", length=255)
+     */
+
+    private $accoups_BVA ;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="acceleration_franche", type="string", length=255)
+     */
+
+    private $acceleration_franche;
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="vitesse_atteinte", type="string", length=255)
+     */
+
+    private $vitesse_atteinte;
+    //Vitesse atteinte (km/h)
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="vibrations_mecaniques", type="string", length=255)
+     */
+
+    private $vibrations_mecaniques;
+    //Vibrations mécaniques (moteur, transmi., échap., tringleries...)
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="vitesse_vibration", type="string", length=255)
+     */
+
+    private $vitesse_vibration;
+    //Si vibrations, à quelle vitesse? (km/h)
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="tenue_cap", type="string", length=255)
+     */
+
+    private $tenue_cap;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="freinage_ligne_droite", type="string", length=255)
+     */
+
+    private $freinage_ligne_droite;
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="presence_bruits_etrangers", type="string", length=255)
+     */
+
+    private $presence_bruits_etrangers;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="regulateur_limiteur_vitesse", type="string", length=255)
+     */
+
+    private $regulateur_limiteur_vitesse;
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="odeurs_exterieur", type="string", length=255)
+     */
+
+    private $odeurs_exterieur;
+    //Odeurs à l'extérieur (freins, huile, échap.)
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="demarrage_vehicule_chaud", type="string", length=255)
+     */
+
+    private $demarrage_vehicule_chaud;
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="ralenti", type="string", length=255)
+     */
+
+    private $ralenti;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="voyants_allumes", type="string", length=255)
+     */
+
+    private $voyants_allumes;
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nom_voyants_allumes", type="string", length=255)
+     */
+
+    private $nom_voyants_allumes;
+    //Si oui, lesquels ?
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="commentaire_test_routier", type="string", length=255)
+     */
+
+    private $commentaire_test_routier;
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="notation_vendeur", type="string", length=255)
+     */
+
+    private $notation_vendeur;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="achat_securise", type="string", length=255)
+     */
+
+    private $achat_securise;
+    //L'achat semble sécurisé, je le recommande
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="kilometrage_coherent", type="string", length=255)
+     */
+
+    private $kilometrage_coherent;
+    //Kilométrage cohérent (entretien, usure...)
+
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="commentaire_conclusion", type="string", length=255)
+     */
+
+    private $commentaire_conclusion;
+
     /**
      * Get id
      *

@@ -1,0 +1,588 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Expertise</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ expertise.id }}</td>
+            </tr>
+            <tr>
+                <th>Status</th>
+                <td>{{ expertise.status }}</td>
+            </tr>
+            <tr>
+                <th>Marque</th>
+                <td>{{ expertise.marque }}</td>
+            </tr>
+            <tr>
+                <th>Motorisation</th>
+                <td>{{ expertise.motorisation }}</td>
+            </tr>
+            <tr>
+                <th>Datecirculation</th>
+                <td>{{ expertise.dateCirculation }}</td>
+            </tr>
+            <tr>
+                <th>Carburant</th>
+                <td>{{ expertise.carburant }}</td>
+            </tr>
+            <tr>
+                <th>Puissance</th>
+                <td>{{ expertise.puissance }}</td>
+            </tr>
+            <tr>
+                <th>Couleur</th>
+                <td>{{ expertise.couleur }}</td>
+            </tr>
+            <tr>
+                <th>Modele</th>
+                <td>{{ expertise.modele }}</td>
+            </tr>
+            <tr>
+                <th>Finition</th>
+                <td>{{ expertise.finition }}</td>
+            </tr>
+            <tr>
+                <th>Numerochassis</th>
+                <td>{{ expertise.numeroChassis }}</td>
+            </tr>
+            <tr>
+                <th>Boitevitesse</th>
+                <td>{{ expertise.boiteVitesse }}</td>
+            </tr>
+            <tr>
+                <th>Kilometrage</th>
+                <td>{{ expertise.kilometrage }}</td>
+            </tr>
+            <tr>
+                <th>Pays</th>
+                <td>{{ expertise.pays }}</td>
+            </tr>
+            <tr>
+                <th>Controletechnique</th>
+                <td>{{ expertise.controleTechnique }}</td>
+            </tr>
+            <tr>
+                <th>Nombrecle</th>
+                <td>{{ expertise.nombreCle }}</td>
+            </tr>
+            <tr>
+                <th>Notice</th>
+                <td>{{ expertise.notice }}</td>
+            </tr>
+            <tr>
+                <th>Factureentretien</th>
+                <td>{{ expertise.factureEntretien }}</td>
+            </tr>
+            <tr>
+                <th>Carnetentretien</th>
+                <td>{{ expertise.carnetEntretien }}</td>
+            </tr>
+            <tr>
+                <th>Certificatconformiteeuropeen</th>
+                <td>{{ expertise.certificatConformiteEuropeen }}</td>
+            </tr>
+            <tr>
+                <th>Datecontroletechnique</th>
+                <td>{{ expertise.dateControleTechnique }}</td>
+            </tr>
+            <tr>
+                <th>Importation</th>
+                <td>{{ expertise.importation }}</td>
+            </tr>
+            <tr>
+                <th>Factureachat</th>
+                <td>{{ expertise.factureAchat }}</td>
+            </tr>
+            <tr>
+                <th>Location</th>
+                <td>{{ expertise.location }}</td>
+            </tr>
+            <tr>
+                <th>Commentaireadministratif</th>
+                <td>{{ expertise.commentaireAdministratif }}</td>
+            </tr>
+            <tr>
+                <th>Siegeavant</th>
+                <td>{{ expertise.siegeAvant }}</td>
+            </tr>
+            <tr>
+                <th>Planchebord</th>
+                <td>{{ expertise.plancheBord }}</td>
+            </tr>
+            <tr>
+                <th>Etatretroviseurinterieur</th>
+                <td>{{ expertise.etatRetroviseurInterieur }}</td>
+            </tr>
+            <tr>
+                <th>Panneauxportes</th>
+                <td>{{ expertise.panneauxPortes }}</td>
+            </tr>
+            <tr>
+                <th>Siegearriere</th>
+                <td>{{ expertise.siegeArriere }}</td>
+            </tr>
+            <tr>
+                <th>Plagearriere</th>
+                <td>{{ expertise.plageArriere }}</td>
+            </tr>
+            <tr>
+                <th>Cric</th>
+                <td>{{ expertise.cric }}</td>
+            </tr>
+            <tr>
+                <th>Garnitureciel</th>
+                <td>{{ expertise.garnitureCiel }}</td>
+            </tr>
+            <tr>
+                <th>Levesvitres</th>
+                <td>{{ expertise.levesVitres }}</td>
+            </tr>
+            <tr>
+                <th>Ceintures</th>
+                <td>{{ expertise.ceintures }}</td>
+            </tr>
+            <tr>
+                <th>Moquettesavants</th>
+                <td>{{ expertise.moquettesAvants }}</td>
+            </tr>
+            <tr>
+                <th>Usurecommande</th>
+                <td>{{ expertise.usureCommande }}</td>
+            </tr>
+            <tr>
+                <th>Modenuitretroviseurinterieur</th>
+                <td>{{ expertise.modeNuitRetroviseurInterieur }}</td>
+            </tr>
+            <tr>
+                <th>Tapissols</th>
+                <td>{{ expertise.tapisSols }}</td>
+            </tr>
+            <tr>
+                <th>Moquettesarriere</th>
+                <td>{{ expertise.moquettesArriere }}</td>
+            </tr>
+            <tr>
+                <th>Coffre</th>
+                <td>{{ expertise.coffre }}</td>
+            </tr>
+            <tr>
+                <th>Rouesecours</th>
+                <td>{{ expertise.roueSecours }}</td>
+            </tr>
+            <tr>
+                <th>Ecrouantivol</th>
+                <td>{{ expertise.ecrouAntivol }}</td>
+            </tr>
+            <tr>
+                <th>Freinmain</th>
+                <td>{{ expertise.freinMain }}</td>
+            </tr>
+            <tr>
+                <th>Commentaireinterieure</th>
+                <td>{{ expertise.commentaireInterieure }}</td>
+            </tr>
+            <tr>
+                <th>Gps</th>
+                <td>{{ expertise.gps }}</td>
+            </tr>
+            <tr>
+                <th>Commandevolant</th>
+                <td>{{ expertise.commandeVolant }}</td>
+            </tr>
+            <tr>
+                <th>Toitouvrant</th>
+                <td>{{ expertise.toitOuvrant }}</td>
+            </tr>
+            <tr>
+                <th>Fermeturecentralisee</th>
+                <td>{{ expertise.fermetureCentralisee }}</td>
+            </tr>
+            <tr>
+                <th>Autoradio</th>
+                <td>{{ expertise.autoradio }}</td>
+            </tr>
+            <tr>
+                <th>Radarsrecul</th>
+                <td>{{ expertise.radarsRecul }}</td>
+            </tr>
+            <tr>
+                <th>Ouverturesanscle</th>
+                <td>{{ expertise.ouvertureSansCle }}</td>
+            </tr>
+            <tr>
+                <th>Presencemarquereparation</th>
+                <td>{{ expertise.presenceMarqueReparation }}</td>
+            </tr>
+            <tr>
+                <th>Etatparebriseavant</th>
+                <td>{{ expertise.etatPareBriseAvant }}</td>
+            </tr>
+            <tr>
+                <th>Etatessuieglaces</th>
+                <td>{{ expertise.etatEssuieGlaces }}</td>
+            </tr>
+            <tr>
+                <th>Etatretroviseurgauche</th>
+                <td>{{ expertise.etatRetroviseurGauche }}</td>
+            </tr>
+            <tr>
+                <th>Etatvitreslaterales</th>
+                <td>{{ expertise.etatVitresLaterales }}</td>
+            </tr>
+            <tr>
+                <th>Etatparebrisearriere</th>
+                <td>{{ expertise.etatPareBriseArriere }}</td>
+            </tr>
+            <tr>
+                <th>Feuxstop</th>
+                <td>{{ expertise.feuxStop }}</td>
+            </tr>
+            <tr>
+                <th>Feurecul</th>
+                <td>{{ expertise.feuRecul }}</td>
+            </tr>
+            <tr>
+                <th>Repetiteurs</th>
+                <td>{{ expertise.repetiteurs }}</td>
+            </tr>
+            <tr>
+                <th>Alignementelements</th>
+                <td>{{ expertise.alignementElements }}</td>
+            </tr>
+            <tr>
+                <th>Presencerouille</th>
+                <td>{{ expertise.presenceRouille }}</td>
+            </tr>
+            <tr>
+                <th>Differencesteintescarrosserie</th>
+                <td>{{ expertise.differencesTeintesCarrosserie }}</td>
+            </tr>
+            <tr>
+                <th>Impactschampvision</th>
+                <td>{{ expertise.impactsChampVision }}</td>
+            </tr>
+            <tr>
+                <th>Feuxavants</th>
+                <td>{{ expertise.feuxAvants }}</td>
+            </tr>
+            <tr>
+                <th>Etatretroviseurdroite</th>
+                <td>{{ expertise.etatRetroviseurDroite }}</td>
+            </tr>
+            <tr>
+                <th>Vitressurteintees</th>
+                <td>{{ expertise.vitresSurteintees }}</td>
+            </tr>
+            <tr>
+                <th>Feuxarrieres</th>
+                <td>{{ expertise.feuxArrieres }}</td>
+            </tr>
+            <tr>
+                <th>Feuxantibrouillards</th>
+                <td>{{ expertise.feuxAntibrouillards }}</td>
+            </tr>
+            <tr>
+                <th>Feuxdetresse</th>
+                <td>{{ expertise.feuxDetresse }}</td>
+            </tr>
+            <tr>
+                <th>Etatjoints</th>
+                <td>{{ expertise.etatJoints }}</td>
+            </tr>
+            <tr>
+                <th>Etatjantes</th>
+                <td>{{ expertise.etatJantes }}</td>
+            </tr>
+            <tr>
+                <th>Commentaireexterieur</th>
+                <td>{{ expertise.commentaireExterieur }}</td>
+            </tr>
+            <tr>
+                <th>Vehiculevu</th>
+                <td>{{ expertise.vehiculeVu }}</td>
+            </tr>
+            <tr>
+                <th>Corrosionperforante</th>
+                <td>{{ expertise.corrosionPerforante }}</td>
+            </tr>
+            <tr>
+                <th>Presencefuitehuile</th>
+                <td>{{ expertise.presenceFuiteHuile }}</td>
+            </tr>
+            <tr>
+                <th>Echappement</th>
+                <td>{{ expertise.echappement }}</td>
+            </tr>
+            <tr>
+                <th>Presencecorrosion</th>
+                <td>{{ expertise.presenceCorrosion }}</td>
+            </tr>
+            <tr>
+                <th>Corrosionlongerons</th>
+                <td>{{ expertise.corrosionLongerons }}</td>
+            </tr>
+            <tr>
+                <th>Originefuite</th>
+                <td>{{ expertise.origineFuite }}</td>
+            </tr>
+            <tr>
+                <th>Plaquettesavantsusage</th>
+                <td>{{ expertise.plaquettesAvantsUsage }}</td>
+            </tr>
+            <tr>
+                <th>Marquepneuavant</th>
+                <td>{{ expertise.marquePneuAvant }}</td>
+            </tr>
+            <tr>
+                <th>Codedotpneuavantgauche</th>
+                <td>{{ expertise.codeDOTPneuAvantGauche }}</td>
+            </tr>
+            <tr>
+                <th>Codedotpneuavantdroite</th>
+                <td>{{ expertise.codeDOTPneuAvantDroite }}</td>
+            </tr>
+            <tr>
+                <th>Usagepneumatiquesavants</th>
+                <td>{{ expertise.usagePneumatiquesAvants }}</td>
+            </tr>
+            <tr>
+                <th>Usagedisquesavants</th>
+                <td>{{ expertise.usageDisquesAvants }}</td>
+            </tr>
+            <tr>
+                <th>Dimensionspneumatiqueavant</th>
+                <td>{{ expertise.dimensionsPneumatiqueAvant }}</td>
+            </tr>
+            <tr>
+                <th>Pneumatiqueconformemonteorigine</th>
+                <td>{{ expertise.pneumatiqueConformeMonteOrigine }}</td>
+            </tr>
+            <tr>
+                <th>Plaquettesarriereusage</th>
+                <td>{{ expertise.plaquettesArriereUsage }}</td>
+            </tr>
+            <tr>
+                <th>Marquepneuarriere</th>
+                <td>{{ expertise.marquePneuArriere }}</td>
+            </tr>
+            <tr>
+                <th>Codedotpneuarrieregauche</th>
+                <td>{{ expertise.codeDOTPneuArriereGauche }}</td>
+            </tr>
+            <tr>
+                <th>Codedotpneuarrieredroite</th>
+                <td>{{ expertise.codeDOTPneuArriereDroite }}</td>
+            </tr>
+            <tr>
+                <th>Usagepneumatiquesarrieres</th>
+                <td>{{ expertise.usagePneumatiquesArrieres }}</td>
+            </tr>
+            <tr>
+                <th>Usagedisquesarriere</th>
+                <td>{{ expertise.usageDisquesArriere }}</td>
+            </tr>
+            <tr>
+                <th>Dimensionspneumatiquearriere</th>
+                <td>{{ expertise.dimensionsPneumatiqueArriere }}</td>
+            </tr>
+            <tr>
+                <th>Pneumatiqueconformemonteoriginearriere</th>
+                <td>{{ expertise.pneumatiqueConformeMonteOrigineArriere }}</td>
+            </tr>
+            <tr>
+                <th>Niveauhuile</th>
+                <td>{{ expertise.niveauHuile }}</td>
+            </tr>
+            <tr>
+                <th>Qualitehuile</th>
+                <td>{{ expertise.qualiteHuile }}</td>
+            </tr>
+            <tr>
+                <th>Soufflebouchonhuile</th>
+                <td>{{ expertise.souffleBouchonHuile }}</td>
+            </tr>
+            <tr>
+                <th>Niveauliquiderefroidissement</th>
+                <td>{{ expertise.niveauLiquideRefroidissement }}</td>
+            </tr>
+            <tr>
+                <th>Qualiteliquiderefroidissement</th>
+                <td>{{ expertise.qualiteLiquideRefroidissement }}</td>
+            </tr>
+            <tr>
+                <th>Typedistribution</th>
+                <td>{{ expertise.typeDistribution }}</td>
+            </tr>
+            <tr>
+                <th>Distribution</th>
+                <td>{{ expertise.Distribution }}</td>
+            </tr>
+            <tr>
+                <th>Courroie</th>
+                <td>{{ expertise.courroie }}</td>
+            </tr>
+            <tr>
+                <th>Commentaireconsommablesmoteur</th>
+                <td>{{ expertise.commentaireConsommablesMoteur }}</td>
+            </tr>
+            <tr>
+                <th>Demarragevehiculefroid</th>
+                <td>{{ expertise.demarrageVehiculeFroid }}</td>
+            </tr>
+            <tr>
+                <th>Bloccompteur</th>
+                <td>{{ expertise.blocCompteur }}</td>
+            </tr>
+            <tr>
+                <th>Presencefumeeechappement</th>
+                <td>{{ expertise.presenceFumeeEchappement }}</td>
+            </tr>
+            <tr>
+                <th>Amortisseurs</th>
+                <td>{{ expertise.amortisseurs }}</td>
+            </tr>
+            <tr>
+                <th>Sonoritemoteur</th>
+                <td>{{ expertise.sonoriteMoteur }}</td>
+            </tr>
+            <tr>
+                <th>Voyantprechauffage</th>
+                <td>{{ expertise.voyantPrechauffage }}</td>
+            </tr>
+            <tr>
+                <th>Commentaireteststatic</th>
+                <td>{{ expertise.commentaireTestStatic }}</td>
+            </tr>
+            <tr>
+                <th>Testroutiereffectue</th>
+                <td>{{ expertise.testRoutierEffectue }}</td>
+            </tr>
+            <tr>
+                <th>Aucuntestexplication</th>
+                <td>{{ expertise.aucunTestExplication }}</td>
+            </tr>
+            <tr>
+                <th>Conditionmeteo</th>
+                <td>{{ expertise.conditionMeteo }}</td>
+            </tr>
+            <tr>
+                <th>Conditionessaie</th>
+                <td>{{ expertise.conditionEssaie }}</td>
+            </tr>
+            <tr>
+                <th>Coursepedaleembrayage</th>
+                <td>{{ expertise.coursePedaleEmbrayage }}</td>
+            </tr>
+            <tr>
+                <th>Embrayagepatine</th>
+                <td>{{ expertise.embrayagePatine }}</td>
+            </tr>
+            <tr>
+                <th>Buteeembrayagebruyante</th>
+                <td>{{ expertise.buteeEmbrayageBruyante }}</td>
+            </tr>
+            <tr>
+                <th>Jeuleviervitesse</th>
+                <td>{{ expertise.jeuLevierVitesse }}</td>
+            </tr>
+            <tr>
+                <th>Passagefacilevitesses</th>
+                <td>{{ expertise.passageFacileVitesses }}</td>
+            </tr>
+            <tr>
+                <th>Accoupsbva</th>
+                <td>{{ expertise.accoupsBVA }}</td>
+            </tr>
+            <tr>
+                <th>Accelerationfranche</th>
+                <td>{{ expertise.accelerationFranche }}</td>
+            </tr>
+            <tr>
+                <th>Vitesseatteinte</th>
+                <td>{{ expertise.vitesseAtteinte }}</td>
+            </tr>
+            <tr>
+                <th>Vibrationsmecaniques</th>
+                <td>{{ expertise.vibrationsMecaniques }}</td>
+            </tr>
+            <tr>
+                <th>Vitessevibration</th>
+                <td>{{ expertise.vitesseVibration }}</td>
+            </tr>
+            <tr>
+                <th>Tenuecap</th>
+                <td>{{ expertise.tenueCap }}</td>
+            </tr>
+            <tr>
+                <th>Freinagelignedroite</th>
+                <td>{{ expertise.freinageLigneDroite }}</td>
+            </tr>
+            <tr>
+                <th>Presencebruitsetrangers</th>
+                <td>{{ expertise.presenceBruitsEtrangers }}</td>
+            </tr>
+            <tr>
+                <th>Regulateurlimiteurvitesse</th>
+                <td>{{ expertise.regulateurLimiteurVitesse }}</td>
+            </tr>
+            <tr>
+                <th>Odeursexterieur</th>
+                <td>{{ expertise.odeursExterieur }}</td>
+            </tr>
+            <tr>
+                <th>Demarragevehiculechaud</th>
+                <td>{{ expertise.demarrageVehiculeChaud }}</td>
+            </tr>
+            <tr>
+                <th>Ralenti</th>
+                <td>{{ expertise.ralenti }}</td>
+            </tr>
+            <tr>
+                <th>Voyantsallumes</th>
+                <td>{{ expertise.voyantsAllumes }}</td>
+            </tr>
+            <tr>
+                <th>Nomvoyantsallumes</th>
+                <td>{{ expertise.nomVoyantsAllumes }}</td>
+            </tr>
+            <tr>
+                <th>Commentairetestroutier</th>
+                <td>{{ expertise.commentaireTestRoutier }}</td>
+            </tr>
+            <tr>
+                <th>Notationvendeur</th>
+                <td>{{ expertise.notationVendeur }}</td>
+            </tr>
+            <tr>
+                <th>Achatsecurise</th>
+                <td>{{ expertise.achatSecurise }}</td>
+            </tr>
+            <tr>
+                <th>Kilometragecoherent</th>
+                <td>{{ expertise.kilometrageCoherent }}</td>
+            </tr>
+            <tr>
+                <th>Commentaireconclusion</th>
+                <td>{{ expertise.commentaireConclusion }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('expertise_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('expertise_edit', { 'id': expertise.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

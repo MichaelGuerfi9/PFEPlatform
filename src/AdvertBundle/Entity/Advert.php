@@ -499,4 +499,9 @@ class Advert
     {
         return $this->expertise;
     }
+
+    public function  __toString(){
+        return $this->getCarModel();
+    }
+
 }
