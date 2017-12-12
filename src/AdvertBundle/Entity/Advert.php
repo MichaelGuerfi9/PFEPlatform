@@ -26,11 +26,18 @@ class Advert
     private $id;
 
     /**
+ * @var string
+ *
+ * @ORM\Column(name="carModel", type="string", length=255)
+ */
+    private $carModel;
+
+    /**
      * @var string
      *
-     * @ORM\Column(name="carModel", type="string", length=255)
+     * @ORM\Column(name="imageUrl", type="string", length=255)
      */
-    private $carModel;
+    private $imageUrl;
 
     /**
      * @var int
@@ -66,6 +73,13 @@ class Advert
      * @ORM\Column(name="gearbox", type="string", length=255)
      */
     private $gearbox;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="description", type="string", length=255)
+     */
+    private $description;
 
     /**
      * @var string
@@ -499,6 +513,43 @@ class Advert
     {
         return $this->expertise;
     }
+
+    /**
+     * @return string
+     */
+    public function getImageUrl()
+    {
+        return $this->imageUrl;
+    }
+
+    /**
+     * @param string $imageUrl
+     * @return Advert
+     */
+    public function setImageUrl($imageUrl)
+    {
+        $this->imageUrl = $imageUrl;
+        return $this;
+    }
+
+    /**
+     * @return description
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * @param description $description
+     * @return Advert
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+        return $this;
+    }
+
 
     public function  __toString(){
         return $this->getCarModel();
