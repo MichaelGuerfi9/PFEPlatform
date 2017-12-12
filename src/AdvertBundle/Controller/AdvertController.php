@@ -48,12 +48,18 @@ class AdvertController extends Controller
     public function newAction(Request $request)
     {
         $advert = new Advert();
+        $user = $this->getUser();
+
+        if ($user == null){
+            die;
+        }
+
         $form = $this->createForm('AdvertBundle\Form\AdvertType', $advert);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $advert->setCre
+            $advert->setCreatedBy($user);
             $em->persist($advert);
             $em->flush();
 

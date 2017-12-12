@@ -125,7 +125,8 @@ class Advert
     private $reservedBy;
 
     /**
-     * @ORM\OneToMany(targetEntity="UserBundle\Entity\User", mappedBy="user_id")
+     * @ORM\ManyToOne(targetEntity="UserBundle\Entity\User", inversedBy="user_id")
+     * @ORM\JoinColumn(nullable=false)
      */
     private $createdBy;
 
@@ -549,5 +550,19 @@ class Advert
     public function getCreatedBy()
     {
         return $this->createdBy;
+    }
+
+    /**
+     * Set createdBy
+     *
+     * @param \UserBundle\Entity\User $createdBy
+     *
+     * @return Advert
+     */
+    public function setCreatedBy(\UserBundle\Entity\User $createdBy)
+    {
+        $this->createdBy = $createdBy;
+
+        return $this;
     }
 }

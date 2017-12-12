@@ -125,7 +125,8 @@ class Advert
     private $reservedBy;
 
     /**
-     * @ORM\OneToMany(targetEntity="UserBundle\Entity\User", mappedBy="user_id")
+     * @ORM\ManyToOne(targetEntity="UserBundle\Entity\User", inversedBy="user_id")
+     * @ORM\JoinColumn(nullable=false)
      */
     private $createdBy;
 
@@ -509,4 +510,45 @@ class Advert
         return $this->getCarModel();
     }
 
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->createdBy = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add createdBy
+     *
+     * @param \UserBundle\Entity\User $createdBy
+     *
+     * @return Advert
+     */
+    public function addCreatedBy(\UserBundle\Entity\User $createdBy)
+    {
+        $this->createdBy[] = $createdBy;
+
+        return $this;
+    }
+
+    /**
+     * Remove createdBy
+     *
+     * @param \UserBundle\Entity\User $createdBy
+     */
+    public function removeCreatedBy(\UserBundle\Entity\User $createdBy)
+    {
+        $this->createdBy->removeElement($createdBy);
+    }
+
+    /**
+     * Get createdBy
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getCreatedBy()
+    {
+        return $this->createdBy;
+    }
 }
