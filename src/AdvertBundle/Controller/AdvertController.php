@@ -53,6 +53,7 @@ class AdvertController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
+            $advert->setCre
             $em->persist($advert);
             $em->flush();
 

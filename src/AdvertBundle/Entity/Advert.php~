@@ -125,6 +125,11 @@ class Advert
     private $reservedBy;
 
     /**
+     * @ORM\OneToMany(targetEntity="UserBundle\Entity\User", mappedBy="user_id")
+     */
+    private $createdBy;
+
+    /**
      * One Customer has One Cart.
      * @OneToOne(targetEntity="AdvertBundle\Entity\Expertise", mappedBy="advert")
      */
@@ -499,4 +504,9 @@ class Advert
     {
         return $this->expertise;
     }
+
+    public function  __toString(){
+        return $this->getCarModel();
+    }
+
 }
