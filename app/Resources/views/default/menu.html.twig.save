@@ -1,0 +1,134 @@
+   <header>
+      {% if app.user and is_granted('ROLE_ADMIN') %}
+      <ul class="nav navbar-nav">
+        <li><a href=""><i class="material-icons">&#xE8B6;</i> Voir les annonces</a></li>
+        <li><a href=""><i class="material-icons">&#xE871;</i> Mon dashboard</a></li>
+      </ul>
+
+      {% else %}
+      <ul class="nav navbar-nav">
+        <li><a href="">Toutes les annonces</a></li>
+        <li><a href="">Swicar en quelques points</a></li>
+        <li><a href="">Dernières offres en ligne</a></li>
+        <li><a href="">Témoignages</a></li>
+      </ul>
+
+      {% endif %}
+
+      {% if app.user and is_granted('ROLE_ADMIN') %}
+      <ul class="nav navbar-nav navbar-right connected">
+        {# <li>Bienvenue {{ app.user.username|capitalize }}</li> #}
+        <!-- Single button -->
+        <li>
+          <div class="btn-group">
+            <a type="button" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              {# si y'a pas d'images rattaché au compte #}
+              <style>
+                .image-control.user {
+                  width: 30px;
+                  height: 30px;
+                  float:left;
+                  border-radius: 50%;
+                  position: relative;
+                  overflow: hidden;
+                }
+                .image-control.user img {
+                  position:absolute;
+                  left: 50%;
+                  top: 50%;
+                  -webkit-transform: translateX(-50%) translateY(-50%);
+                     -moz-transform: translateX(-50%) translateY(-50%);
+                      -ms-transform: translateX(-50%) translateY(-50%);
+                       -o-transform: translateX(-50%) translateY(-50%);
+                          transform: translateX(-50%) translateY(-50%);
+                }
+              </style>
+              {#
+              {% if  app.user.imageName %}
+                <div class="image-control user">
+                  <img src="" alt="image user TCPQQ1">
+                </div>
+              {% else %}
+                <i class="material-icons">&#xE853;</i>
+              {% endif %}
+
+              #}
+                <i class="material-icons">&#xE853;</i>
+
+              {# sinon #}
+{#               <img src="" alt="logo utilisateur logué">
+ #}              {{ app.user.username|capitalize }} <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href=""><i class="material-icons">&#xE851;</i> Mon Compte</a></li>
+              <li><a href=""><i class="material-icons">&#xE85A;</i> Mes Annonces</a></li>
+              <li><a href=""><i class="material-icons">&#xE87D;</i> Mes Coups de coeur</a></li>
+              <li><a href=""><i class="material-icons">&#xE7F7;</i> Mes Alertes</a></li>
+              <li><a href=""><i class="material-icons">&#xE8CD;</i> Mes Avis</a></li>
+              <li><a href=""><i class="material-icons">&#xE8AC;</i> Déconnexion</a></li>
+            </ul>
+          </div>
+        </li>
+        {# <li>
+          <div class="btn-group">
+            <a type="button" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="material-icons">&#xE7F4;</i>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="#">test</a></li>
+              <li><a href="#">yep</a></li>
+              <li><a href="#">je suis une super notification !</a></li>
+            </ul>
+          </div>
+        </li> #}
+
+        {# <li><a href="#" data-toggle="modal" data-target="#Connexion">Mon compte</a></li> #}
+      </ul>
+    {% elseif app.user and is_granted('ROLE_USER') %}
+      
+      <ul class="nav navbar-nav navbar-right connected">
+        {# <li>Bienvenue {{ app.user.username|capitalize }}</li> #}
+        <!-- Single button -->
+        <li>
+          <div class="btn-group">
+            <a type="button" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              {# si y'a pas d'images rattaché au compte #}
+              <i class="material-icons">&#xE853;</i>
+              {# sinon #}
+{#               <img src="" alt="logo utilisateur logué">
+ #}              {{ app.user.username|capitalize }} <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href=""><i class="material-icons">&#xE851;</i> Mon Compte</a></li>
+              <li><a href=""><i class="material-icons">&#xE85A;</i> Mes Annonces</a></li>
+              <li><a href=""><i class="material-icons">&#xE87D;</i> Mes Coups de coeur</a></li>
+              <li><a href=""><i class="material-icons">&#xE8CD;</i> Mes Avis</a></li>
+              <li><a href=""><i class="material-icons">&#xE8AC;</i> Déconnexion</a></li>
+            </ul>
+          </div>
+        </li>
+        {# <li>
+          <div class="btn-group">
+            <a type="button" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="material-icons">&#xE7F4;</i>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="#">test</a></li>
+              <li><a href="#">yep</a></li>
+              <li><a href="#">je suis une super notification !</a></li>
+            </ul>
+          </div>
+        </li> #}
+
+        {# <li><a href="#" data-toggle="modal" data-target="#Connexion">Mon compte</a></li> #}
+      </ul>
+      {% else %}
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="">Inscription</a></li>
+        <li><a href="#" class="btn-website" data-toggle="modal" data-target="#exampleModal">Connexion</a></li>
+        {# <li><a class="btn-website" href="#">Devenir Presta</a></li> #}
+      </ul>
+
+      {% endif %}
+
+   </header>
