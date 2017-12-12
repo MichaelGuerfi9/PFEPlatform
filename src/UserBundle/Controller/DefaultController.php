@@ -130,4 +130,28 @@ class DefaultController extends Controller
 
     }
 
+    /**
+     *
+     * @Route("/mon-espace", name="monEspace")
+     * @Method("GET")
+     */
+    public function monEspaceAction()
+    {
+
+        $user = $this->getUser();
+
+        if ($user == null){
+            die;
+        }
+
+        $em = $this->getDoctrine()->getManager();
+
+        $adverts = $em->getRepository('AdvertBundle:Advert')->findByReservedBy($user);
+
+        return $this->render('UserBundle:Default:monEspace.html.twig',array(
+            'adverts'=> $adverts,
+        ));
+    }
+
+
 }
