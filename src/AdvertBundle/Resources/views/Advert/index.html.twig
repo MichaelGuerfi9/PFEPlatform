@@ -2,19 +2,21 @@
 
 {% block body %}
 
-<div class="grid" style="margin-top: 3%;">
+<div class="grid col-md-12" style="margin-top: 3%; background: #F5F5F5; padding: 0;">
 
-    <div id="homeTopImage" style="background: black; width: 100%; height: 300px">
+    <div id="homeTopImage" class="col-md-12" style=" width: 100%; height: 300px; padding: 0;">
+        <img src="{{ asset("img/driver.png") }}" alt="" style="width: 100%">
 
     </div>
 
-    <div id="search" class="col-md-6" style="background: white; width: 50%; height: 100px; margin-left: 25%; border: 1px solid grey; border-radius: 5px">
+    <div id="search" class="col-md-6" style="background: white; width: 50%; height: 100px; margin-left: 25%; border: 1px solid grey; border-radius: 5px; z-index: 1; top: 200px;">
 
         <input id="homeSearchInput" type="text" class="center-block" style="width: 80%; margin-top: 2%; border: none; border-bottom: 1px solid grey;" placeholder="Modele, marque ville ...">
 
         <div class="center-block" style="width: 80%; margin-top: 2%; background: red">
 
-            <div class="col-md-2 searchMarque" style="background: red">
+            <div class="col-md-2 searchMarque" style="border: 1px solid blue">
+                <img src="{{ asset("img/opel.png") }}" alt="">
                 toto
             </div>
             <div class="col-md-2 searchMarque" style="background: red">
@@ -50,30 +52,34 @@
 
     </div>
 
-    <div class="col-md-12" style="background: #F5F5F5; margin-top: 4%">
+    <div class="col-md-12" style="background: #F5F5F5; margin-top: 14.5%">
 
-        <div id="blockInformations" class="col-lg-10" style="margin-left: 10%; ">
+        <div id="blockInformations" class="col-lg-12" style="/*margin-left: 10%;*/">
 
-            <h2 class="center-block" style="width:36%;">Swicar en quelques points</h2>
+            <h2 class="center-block col-lg-12" style="text-align: center;">Swicar en quelques points</h2>
 
-            <div class="informationBlock col-lg-3" style="background: red">
-                t
+            <div class="informationBlock col-lg-3" style="">
+                <img class="col-lg-3" src="{{ asset("img/etape/etape1.png") }}" alt="">
             </div>
-            <div class="informationBlock col-lg-3" style="background: red">
-                t
+            <div class="informationBlock col-lg-3" style="">
+                <img class="col-lg-3" src="{{ asset("img/etape/etape2.png") }}" alt="">
             </div>
-            <div class="informationBlock col-lg-3" style="background: red">
-                t
+            <div class="informationBlock col-lg-3" style="">
+                <img class="col-lg-3" src="{{ asset("img/etape/etape3.png") }}" alt="">
             </div>
-            <div class="informationBlock col-lg-3" style="background: red">
-                t
+            <div class="informationBlock col-lg-3" style="">
+                <img class="col-lg-3" src="{{ asset("img/etape/etape4.png") }}" alt="">
             </div>
 
             <style>
 
                 .informationBlock{
-                    margin-right: 5%;
-                    width: 20%;
+                    margin-right: 8%;
+                    width: 17%;
+                }
+
+                .informationBlock img {
+                    width: 134%;
                 }
 
             </style>
@@ -82,27 +88,36 @@
     </div>
     <br>
 
-    <div class="col-md-12" style="background: #E6E6E6;">
+    <div class="col-md-12" style="background: #E6E6E6; padding-bottom: 3%">
 
         <div id="blockLastAdvert" style="margin-left: 10%;">
 
             <h2 class="center-block" style="width:36%;">Denieres offres en ligne</h2>
 
-            <div class="advertBlock col-lg-3" style="background: red; border-radius: 6%">
+            <div class="advertBlock col-lg-3" style="background: white; border-radius: 6%">
                 <img style="width: 100%" src="http://www.camerounsports.info/wp-content/uploads/sites/5/2017/10/mclaren-650s-spyder-2014-750x410.jpeg" alt="">
-                <div style="background: red">
+                <div style="background: white">
+
+                    <h3 class="advert-title">Alfa Romeo 2600
+                        <i class="material-icons pull-right" style="color: #C14D63; padding-right: 5%">favorite</i>
+                    </h3>
+
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aliquam animi consectetur corporis deleniti dolorum ea exercitationem hic incidunt magnam nemo neque qui quidem quisquam quod similique veritatis, voluptatem voluptatum.
+                    </p>
+
+
+                </div>
+            </div>
+            <div class="advertBlock col-lg-3" style="background: white;  border-radius: 6%">
+                <img style="width: 100%" src="http://www.camerounsports.info/wp-content/uploads/sites/5/2017/10/mclaren-650s-spyder-2014-750x410.jpeg" alt="">
+                <div style="background: white">
                     t
                 </div>
             </div>
-            <div class="advertBlock col-lg-3" style="background: red;  border-radius: 6%">
+            <div class="advertBlock col-lg-3" style="background: white;  border-radius: 6%">
                 <img style="width: 100%" src="http://www.camerounsports.info/wp-content/uploads/sites/5/2017/10/mclaren-650s-spyder-2014-750x410.jpeg" alt="">
-                <div style="background: red">
-                    t
-                </div>
-            </div>
-            <div class="advertBlock col-lg-3" style="background: red;  border-radius: 6%">
-                <img style="width: 100%" src="http://www.camerounsports.info/wp-content/uploads/sites/5/2017/10/mclaren-650s-spyder-2014-750x410.jpeg" alt="">
-                <div style="background: red">
+                <div style="background: white">
                     t
                 </div>
             </div>
@@ -115,6 +130,11 @@
                     padding-right: 0%;
                 }
 
+                .advert-title{
+                    border-left: #25437A 4px solid;
+                    padding-left: 20px;
+                }
+
             </style>
 
         </div>
@@ -125,10 +145,69 @@
 
         <div id="commentBlock" class="col-lg-10" style="margin-left: 10%; ">
 
-            <h2 class="center-block" style="width:36%; text-align: center;">Ils nous ont fais confiance </h2>
+            <h2 class="center-block" style="width:36%; text-align: center;">Ils nous ont fait confiance </h2>
 
             <div class="comment">
+
+                <style type="text/css">
+                    .your-class{
+                        width: 90%;
+                        left: 5%;
+                        height: 100px;
+                        text-align: center;
+                        margin: 50px 0;
+                    }
+                </style>
+                <div class="your-class">
+                    <div>
+                        <img src="">
+                        <p>
+                            toto
+                        </p>
+                        <p>
+                            toto
+                        </p>
+                        <p>
+                            Alice Kruger
+                        </p>
+                    </div>
+                    <div>
+                        <img src="">
+                        <p>
+                            toto
+                        </p>
+                        <p>
+                            toto
+                        </p>
+                        <p>
+                            Alice Kruger
+                        </p>
+                    </div>
+                </div>
+
+                <script type="text/javascript" src="/js/jquery-migrate.min.js"></script>
+                <script type="text/javascript" src="/js/slick.min.js"></script>
+
+                <script type="text/javascript">
+                    $(document).ready(function(){
+                        $('.your-class').slick({
+                            dots: true,
+                            infinite: true,
+                            speed: 300,
+                            slidesToShow: 1,
+                            adaptiveHeight: true,
+                            autoplay: true,
+                            autoplaySpeed: 2000,
+                            arrow: true
+                        });
+                    });
+                </script>
+
+
+                {#
                 <img src="{{ asset("image.jpg") }}" alt="" class="col-md-2" style="border-radius: 50%">
+                #}
+
             </div>
 
         </div>
@@ -143,21 +222,23 @@
 
                 <div class="col-md-12">
 
-                    <div class="livraison-footer block-img col-md-3">
+                    <div class="icone-footer telephone-icone block-img col-md-3">
                         <span class="txt">TELEPHONE <br>01 59 60 44 66</span>
                     </div>
 
-                    <div class="livraison-footer block-img col-md-3">
+                    <div class="icone-footer email-icone block-img col-md-3">
                         <span class="txt">EMAIL <br>contact@swicar.com</span>
                     </div>
 
-                    <div class="livraison-footer block-img col-md-3">
+                    <div class="icone-footer chat-icone block-img col-md-3">
                         <span class="txt">CHAT <br>cliquez ici</span>
                     </div>
 
                 </div>
 
-                <p class="coyprigthFooter col-md-12" style="text-align: center; border-top: 1px solid white;">&copy; 2017 SWICAR</p>
+                <hr class="col-lg-12 hr-footer">
+
+                <p class="coyprigthFooter col-md-12" style="text-align: center">&copy; 2017 SWICAR</p>
 
                 <p class="col-md-1 text-footer" style="min-width: 11%">Mentions légales</p>
                 <p class="col-md-1 text-footer" style="max-width: 7%">À propos</p>
@@ -177,8 +258,7 @@
                  */
             }
 
-            .livraison-footer {
-                background: url(https://vintage-motors.net/themes/default-bootstrap/img/livraison.png)no-repeat center 15px;
+            .icone-footer {
                 background-position: center top;
                 background-size: 80px;
                 padding-top: 90px;
@@ -189,8 +269,33 @@
                  */
             }
 
+            .telephone-icone {
+                background: url( {{ asset("img/footer/telephone.png") }} )no-repeat center 15px;
+                background-size: 60px;
+            }
+            .email-icone {
+                background: url( {{ asset("img/footer/email.png") }} )no-repeat center 15px;
+                background-size: 60px;
+            }
+            .chat-icone {
+                background: url( {{ asset("img/footer/chat.png") }} )no-repeat center 15px;
+                background-size: 60px;
+            }
+
             .text-footer {
                 padding: 0;
+            }
+
+            .hr-footer{
+                border: 0;
+                height: 2px;
+                background-color: #fff;
+                /*
+                background-image: -webkit-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+                background-image: -moz-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+                background-image: -ms-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+                background-image: -o-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+                */
             }
 
         </style>
