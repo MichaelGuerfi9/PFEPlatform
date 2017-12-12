@@ -24,6 +24,18 @@ class DefaultController extends Controller
         return $this->render('UserBundle:Default:index.html.twig');
     }
 
+    public function becomeExpertAction($userId){
+
+
+        $em = $this->getDoctrine()->getManager();
+
+        $user = $em->getRepository('UserBundle:User')->find($userId);
+
+        $user->addRole('ROLE_EXPERT');
+
+        return $this->render('UserBundle:Default:expertIndex.html.twig',array('user'=>$user));
+    }
+
     /**
      * @Route("/profil", name="myProfile")
      */
