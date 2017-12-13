@@ -26,7 +26,7 @@
                         <li><a href=""><i class="material-icons">&#xE85A;</i> Mes Annonces</a></li>
                         <li><a href=""><i class="material-icons">&#xE87D;</i> Mes Coups de coeur</a></li>
                         <li><a href=""><i class="material-icons">&#xE8CD;</i> Mes Avis</a></li>
-                        <li><a href=""><i class="material-icons">&#xE8AC;</i> Déconnexion</a></li>
+                        <li><a href="{{ path('fos_user_security_logout') }}"><i class="material-icons">&#xE8AC;</i> Déconnexion</a></li>
                     </ul>
                 </div>
             </li>
@@ -62,9 +62,9 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form action="" method="post">
+                        <form action="/login_check" method="post">
 
-                            <input type="hidden" name="_csrf_token" value="setValue">
+                            <input type="hidden" name="_csrf_token" value="{{ csrfToken }}">
 
                             <div class="form-group label-floating">
                                 <label class="control-label" for="inputUsernameEmail">Pseudo ou email</label>
