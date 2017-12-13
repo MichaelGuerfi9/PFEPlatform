@@ -139,6 +139,12 @@ class Advert
     private $reservedBy;
 
     /**
+     * @ORM\ManyToOne(targetEntity="UserBundle\Entity\User", inversedBy="user_id")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $createdBy;
+
+    /**
      * One Customer has One Cart.
      * @OneToOne(targetEntity="AdvertBundle\Entity\Expertise", mappedBy="advert")
      */
@@ -555,4 +561,59 @@ class Advert
         return $this->getCarModel();
     }
 
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->createdBy = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add createdBy
+     *
+     * @param \UserBundle\Entity\User $createdBy
+     *
+     * @return Advert
+     */
+    public function addCreatedBy(\UserBundle\Entity\User $createdBy)
+    {
+        $this->createdBy[] = $createdBy;
+
+        return $this;
+    }
+
+    /**
+     * Remove createdBy
+     *
+     * @param \UserBundle\Entity\User $createdBy
+     */
+    public function removeCreatedBy(\UserBundle\Entity\User $createdBy)
+    {
+        $this->createdBy->removeElement($createdBy);
+    }
+
+    /**
+     * Get createdBy
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getCreatedBy()
+    {
+        return $this->createdBy;
+    }
+
+    /**
+     * Set createdBy
+     *
+     * @param \UserBundle\Entity\User $createdBy
+     *
+     * @return Advert
+     */
+    public function setCreatedBy(\UserBundle\Entity\User $createdBy)
+    {
+        $this->createdBy = $createdBy;
+
+        return $this;
+    }
 }

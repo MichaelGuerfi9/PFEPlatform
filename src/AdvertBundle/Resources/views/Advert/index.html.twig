@@ -9,7 +9,7 @@
 
     </div>
 
-    <div id="search" class="col-md-6" style="background: white; width: 50%; height: 100px; margin-left: 25%; border: 1px solid grey; border-radius: 5px; z-index: 1; top: 200px;">
+    <div id="search" class="col-md-6" style="background: white; width: 50%; /*height: 100px;*/ margin-left: 25%; border: 1px solid grey; border-radius: 5px; /*z-index: 1;*/ top: 200px;">
 
         <input id="homeSearchInput" type="text" class="center-block" style="width: 80%; margin-top: 2%; border: none; border-bottom: 1px solid grey;" placeholder="Modele, marque ville ...">
 
@@ -94,34 +94,103 @@
 
             <h2 class="center-block" style="width:36%;">Denieres offres en ligne</h2>
 
-            <div class="advertBlock col-lg-3" style="background: white; border-radius: 6%">
+            {#
+            <div class="advertBlock col-lg-3" style="background: white; border-radius: 3%">
                 <img style="width: 100%" src="http://www.camerounsports.info/wp-content/uploads/sites/5/2017/10/mclaren-650s-spyder-2014-750x410.jpeg" alt="">
                 <div style="background: white">
 
-                    <h3 class="advert-title">Alfa Romeo 2600
+                    <h3 class="advert-title col-lg-12">Alfa Romeo 2600
                         <i class="material-icons pull-right" style="color: #C14D63; padding-right: 5%">favorite</i>
                     </h3>
 
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aliquam animi consectetur corporis deleniti dolorum ea exercitationem hic incidunt magnam nemo neque qui quidem quisquam quod similique veritatis, voluptatem voluptatum.
+                    <p class="col-lg-12" style=" font-size: 12px; color: #afafaf; padding: 11px;">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aliquam animi consectetur corporis deleniti dolorum ...
                     </p>
 
+                    <div class="col-lg-12">
+                        <span class="advert-price">21 000  <i class="material-icons">euro_symbol</i></span>
+                        <span class="advert-kilometrage">1 270</span>
+                        <span class="advert-boite" style="">Automatique</span>
+                    </div>
 
                 </div>
             </div>
-            <div class="advertBlock col-lg-3" style="background: white;  border-radius: 6%">
-                <img style="width: 100%" src="http://www.camerounsports.info/wp-content/uploads/sites/5/2017/10/mclaren-650s-spyder-2014-750x410.jpeg" alt="">
-                <div style="background: white">
-                    t
-                </div>
-            </div>
-            <div class="advertBlock col-lg-3" style="background: white;  border-radius: 6%">
-                <img style="width: 100%" src="http://www.camerounsports.info/wp-content/uploads/sites/5/2017/10/mclaren-650s-spyder-2014-750x410.jpeg" alt="">
-                <div style="background: white">
-                    t
-                </div>
-            </div>
+#}
 
+            {% for advert in adverts %}
+            
+            <div class="col-lg-3 advertBlock" style="background-color: white;border-radius: 5%;/*margin: 2% 0.3% 2% 0.3%;*/padding: 0;">
+                <div class="card">
+                    <img class="card-img-top" src="{{ advert.imageUrl }}" style="width: 100%; height: auto;border-top-right-radius: 5%;border-top-left-radius: 5%;">
+                    <div class="card-block" style="padding: 20px; padding-top: 0">
+                        <h4 class="card-title">{{ advert.carModel|upper }}</h4>
+                        <div class="meta">
+                            {{ advert.description|slice(0, 50) ~ '...' }}
+                        </div>
+                    </div>
+                    <div class="card-footer col-lg-12" style="padding: 0; padding-bottom: 4%">
+                    <span class="col-lg-12">
+                        <span>{{ advert.price|number_format(0,'.',' ') }} <img src="{{ asset("img/euro.png") }}" alt="euro"> </span> |
+                        <span>{{ advert.mileage }} <img src="{{ asset("img/speedometer.png") }}" alt="speedometer"></span> |
+                        <span>
+                        {% if advert.gearbox == 'manual' %}
+                            MANUELLE <img src="{{ asset("img/automatic.png") }}" alt="">
+                            {% else %}
+                            AUTOMATIQUE <img src="{{ asset("img/automatic.png") }}" alt="">
+                        {% endif %}
+                        </span>
+                    </span>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+            <style>
+                .card-title::before{
+                    font-family: Bebas sans-serif;
+                    width: 3px;
+                    height: 20px;
+                    background-color: #1a7bd3;
+                    content: '';
+                    display: inline-block;
+                    margin-left: -20px;
+                    margin-right: 15px;
+                }
+
+                .card-footer .float-right span {
+                    font-weight: bold;
+                    padding: 17px;
+                    margin-top:20px ;
+                }
+                .meta {
+                    font-size: 12px;
+                    color: #afafaf;
+                }
+            </style>
+
+
+
+
+{#
+            <div class="advertBlock col-lg-3" style="background: white;  border-radius: 3%">
+                <img style="width: 100%" src="http://www.camerounsports.info/wp-content/uploads/sites/5/2017/10/mclaren-650s-spyder-2014-750x410.jpeg" alt="">
+                <div style="background: white">
+
+
+
+
+
+                </div>
+            </div>
+            #}
+            {#
+                        <div class="advertBlock col-lg-3" style="background: white;  border-radius: 3%">
+                            <img style="width: 100%" src="http://www.camerounsports.info/wp-content/uploads/sites/5/2017/10/mclaren-650s-spyder-2014-750x410.jpeg" alt="">
+                            <div style="background: white">
+                                t
+                            </div>
+                        </div>
+                        #}
             <style>
 
                 .advertBlock{
@@ -147,41 +216,31 @@
 
             <h2 class="center-block" style="width:36%; text-align: center;">Ils nous ont fait confiance </h2>
 
-            <div class="comment">
+            <div class="comment col-lg-12">
 
-                <style type="text/css">
-                    .your-class{
-                        width: 90%;
-                        left: 5%;
-                        height: 100px;
-                        text-align: center;
-                        margin: 50px 0;
-                    }
-                </style>
                 <div class="your-class">
-                    <div>
-                        <img src="">
-                        <p>
-                            toto
-                        </p>
-                        <p>
-                            toto
-                        </p>
-                        <p>
-                            Alice Kruger
-                        </p>
+                    <div class="col-lg-12">
+                        <img src="{{ asset("img/img.png") }}" class="col-lg-3">
+                        <div class="col-lg-9 comment-block">
+                            <p class="comment-comment">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto cumque laudantium mollitia natus nesciunt odio pariatur quaerat, rem. Ad, adipisci dicta ea natus nisi quibusdam reprehenderit rerum tempore unde vero.
+                            </p>
+                            <p class="comment-author">
+                                Alice Kruger
+                            </p>
+                        </div>
                     </div>
-                    <div>
-                        <img src="">
-                        <p>
-                            toto
-                        </p>
-                        <p>
-                            toto
-                        </p>
-                        <p>
-                            Alice Kruger
-                        </p>
+
+                    <div class="col-lg-12">
+                        <img src="{{ asset("img/img.png") }}" class="col-lg-3">
+                        <div class="col-lg-9 comment-block">
+                            <p class="comment-comment">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto cumque laudantium mollitia natus nesciunt odio pariatur quaerat, rem. Ad, adipisci dicta ea natus nisi quibusdam reprehenderit rerum tempore unde vero.
+                            </p>
+                            <p class="comment-author">
+                                Alice Kruger
+                            </p>
+                        </div>
                     </div>
                 </div>
 
@@ -203,6 +262,23 @@
                     });
                 </script>
 
+                <style type="text/css">
+                    .your-class{
+                        width: 90%;
+                        left: 5%;
+                        /*
+                        height: 100px;
+                         */
+                        text-align: center;
+                        margin: 50px 0;
+                    }
+
+                    .comment-block {
+                        padding-top: 7%;
+                        text-align: left;
+                    }
+
+                </style>
 
                 {#
                 <img src="{{ asset("image.jpg") }}" alt="" class="col-md-2" style="border-radius: 50%">

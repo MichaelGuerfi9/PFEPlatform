@@ -5,6 +5,7 @@ namespace UserBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
+use Symfony\Component\Security\Acl\Exception\Exception;
 use UserBundle\Entity\Profil;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
@@ -141,5 +142,29 @@ class DefaultController extends Controller
         */
 
     }
+
+    /**
+     *
+     * @Route("/mon-espace", name="monEspace")
+     * @Method("GET")
+     */
+    public function monEspaceAction()
+    {
+
+        $user = $this->getUser();
+
+        if ($user == null){
+            die;
+        }
+
+        $em = $this->getDoctrine()->getManager();
+
+        $adverts = $em->getRepository('AdvertBundle:Advert')->findByReservedBy($user);
+
+        return $this->render('UserBundle:Default:monEspace.html.twig',array(
+            'adverts'=> $adverts,
+        ));
+    }
+
 
 }

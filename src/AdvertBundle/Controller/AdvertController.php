@@ -34,12 +34,17 @@ class AdvertController extends Controller
             //return $this->redirect($this->generateUrl('fos_user_security_login'));
         }
 
+        $csrfToken = $this->has('security.csrf.token_manager')
+            ? $this->get('security.csrf.token_manager')->getToken('authenticate')->getValue()
+            : null;
+
         $em = $this->getDoctrine()->getManager();
 
         $adverts = $em->getRepository('AdvertBundle:Advert')->findBy(array('reservedBy'=>null),array('id'=>'DESC'),3);
 
         return $this->render('AdvertBundle:Advert:index.html.twig', array(
             'adverts' => $adverts,
+            'csrfToken' => $csrfToken,
         ));
     }
 
@@ -52,11 +57,18 @@ class AdvertController extends Controller
     public function newAction(Request $request)
     {
         $advert = new Advert();
+        $user = $this->getUser();
+
+        if ($user == null){
+            die;
+        }
+
         $form = $this->createForm('AdvertBundle\Form\AdvertType', $advert);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
+            $advert->setCreatedBy($user);
             $em->persist($advert);
             $em->flush();
 
