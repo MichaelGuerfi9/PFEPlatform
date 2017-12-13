@@ -13,6 +13,10 @@
             {# <li>Bienvenue {{ app.user.username|capitalize }}</li> #}
             <!-- Single button -->
             <li>
+
+            <li class="username" style=""><a href="{{ path('monEspace') }}">Bonjour {{ app.user.username|capitalize }}</a></li>
+
+                <!--
                 <div class="btn-group">
                     <a type="button" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         {# si y'a pas d'images rattaché au compte #}
@@ -22,13 +26,14 @@
                          #}              {{ app.user.username|capitalize }} <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a href=""><i class="material-icons">&#xE851;</i> Mon Compte</a></li>
+                        <li><a href="{{ path('monEspace') }}"><i class="material-icons">&#xE851;</i> Mon Compte</a></li>
                         <li><a href=""><i class="material-icons">&#xE85A;</i> Mes Annonces</a></li>
                         <li><a href=""><i class="material-icons">&#xE87D;</i> Mes Coups de coeur</a></li>
                         <li><a href=""><i class="material-icons">&#xE8CD;</i> Mes Avis</a></li>
                         <li><a href="{{ path('fos_user_security_logout') }}"><i class="material-icons">&#xE8AC;</i> Déconnexion</a></li>
                     </ul>
                 </div>
+                -->
             </li>
             {# <li>
               <div class="btn-group">
