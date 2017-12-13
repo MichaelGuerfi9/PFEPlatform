@@ -1,0 +1,27 @@
+{% for advert in adverts %}
+    <div class="col-sm-2 col-md-4 col-lg-3 mt-4" style="background-color: white;border-radius: 3%;margin: 2% 0.3% 2% 0.3%;padding: 0;height: 390px;">
+        <div class="card">
+            <img class="card-img-top" src="{{ advert.imageUrl }}" style="width: 100%; height: auto;border-top-right-radius: 5%;border-top-left-radius: 5%;">
+            <div class="card-block" style="padding: 20px;">
+                <span style="position: absolute;height: 35px;width: 3px;background-color: #1a7bd3;left: 0;bottom: 85px;"></span>
+                <h4 class="card-title" style="vertical-align: middle">{{ advert.carModel|upper }} <span style="float: right "><img style="height: 18px;" src="{{ asset("img/heart.png") }}" alt="like"></span> </h4>
+                <div class="meta">
+                    {{ advert.description|slice(0, 50) ~ '...' }}
+                </div>
+            </div>
+            <div class="card-footer">
+                    <span class="float-right">
+                        <span>{{ advert.price|number_format(0,'.',' ') }} <img src="{{ asset("img/euro.png") }}" alt="euro"> </span> |
+                        <span>{{ advert.mileage|number_format(0,'.',' ') }} <img src="{{ asset("img/speedometer.png") }}" alt="speedometer"></span> |
+                        <span>
+                        {% if advert.gearbox == 'manual' %}
+                            MANUELLE <img src="{{ asset("img/automatic.png") }}" alt="">
+                            {% else %}
+                            AUTOMATIQUE <img src="{{ asset("img/automatic.png") }}" alt="">
+                        {% endif %}
+                        </span>
+                    </span>
+            </div>
+        </div>
+    </div>
+{% endfor %}

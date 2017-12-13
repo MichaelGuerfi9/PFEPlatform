@@ -5,7 +5,11 @@ namespace AdvertBundle\Controller;
 use AdvertBundle\Entity\Advert;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+//use Symfony\Component\BrowserKit\Response;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 /**
  * Advert controller.
@@ -185,5 +189,26 @@ class AdvertController extends Controller
         return $this->render('AdvertBundle:Advert:list.html.twig',array(
             'adverts'=> $adverts,
         ));
+    }
+
+
+    /**
+     * Lists all advert entities.
+     *
+     * @Route("/listAjax", name="list_ajax")
+     * @Method("GET")
+     */
+    public function listAjaxAction(Request $request){
+        $filters = $request->query->get('filter');
+//        var_dump($filters);
+        $em = $this->getDoctrine()->getManager();
+
+        $adverts = $em->getRepository('AdvertBundle:Advert')->findByMarque($filters);
+        $html = $this->renderView('AdvertBundle:Advert:listCards.html.twig',array(
+            'adverts'=> $adverts,
+        ));
+        return new JsonResponse([
+            'html' => $html
+        ]);
     }
 }
