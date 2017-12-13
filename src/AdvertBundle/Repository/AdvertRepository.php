@@ -10,4 +10,12 @@ namespace AdvertBundle\Repository;
  */
 class AdvertRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function findByMarque($marque)
+    {
+        return $this->createQueryBuilder("u")
+            ->where("u.carModel LIKE :term")
+            ->setParameter("term", "%".$marque."%")
+            ->getQuery()->getArrayResult();
+    }
+
 }
