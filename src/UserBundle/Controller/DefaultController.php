@@ -159,10 +159,12 @@ class DefaultController extends Controller
 
         $em = $this->getDoctrine()->getManager();
 
+        $advert = $em->getRepository('AdvertBundle:Advert')->findOneByReservedBy($user);
         $adverts = $em->getRepository('AdvertBundle:Advert')->findByReservedBy($user);
 
         return $this->render('UserBundle:Default:monEspace.html.twig',array(
             'adverts'=> $adverts,
+            'advert'=> $advert,
         ));
     }
 

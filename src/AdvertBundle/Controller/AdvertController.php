@@ -198,4 +198,52 @@ class AdvertController extends Controller
             'adverts'=> $adverts,
         ));
     }
+
+
+
+    /**
+     *
+     * @Route("/payment/{id}/{params}", name="payment")
+     * @Method({"GET", "POST"})
+     */
+    public function paymentAction(Advert $advert, Request $request, $params=null)
+    {
+
+
+        //if ($request->isMethod('POST')){
+
+        if ($params != null){
+
+
+            echo 'ta mere';die;
+
+
+        }
+
+
+        $em = $this->getDoctrine()->getManager();
+
+        return $this->render('AdvertBundle:Advert:payment.html.twig',array(
+            'advert'=> $advert,
+        ));
+    }
+
+
+
+    function construit_url_paypal()
+    {
+        $api_paypal = 'https://api-3t.sandbox.paypal.com/nvp?'; // Site de l'API PayPal. On ajoute déjà le ? afin de concaténer directement les paramètres.
+        $version = 56.0; // Version de l'API
+
+        $user = 'julienbrandin-facilitator_api1.sfr.fr'; // Utilisateur API
+        $pass = 'VDT5SNRFDTV5YCP6'; // Mot de passe API
+        $signature = 'AFcWxV21C7fd0v3bYYYRCpSSRl31A3LeItrytN1I6H2pPfGwOsNkZR96'; // Signature de l'API
+
+        $api_paypal = $api_paypal.'VERSION='.$version.'&USER='.$user.'&PWD='.$pass.'&SIGNATURE='.$signature; // Ajoute tous les paramètres
+
+        return 	$api_paypal; // Renvoie la chaîne contenant tous nos paramètres.
+    }
+
+
+
 }
