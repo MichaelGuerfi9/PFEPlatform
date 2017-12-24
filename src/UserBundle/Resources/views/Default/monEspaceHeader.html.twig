@@ -1,7 +1,10 @@
 <div class="account-header">
     <span>Tableau de bord</span>
     <span>Wishlist</span>
-    <span>Expertise</span>
+    {% if is_granted('ROLE_ADMIN') or is_granted('ROLE_EXPERT') %}
+        <span>Expertise</span>
+    {% endif %}
+
 </div>
 
 <style>
