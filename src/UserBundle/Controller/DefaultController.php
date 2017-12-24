@@ -168,5 +168,36 @@ class DefaultController extends Controller
         ));
     }
 
+    /**
+     *
+     * @Route("/mon-espace/expertise", name="monEspaceExpertise")
+     * @Method("GET")
+     */
+    public function monEspaceExpertiseAction()
+    {
+
+        $user = $this->getUser();
+
+        if ($user == null){
+            die;
+        }
+
+        $em = $this->getDoctrine()->getManager();
+
+        $allAskedExpertises = $em->getRepository('AdvertBundle:Expertise')->findByStatus("ask");
+        $allAcceptedExpertises = $em->getRepository('AdvertBundle:Expertise')->findBy(array(
+            'status' =>'accepted',
+             'expertisedBy' => $user
+            )
+        );
+
+        return $this->render('UserBundle:Default:monEspaceExpertise.html.twig',array(
+            'allAskedExpertises'=> $allAskedExpertises,
+            'allAcceptedExpertises'=> $allAcceptedExpertises,
+        ));
+    }
+
+
+
 
 }

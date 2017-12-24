@@ -16,6 +16,31 @@ use AdvertBundle\Entity\Advert;
 class ExpertiseController extends Controller
 {
 
+
+    /**
+     * Deletes a expertise entity.
+     *
+     * @Route("/expertise/accept/{id}", name="accept_expertise")
+     */
+    public function acceptAction(Request $request, Expertise $expertise)
+    {
+        $user = $this->getUser();
+
+        if ($user == null){
+            die;
+        }
+
+        $em = $this->getDoctrine()->getManager();
+        $expertise->setStatus("accepted");
+        $expertise->setExpertisedBy($user);
+        $user->addExpertise($expertise);
+        $em->persist($expertise);
+        $em->persist($user);
+        $em->flush();
+
+        return $this->redirectToRoute('monEspaceExpertise');
+    }
+
     /**
      * @Route("/askExpertise/{id}", name="ask_expertise")
      * @Method("GET")
@@ -190,4 +215,5 @@ class ExpertiseController extends Controller
             ->getForm()
             ;
     }
+
 }

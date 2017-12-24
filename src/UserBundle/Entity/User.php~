@@ -39,6 +39,12 @@ class User extends BaseUser
     private $reservedCar;
 
     /**
+     * One Product has Many Features.
+     * @OneToMany(targetEntity="AdvertBundle\Entity\Expertise", mappedBy="expertisedBy")
+     */
+    private $expertises;
+
+    /**
      * Get id
      *
      * @return int

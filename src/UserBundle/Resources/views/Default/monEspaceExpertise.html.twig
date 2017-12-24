@@ -1,0 +1,167 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<div class="grid col-md-12" style="margin-top: 3%; /*background: #F5F5F5;*/ padding: 0;">
+
+    {% include("UserBundle:Default:monEspaceHeader.html.twig") %}
+
+    <h2 class="col-lg-12 text-center">Espace expertise</h2>
+
+    <div class="col-lg-6" style="height: 100px;">
+
+        <div class="col-lg-12 information-block">
+            <div class="title col-lg-12">Expertises demandées</div>
+            <div class="col-lg-12 content" style="height: 100px;">
+                <div class="col-lg-12">
+
+                    <table>
+                        {% for expertise in allAskedExpertises %}
+                            <tr>
+                                <td>
+                                    {{ expertise.advert.createdBy.username }}
+                                </td>
+                                <td>
+                                    {{ expertise.advert.carModel }}
+                                </td>
+                                <td>
+                                    <a href="{{ path('accept_expertise', { 'id': expertise.id }) }}">
+                                        <button>
+                                            Accepter l'expertise
+                                        </button>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="{{ path('advert_show', { 'id': expertise.advert.id }) }}">
+                                        <button>
+                                            Voir l'annonce
+                                        </button>
+                                    </a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="col-lg-6" style="">
+
+
+        <div class="title col-lg-12">Mes expertises</div>
+        <div class="col-lg-12 content" style="height: 100px;">
+            <div class="col-lg-12">
+                {% if allAcceptedExpertises is not empty %}
+                    <table>
+                        {% for expertise in allAcceptedExpertises %}
+                            <tr>
+                                <td>
+                                    {{ expertise.advert.createdBy.username }}
+                                </td>
+                                <td>
+                                    {{ expertise.advert.carModel }}
+                                </td>
+                                {% if expertise.status == "finish" %}
+                                    <td>
+                                        <a href=" {{ path('expertise_edit', { 'id': expertise.id }) }} ">
+                                            <button>
+                                                Voir l'expertise
+                                            </button>
+                                        </a>
+                                    </td>
+                                {% elseif expertise.status == "accepted" %}
+                                    <td>
+                                        <a href=" {{ path('expertise_edit', { 'id': expertise.id }) }} ">
+                                            <button>
+                                                Demarer l'expertise
+                                            </button>
+                                        </a>
+                                    </td>
+                                {% endif %}
+                                <td>
+                                    <a href="{{ path('advert_show', { 'id': expertise.advert.id }) }}">
+                                        <button>
+                                            Voir l'annonce
+                                        </button>
+                                    </a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+                {% else %}
+                    <p>Aucunes expertises acceptées</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+
+    <style>
+
+        .title{
+            background: #00457c;
+            color: #FFFFFF;
+            padding-bottom: 3%;
+            padding-top: 3%;
+        }
+
+        .post-advert{
+            padding: 3%;
+            border: 1px #337ab7 solid;
+        }
+
+        .information-block{
+        }
+
+    </style>
+
+
+    {#
+    {% for advert in adverts %}
+
+        <div class="advertBlock col-lg-3" style="background: white; border-radius: 3%">
+            <img style="width: 100%" src="http://www.camerounsports.info/wp-content/uploads/sites/5/2017/10/mclaren-650s-spyder-2014-750x410.jpeg" alt="">
+            <div style="background: white">
+
+                <h3 class="advert-title col-lg-12"> {{ advert.carModel }}
+                    <i class="material-icons pull-right" style="color: #C14D63; padding-right: 5%">favorite</i>
+                </h3>
+
+                <p class="col-lg-12" style="font-size: 11px; padding: 11px;">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aliquam animi consectetur corporis deleniti dolorum ...
+                </p>
+
+                <div class="col-lg-12">
+                    <span class="advert-price">21 000  <i class="material-icons">euro_symbol</i></span>
+                    <span class="advert-kilometrage">1 270</span>
+                    <span class="advert-boite" style="">{{ advert.gearbox }}</span>
+                </div>
+
+            </div>
+        </div>
+
+    {% endfor %}
+
+    <style>
+
+        .advertBlock{
+            margin-right: 7%;
+            padding-left: 0;
+            padding-right: 0%;
+        }
+
+        .advert-title{
+            border-left: #25437A 4px solid;
+            padding-left: 20px;
+        }
+
+    </style>
+#}
+
+</div>
+
+{% endblock %}
