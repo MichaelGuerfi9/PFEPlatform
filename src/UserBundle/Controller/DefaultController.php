@@ -182,6 +182,10 @@ class DefaultController extends Controller
             die;
         }
 
+        if (!$this->get('security.authorization_checker')->isGranted('ROLE_ADMIN') && !$this->get('security.authorization_checker')->isGranted('ROLE_EXPERT')) {
+            die;
+        }
+
         $em = $this->getDoctrine()->getManager();
 
         $allAskedExpertises = $em->getRepository('AdvertBundle:Expertise')->findByStatus("ask");

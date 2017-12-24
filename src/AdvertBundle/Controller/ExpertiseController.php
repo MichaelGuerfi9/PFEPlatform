@@ -30,6 +30,10 @@ class ExpertiseController extends Controller
             die;
         }
 
+        if (!$this->get('security.authorization_checker')->isGranted('ROLE_ADMIN') && !$this->get('security.authorization_checker')->isGranted('ROLE_EXPERT')) {
+            die;
+        }
+
         $em = $this->getDoctrine()->getManager();
         $expertise->setStatus("accepted");
         $expertise->setExpertisedBy($user);
