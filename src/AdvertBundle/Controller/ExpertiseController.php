@@ -174,6 +174,10 @@ class ExpertiseController extends Controller
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
+
+            //TODO: Create and save the pdf
+            //TODO: status->finish
+
             return $this->redirectToRoute('expertise_edit', array('id' => $expertise->getId()));
         }
 
