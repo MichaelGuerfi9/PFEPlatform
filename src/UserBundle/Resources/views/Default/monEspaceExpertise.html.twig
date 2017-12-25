@@ -66,10 +66,13 @@
                                     {{ expertise.advert.carModel }}
                                 </td>
                                 {% if expertise.status == "finish" %}
+                                    {#
+                                        TODO: Path to read pdf
+                                    #}
                                     <td>
                                         <a href=" {{ path('expertise_edit', { 'id': expertise.id }) }} ">
                                             <button>
-                                                Voir l'expertise
+                                                Voir le pdf
                                             </button>
                                         </a>
                                     </td>

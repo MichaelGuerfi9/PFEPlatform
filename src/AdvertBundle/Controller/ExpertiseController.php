@@ -177,6 +177,7 @@ class ExpertiseController extends Controller
 
             //TODO: Create and save the pdf
             //TODO: status->finish
+            //TODO: Add pdf path to expertise entity
 
             return $this->redirectToRoute('expertise_edit', array('id' => $expertise->getId()));
         }
