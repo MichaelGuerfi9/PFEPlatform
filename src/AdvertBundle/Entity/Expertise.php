@@ -39,6 +39,12 @@ class Expertise
 
     private $status;
 
+    /**
+     * Many Features have One Product.
+     * @ORM\ManyToOne(targetEntity="UserBundle\Entity\User", inversedBy="expertises")
+     * @JoinColumn(name="user_id", referencedColumnName="id")
+     */
+    private $expertisedBy;
 
     /**
      * @var string
@@ -4613,4 +4619,28 @@ class Expertise
         return $this->getAdvert()->getId();
     }
 
+
+    /**
+     * Set expertisedBy
+     *
+     * @param \UserBundle\Entity\User $expertisedBy
+     *
+     * @return Expertise
+     */
+    public function setExpertisedBy(\UserBundle\Entity\User $expertisedBy = null)
+    {
+        $this->expertisedBy = $expertisedBy;
+
+        return $this;
+    }
+
+    /**
+     * Get expertisedBy
+     *
+     * @return \UserBundle\Entity\User
+     */
+    public function getExpertisedBy()
+    {
+        return $this->expertisedBy;
+    }
 }

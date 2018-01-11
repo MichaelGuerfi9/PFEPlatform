@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <div class="grid col-md-12" style="margin-top: 5%; /*background: #F5F5F5;*/ padding: 0;">
+
+
+        Voulez vous effectuez le payement de {{ advert.price |number_format(0,'.',' ') }} € ?
+
+        <br>
+        <button>
+            <a href="{{ path('payment', {'id': advert.id, 'params': 'oui' }) }}">oui</a>
+        </button>
+
+        <button>
+            <a href="{{ path('payment', {'id': advert.id, 'params': 'non' }) }}">non</a>
+        </button>
+
+
+
+
+    </div>
+
+{% endblock %}

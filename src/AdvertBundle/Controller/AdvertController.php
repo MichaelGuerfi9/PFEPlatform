@@ -205,6 +205,119 @@ class AdvertController extends Controller
 
 
     /**
+     *
+     * @Route("/toto/success", name="success")
+     */
+    public function successAction()
+    {
+        echo "success";die;
+
+    }
+
+    /**
+     *
+     * @Route("/toto/error", name="error")
+     */
+    public function errorAction()
+    {
+        echo "error";die;
+
+    }
+
+
+
+    /**
+     *
+     * @Route("/payment/{id}/{params}", name="payment")
+     * @Method({"GET", "POST"})
+     */
+    public function paymentAction(Advert $advert, Request $request, $params=null)
+    {
+
+
+        //if ($request->isMethod('POST')){
+
+        if ($params != null){
+
+
+            $requete = $this->construit_url_paypal();
+            $requete = $requete."&METHOD=SetExpressCheckout".
+                "&CANCELURL=".urlencode("http://127.0.0.1/toto/error").
+                "&RETURNURL=".urlencode("http://127.0.0.1/toto/success").
+                "&AMT=10.0".
+                "&CURRENCYCODE=EUR".
+                "&DESC=".urlencode("Magnifique oeuvre d'art (que mon fils de 3 ans a peint.)").
+                "&LOCALECODE=FR".
+                "&HDRIMG=".urlencode("http://www.siteduzero.com/Templates/images/designs/2/logo_sdz_fr.png");
+
+            $ch = curl_init($requete);
+            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+            curl_setopt( $ch, CURLOPT_SSL_VERIFYHOST, 0);
+            curl_setopt($ch, CURLOPT_URL, $requete);
+
+
+            $resultat_paypal = curl_exec($ch);
+
+            if (!$resultat_paypal)
+            {echo "<p>Erreur</p><p>".curl_error($ch)."</p>";}
+            else
+            {
+                $liste_param_paypal = $this->recup_param_paypal($resultat_paypal); // Lance notre fonction qui dispatche le résultat obtenu en un array
+
+                // Si la requête a été traitée avec succès
+                if ($liste_param_paypal['ACK'] == 'Success')
+                {
+                    // Redirige le visiteur sur le site de PayPal
+                    header("Location: https://www.sandbox.paypal.com/webscr&cmd=_express-checkout&token=".$liste_param_paypal['TOKEN']);
+                    exit();
+                }
+                else // En cas d'échec, affiche la première erreur trouvée.
+                {echo "<p>Erreur de communication avec le serveur PayPal.<br />".$liste_param_paypal['L_SHORTMESSAGE0']."<br />".$liste_param_paypal['L_LONGMESSAGE0']."</p>";}
+            }
+            curl_close($ch);
+
+            die;
+        }
+
+
+        $em = $this->getDoctrine()->getManager();
+
+        return $this->render('AdvertBundle:Advert:payment.html.twig',array(
+            'advert'=> $advert,
+        ));
+    }
+
+
+
+    function construit_url_paypal()
+    {
+        $api_paypal = 'https://api-3t.sandbox.paypal.com/nvp?'; // Site de l'API PayPal. On ajoute déjà le ? afin de concaténer directement les paramètres.
+        $version = 56.0; // Version de l'API
+
+        $user = 'julienbrandin-facilitator_api1.sfr.fr'; // Utilisateur API
+        $pass = 'VDT5SNRFDTV5YCP6'; // Mot de passe API
+        $signature = 'AFcWxV21C7fd0v3bYYYRCpSSRl31A3LeItrytN1I6H2pPfGwOsNkZR96'; // Signature de l'API
+
+        $api_paypal = $api_paypal.'VERSION='.$version.'&USER='.$user.'&PWD='.$pass.'&SIGNATURE='.$signature; // Ajoute tous les paramètres
+
+        return 	$api_paypal; // Renvoie la chaîne contenant tous nos paramètres.
+    }
+
+
+    function recup_param_paypal($resultat_paypal)
+    {
+        $liste_parametres = explode("&",$resultat_paypal); // Crée un tableau de paramètres
+        foreach($liste_parametres as $param_paypal) // Pour chaque paramètre
+        {
+            list($nom, $valeur) = explode("=", $param_paypal); // Sépare le nom et la valeur
+            $liste_param_paypal[$nom]=urldecode($valeur); // Crée l'array final
+        }
+        return $liste_param_paypal; // Retourne l'array
+    }
+
+
+    /**
      * Lists all advert entities.
      *
      * @Route("/listAjax", name="list_ajax")

@@ -2,32 +2,11 @@
 
 {% block body %}
 
-<div class="grid col-md-12" style="margin-top: 3%; background: #F5F5F5; padding: 0;">
+<div class="grid col-md-12" style="margin-top: 3%; /*background: #F5F5F5;*/ padding: 0;">
 
-    <div class="account-header">
-        <span>Tableau de bord</span>
-        <span>Wishlist</span>
-    </div>
-
-    <style>
-        .account-header span {
-            margin-right: 30px;
-            margin-left: 30px;
-            color: #fff;
-        }
-
-        .account-header {
-            padding: 20px;
-            text-align: center;
-            background: #00457c;
-        }
-
-    </style>
-
+    {% include("UserBundle:Default:monEspaceHeader.html.twig") %}
 
     <h2 class="col-lg-12 text-center">Mon tableau de bord</h2>
-
-    {{ dump(app.user) }}
 
     <div class="col-lg-6" style="height: 100px;">
 
@@ -53,12 +32,65 @@
         </div>
 
         <div class="col-lg-12">
-            toto
+
+
+            <div class="title col-lg-12">Mes ventes</div>
+            <div class="col-lg-12 content" style="height: 100px;">
+                <div class="col-lg-12">
+
+                    <span class="col-lg-12 text-center" style="margin-bottom: 4%">Vous n'avez pas encore posté d'annonce</span>
+
+                    <span class="col-lg-12 text-center">
+                        <a href="" class="post-advert">
+                            Poster une annonce
+                        </a>
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
         </div>
 
     </div>
 
-    <div class="col-lg-6" style="height: 100px; background: yellow">
+    <div class="col-lg-6" style="">
+
+
+        <div class="title col-lg-12">Suivi de ma commande</div>
+        <div class="col-lg-12 content" style="height: 100px;">
+            <div class="col-lg-12">
+
+                <span class="col-lg-12 text-center">
+
+                    Ma derniere réservation : {{ advert.carModel }}
+
+                    {% if advert.expertise %}
+                        L'expertise à déja été demandée.
+                    {% else %}
+                        <a href="{{ path('ask_expertise', { 'id' : advert.id }) }}">Demander une expertise</a>
+                        <br>
+                    {% endif %}
+                    <a href="{{ path('payment', {'id' : advert.id }) }}">Effectuer directement le payement</a>
+
+
+                </span>
+
+                <span class="col-lg-12 text-center">
+
+
+
+                </span>
+
+            </div>
+
+
+        </div>
+
+
+
 
     </div>
 
@@ -68,6 +100,13 @@
         .title{
             background: #00457c;
             color: #FFFFFF;
+            padding-bottom: 3%;
+            padding-top: 3%;
+        }
+
+        .post-advert{
+            padding: 3%;
+            border: 1px #337ab7 solid;
         }
 
         .myInformation-block{

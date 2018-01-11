@@ -39,6 +39,12 @@ class Expertise
 
     private $status;
 
+    /**
+     * Many Features have One Product.
+     * @ORM\ManyToOne(targetEntity="UserBundle\Entity\User", inversedBy="expertises")
+     * @JoinColumn(name="user_id", referencedColumnName="id")
+     */
+    private $expertisedBy;
 
     /**
      * @var string

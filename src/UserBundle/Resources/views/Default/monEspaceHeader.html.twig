@@ -1,0 +1,35 @@
+<div class="account-header">
+    <span>
+        <a href="{{ path('monEspace') }}">
+            Tableau de bord
+        </a>
+    </span>
+    <span>Wishlist</span>
+    {% if is_granted('ROLE_ADMIN') or is_granted('ROLE_EXPERT') %}
+        <span>
+        <a href="{{ path('monEspaceExpertise') }}">
+            Expertise
+        </a>
+    </span>
+    {% endif %}
+
+</div>
+
+<style>
+    .account-header span {
+        margin-right: 30px;
+        margin-left: 30px;
+        color: #fff;
+    }
+
+    .account-header {
+        padding: 20px;
+        text-align: center;
+        background: #00457c;
+    }
+
+    .account-header span a{
+        color: inherit;
+    }
+
+</style>

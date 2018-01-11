@@ -16,6 +16,35 @@ use AdvertBundle\Entity\Advert;
 class ExpertiseController extends Controller
 {
 
+
+    /**
+     * Deletes a expertise entity.
+     *
+     * @Route("/expertise/accept/{id}", name="accept_expertise")
+     */
+    public function acceptAction(Request $request, Expertise $expertise)
+    {
+        $user = $this->getUser();
+
+        if ($user == null){
+            die;
+        }
+
+        if (!$this->get('security.authorization_checker')->isGranted('ROLE_ADMIN') && !$this->get('security.authorization_checker')->isGranted('ROLE_EXPERT')) {
+            die;
+        }
+
+        $em = $this->getDoctrine()->getManager();
+        $expertise->setStatus("accepted");
+        $expertise->setExpertisedBy($user);
+        $user->addExpertise($expertise);
+        $em->persist($expertise);
+        $em->persist($user);
+        $em->flush();
+
+        return $this->redirectToRoute('monEspaceExpertise');
+    }
+
     /**
      * @Route("/askExpertise/{id}", name="ask_expertise")
      * @Method("GET")
@@ -145,6 +174,11 @@ class ExpertiseController extends Controller
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
+
+            //TODO: Create and save the pdf
+            //TODO: status->finish
+            //TODO: Add pdf path to expertise entity
+
             return $this->redirectToRoute('expertise_edit', array('id' => $expertise->getId()));
         }
 
@@ -190,4 +224,5 @@ class ExpertiseController extends Controller
             ->getForm()
             ;
     }
+
 }

@@ -39,6 +39,12 @@ class User extends BaseUser
     private $reservedCar;
 
     /**
+     * One Product has Many Features.
+     * @OneToMany(targetEntity="AdvertBundle\Entity\Expertise", mappedBy="expertisedBy")
+     */
+    private $expertises;
+
+    /**
      * Get id
      *
      * @return int
@@ -114,5 +120,39 @@ class User extends BaseUser
     public function getReservedCar()
     {
         return $this->reservedCar;
+    }
+
+    /**
+     * Add expertise
+     *
+     * @param \AdvertBundle\Entity\Expertise $expertise
+     *
+     * @return User
+     */
+    public function addExpertise(\AdvertBundle\Entity\Expertise $expertise)
+    {
+        $this->expertises[] = $expertise;
+
+        return $this;
+    }
+
+    /**
+     * Remove expertise
+     *
+     * @param \AdvertBundle\Entity\Expertise $expertise
+     */
+    public function removeExpertise(\AdvertBundle\Entity\Expertise $expertise)
+    {
+        $this->expertises->removeElement($expertise);
+    }
+
+    /**
+     * Get expertises
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getExpertises()
+    {
+        return $this->expertises;
     }
 }

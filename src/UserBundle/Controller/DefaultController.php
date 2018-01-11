@@ -159,12 +159,49 @@ class DefaultController extends Controller
 
         $em = $this->getDoctrine()->getManager();
 
+        $advert = $em->getRepository('AdvertBundle:Advert')->findOneByReservedBy($user);
         $adverts = $em->getRepository('AdvertBundle:Advert')->findByReservedBy($user);
 
         return $this->render('UserBundle:Default:monEspace.html.twig',array(
             'adverts'=> $adverts,
+            'advert'=> $advert,
         ));
     }
+
+    /**
+     *
+     * @Route("/mon-espace/expertise", name="monEspaceExpertise")
+     * @Method("GET")
+     */
+    public function monEspaceExpertiseAction()
+    {
+
+        $user = $this->getUser();
+
+        if ($user == null){
+            die;
+        }
+
+        if (!$this->get('security.authorization_checker')->isGranted('ROLE_ADMIN') && !$this->get('security.authorization_checker')->isGranted('ROLE_EXPERT')) {
+            die;
+        }
+
+        $em = $this->getDoctrine()->getManager();
+
+        $allAskedExpertises = $em->getRepository('AdvertBundle:Expertise')->findByStatus("ask");
+        $allAcceptedExpertises = $em->getRepository('AdvertBundle:Expertise')->findBy(array(
+            'status' =>'accepted',
+             'expertisedBy' => $user
+            )
+        );
+
+        return $this->render('UserBundle:Default:monEspaceExpertise.html.twig',array(
+            'allAskedExpertises'=> $allAskedExpertises,
+            'allAcceptedExpertises'=> $allAcceptedExpertises,
+        ));
+    }
+
+
 
 
 }
