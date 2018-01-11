@@ -216,11 +216,8 @@ class AdvertController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $adverts = $em->getRepository('AdvertBundle:Advert')->findByMarque($filters);
-        $html = $this->renderView('AdvertBundle:Advert:listCards.html.twig',array(
+        return $this->render('AdvertBundle:Advert:listCards.html.twig',array(
             'adverts'=> $adverts,
         ));
-        return new JsonResponse([
-            'html' => $html
-        ]);
     }
 }

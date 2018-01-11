@@ -146,7 +146,7 @@
                 url: "{{ path('list_ajax') }}",
                 data: {filter:filters['marque']},
                 success: function (data, dataType) {
-                    $('.cars').html(data.html)
+                    $('.cars').html(data)
                 },
 
                 error: function (XMLHttpRequest, textStatus, errorThrown) {
