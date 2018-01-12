@@ -10,6 +10,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use UserBundle\Entity\Buying;
 
 /**
  * Advert controller.
@@ -286,28 +287,6 @@ class AdvertController extends Controller
 
     /**
      *
-     * @Route("/toto/success", name="success")
-     */
-    public function successAction()
-    {
-        echo "success";die;
-
-    }
-
-    /**
-     *
-     * @Route("/toto/error", name="error")
-     */
-    public function errorAction()
-    {
-        echo "error";die;
-
-    }
-
-
-
-    /**
-     *
      * @Route("/payment/{id}/{params}", name="payment")
      * @Method({"GET", "POST"})
      */
@@ -337,6 +316,8 @@ class AdvertController extends Controller
 
         $token = $request->request->get('stripeToken');
         $advertId = $request->request->get('advertId');
+        $type = $request->request->get('type');
+        $user = $this->getUser();
 
         $em = $this->getDoctrine()->getManager();
 
@@ -349,7 +330,18 @@ class AdvertController extends Controller
             "description" => "Payement de " . $advert->getCarModel()
         ));
 
-        
+        $buying = new Buying();
+        $buying->setAdvert($advert);
+        $buying->setUser($user);
+        $buying->setDate(new \DateTime());
+        $buying->setType($type);
+
+        $em->persist($buying);
+        $em->flush();
+
+        return $this->render('AdvertBundle:Payement:listCards.html.twig',array(
+            'advert'=> $advert,
+        ));
 
         echo("payement effectué");
         die;

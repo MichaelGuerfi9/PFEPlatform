@@ -22,7 +22,7 @@
                     <div id="card-errors" role="alert"></div>
                 </div>
 
-                <button>Submit Payment</button>
+                <button>Effectué le payement</button>
             </form>
 
         </div>
@@ -108,6 +108,12 @@
             hiddenInput2.setAttribute('name', 'advertId');
             hiddenInput2.setAttribute('value', {{ advert.id }});
             form.appendChild(hiddenInput2);
+
+            var hiddenInput3 = document.createElement('input');
+            hiddenInput3.setAttribute('type', 'hidden');
+            hiddenInput3.setAttribute('name', 'type');
+            hiddenInput3.setAttribute('value', "expertise");
+            form.appendChild(hiddenInput3);
 
             // Submit the form
             form.submit();
