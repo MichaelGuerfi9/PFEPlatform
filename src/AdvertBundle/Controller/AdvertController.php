@@ -205,6 +205,86 @@ class AdvertController extends Controller
 
 
     /**
+     * Lists all advert entities.
+     *
+     * @Route("/addFav", name="addFav")
+     * @Method("POST")
+     */
+    public function addFavAction(Request $request)
+    {
+
+        $em = $this->getDoctrine()->getManager();
+
+        $id = $request->request->get('id');
+
+        $advert = $em->getRepository('AdvertBundle:Advert')->find($id);
+
+        if ($advert == null){
+            $this->getResponse()->setStatusCode('404');
+        }
+
+        //var_dump($advert);
+
+        //return json_encode($advert);
+
+        $user = $this->getUser();
+
+        if ($user == null){
+            $this->getResponse()->setStatusCode('404');
+        }
+
+        $user->addFavoriteAdvert($advert);
+        $em->persist($user);
+        $em->flush();
+
+        return new JsonResponse(array(
+            'message' => "success"
+            ));
+
+
+    }
+
+    /**
+     * Lists all advert entities.
+     *
+     * @Route("/deleteFav", name="deleteFav")
+     * @Method("POST")
+     */
+    public function deleteFavAction(Request $request)
+    {
+
+        $em = $this->getDoctrine()->getManager();
+
+        $id = $request->request->get('id');
+
+        $advert = $em->getRepository('AdvertBundle:Advert')->find($id);
+
+        if ($advert == null){
+            $this->getResponse()->setStatusCode('404');
+        }
+
+        //var_dump($advert);
+
+        //return json_encode($advert);
+
+        $user = $this->getUser();
+
+        if ($user == null){
+            $this->getResponse()->setStatusCode('404');
+        }
+
+        $user->removeFavoriteAdvert($advert);
+        $em->persist($user);
+        $em->flush();
+
+        return new JsonResponse(array(
+            'message' => "success"
+        ));
+
+
+    }
+
+    /**
      *
      * @Route("/toto/success", name="success")
      */

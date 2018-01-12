@@ -77,11 +77,17 @@ class Profil
      */
     private $zipCode;
 
-
     /**
-     * @ORM\OneToOne(targetEntity="UserBundle\Entity\User", cascade={"persist"})
+     * @var \UserBundle\Entity\User
+     * @ORM\OneToOne(targetEntity="User", inversedBy="profil",cascade={"persist"})
+     *
      */
     private $user;
+
+    /*
+     * @ORM\OneToOne(targetEntity="UserBundle\Entity\User", cascade={"persist"})
+       private $user;
+    */
 
 
     /**

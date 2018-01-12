@@ -148,7 +148,7 @@ class DefaultController extends Controller
      * @Route("/mon-espace", name="monEspace")
      * @Method("GET")
      */
-    public function monEspaceAction()
+    public function monEspaceAction(Request $request)
     {
 
         $user = $this->getUser();
@@ -156,6 +156,27 @@ class DefaultController extends Controller
         if ($user == null){
             die;
         }
+
+        $profil = $user->getProfil();
+
+
+        $form = $this->createFormBuilder($profil)
+            ->add('firstName', TextType::class)
+            ->add('lastName', TextType::class)
+            ->add('cellphone', TextType::class)
+            ->add('adress', TextType::class)
+            ->add('country', TextType::class)
+            ->add('gender', TextType::class)
+            ->add('city', TextType::class)
+            ->add('zip_code', TextType::class)
+            //->add('password', PasswordType::class)
+            ->add('save', SubmitType::class, array('label' => 'Editer le profil'))
+            ->getForm();
+
+        $form->handleRequest($request);
+
+        //$form = $this->createForm('UserBundle\Form\UserType', $user);
+        $form->handleRequest($request);
 
         $em = $this->getDoctrine()->getManager();
 

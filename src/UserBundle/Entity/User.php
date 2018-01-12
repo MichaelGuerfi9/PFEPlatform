@@ -45,6 +45,13 @@ class User extends BaseUser
     private $expertises;
 
     /**
+     * @var \UserBundle\Entity\Profil
+     * @ORM\OneToOne(targetEntity="Profil", mappedBy="user")
+     *
+     */
+    private $profil;
+
+    /**
      * Get id
      *
      * @return int
@@ -154,5 +161,29 @@ class User extends BaseUser
     public function getExpertises()
     {
         return $this->expertises;
+    }
+
+    /**
+     * Set profil
+     *
+     * @param \UserBundle\Entity\Profil $profil
+     *
+     * @return User
+     */
+    public function setProfil(\UserBundle\Entity\Profil $profil = null)
+    {
+        $this->profil = $profil;
+
+        return $this;
+    }
+
+    /**
+     * Get profil
+     *
+     * @return \UserBundle\Entity\Profil
+     */
+    public function getProfil()
+    {
+        return $this->profil;
     }
 }
