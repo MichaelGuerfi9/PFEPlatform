@@ -53,6 +53,13 @@ class Buying
      */
     private $type;
 
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="amount", type="integer")
+     */
+    private $amount;
+
 
     /**
      * Get id
@@ -158,5 +165,29 @@ class Buying
     public function getAdvert()
     {
         return $this->advert;
+    }
+
+    /**
+     * Set amount
+     *
+     * @param integer $amount
+     *
+     * @return Buying
+     */
+    public function setAmount($amount)
+    {
+        $this->amount = $amount;
+
+        return $this;
+    }
+
+    /**
+     * Get amount
+     *
+     * @return integer
+     */
+    public function getAmount()
+    {
+        return $this->amount;
     }
 }

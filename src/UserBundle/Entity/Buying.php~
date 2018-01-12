@@ -53,6 +53,13 @@ class Buying
      */
     private $type;
 
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="amount", type="integer")
+     */
+    private $amount;
+
 
     /**
      * Get id
@@ -111,5 +118,52 @@ class Buying
     {
         return $this->type;
     }
-}
 
+    /**
+     * Set user
+     *
+     * @param \UserBundle\Entity\User $user
+     *
+     * @return Buying
+     */
+    public function setUser(\UserBundle\Entity\User $user = null)
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * Get user
+     *
+     * @return \UserBundle\Entity\User
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+
+    /**
+     * Set advert
+     *
+     * @param \AdvertBundle\Entity\Advert $advert
+     *
+     * @return Buying
+     */
+    public function setAdvert(\AdvertBundle\Entity\Advert $advert = null)
+    {
+        $this->advert = $advert;
+
+        return $this;
+    }
+
+    /**
+     * Get advert
+     *
+     * @return \AdvertBundle\Entity\Advert
+     */
+    public function getAdvert()
+    {
+        return $this->advert;
+    }
+}

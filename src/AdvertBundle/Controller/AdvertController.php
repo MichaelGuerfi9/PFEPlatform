@@ -335,6 +335,7 @@ class AdvertController extends Controller
         $buying->setUser($user);
         $buying->setDate(new \DateTime());
         $buying->setType($type);
+        $buying->setAmount($advert->getPrice());
 
         $em->persist($buying);
         $em->flush();

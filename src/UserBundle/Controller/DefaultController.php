@@ -211,14 +211,67 @@ class DefaultController extends Controller
 
         $allAskedExpertises = $em->getRepository('AdvertBundle:Expertise')->findByStatus("ask");
         $allAcceptedExpertises = $em->getRepository('AdvertBundle:Expertise')->findBy(array(
-            'status' =>'accepted',
-             'expertisedBy' => $user
+                'status' =>'accepted',
+                'expertisedBy' => $user
             )
         );
 
         return $this->render('UserBundle:Default:monEspaceExpertise.html.twig',array(
             'allAskedExpertises'=> $allAskedExpertises,
             'allAcceptedExpertises'=> $allAcceptedExpertises,
+        ));
+    }
+
+
+    /**
+     *
+     * @Route("/mesAchats", name="mesAchats")
+     * @Method("GET")
+     */
+    public function mesAchatsAction()
+    {
+
+        $user = $this->getUser();
+
+        if ($user == null){
+            die;
+        }
+
+        $em = $this->getDoctrine()->getManager();
+
+        $buyings = $em->getRepository('UserBundle:Buying')->findBy(array(
+                'user' => $user
+            )
+        );
+
+        return $this->render('UserBundle:Default:monEspaceBuying.html.twig',array(
+            'buyings'=> $buyings,
+        ));
+    }
+
+    /**
+     *
+     * @Route("/Wishlist", name="wishlist")
+     * @Method("GET")
+     */
+    public function wishlistAction()
+    {
+
+        $user = $this->getUser();
+
+        if ($user == null){
+            die;
+        }
+
+        $em = $this->getDoctrine()->getManager();
+
+        $buyings = $em->getRepository('UserBundle:Buying')->findBy(array(
+                'user' => $user
+            )
+        );
+
+        return $this->render('UserBundle:Default:monEspaceBuying.html.twig',array(
+            'buyings'=> $buyings,
         ));
     }
 

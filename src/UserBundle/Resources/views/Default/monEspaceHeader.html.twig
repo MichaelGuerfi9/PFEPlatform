@@ -4,7 +4,16 @@
             Tableau de bord
         </a>
     </span>
-    <span>Wishlist</span>
+    <span>
+        <a href="{{ path('wishlist') }}">
+            Wishlist
+        </a>
+    </span>
+    <span>
+        <a href="{{ path('mesAchats') }}">
+            Mes achats
+        </a>
+    </span>
     {% if is_granted('ROLE_ADMIN') or is_granted('ROLE_EXPERT') %}
         <span>
         <a href="{{ path('monEspaceExpertise') }}">

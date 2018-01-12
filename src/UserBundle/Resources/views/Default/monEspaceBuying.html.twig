@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <div class="grid col-md-12" style="margin-top: 3%; /*background: #F5F5F5;*/ padding: 0;">
+
+    {% include("UserBundle:Default:monEspaceHeader.html.twig") %}
+
+
+    <h2 class="col-lg-12 text-center">Historique d'achat</h2>
+
+    <div class="col-lg-6" style="/*height: 100px;*/">
+
+        {% for buying in buyings %}
+
+            <div class="col-lg-4">
+                <img src="{{ buying.advert.imageUrl }}" alt="" style="width: 100%">
+            </div>
+
+            <div class="col-lg-8">
+                <span>
+                    {{ buying.type }} de {{ buying.advert.carModel }}
+                </span>
+                    <br>
+                    <span>
+                    {{ buying.amount }} €
+                </span>
+                <br>
+                <a href="">
+                    <button>Voir le pdf</button>
+                </a>
+                <br>
+                <a href="{{ path('advert_show', { 'id': buying.advert.id }) }}">
+                    <button>Voir l'annonce</button>
+                </a>
+            </div>
+
+            <hr class="col-lg-12">
+
+
+        {% endfor %}
+
+    </div>
+
+
+    </div>
+
+{% endblock %}
