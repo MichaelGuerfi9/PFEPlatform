@@ -11,8 +11,6 @@
 
     <div class="col-lg-12" style="/*height: 100px;*/">
 
-        {{ dump(app.user.favoriteAdvert) }}
-
         {% include("AdvertBundle:Advert:listCards.html.twig") with {'adverts': app.user.favoriteAdvert}  %}
 
         {#
@@ -51,5 +49,42 @@
 
 
     </div>
+
+
+    <script>
+
+        $('.add-fav').on('click', function(event) {
+            event.preventDefault();
+
+        if ($(this).hasClass("add-fav")) {
+            var url = "{{ path("deleteFav") }}";
+            $(this).removeClass('add-fav');
+        }else {
+             var url = "{{ path("addFav") }}";
+             $(this).addClass('add-fav');
+         }
+
+        /* Act on the event */
+
+        var idSelector = "#"+$(this)[0].dataset.id;
+
+        $.ajax({
+        method: "POST",
+        url: url,
+        data: { id: $(this)[0].dataset.id }
+
+        })
+        .done(function( data ) {
+            console.log(data);
+            $(idSelector).remove();
+        //alert( "Data Saved: " + data );
+        })
+        .fail(function() {
+        alert( "error" );
+        })
+
+        });
+
+    </script>
 
 {% endblock %}
