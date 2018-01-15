@@ -270,8 +270,10 @@ class DefaultController extends Controller
             )
         );
 
-        return $this->render('UserBundle:Default:monEspaceBuying.html.twig',array(
-            'buyings'=> $buyings,
+        $favorite = $user->getFavoriteAdvert();
+
+        return $this->render('UserBundle:Default:monEspaceWhishlist.html.twig',array(
+            'favorite'=> $favorite,
         ));
     }
 
