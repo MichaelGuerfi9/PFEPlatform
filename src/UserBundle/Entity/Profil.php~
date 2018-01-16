@@ -59,13 +59,6 @@ class Profil
     /**
      * @var string
      *
-     * @ORM\Column(name="gender", type="string", length=255)
-     */
-    private $gender;
-
-    /**
-     * @var string
-     *
      * @ORM\Column(name="city", type="string", length=255)
      */
     private $city;

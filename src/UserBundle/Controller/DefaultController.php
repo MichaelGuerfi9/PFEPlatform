@@ -63,7 +63,6 @@ class DefaultController extends Controller
             ->add('cellphone', TextType::class)
             ->add('adress', TextType::class)
             ->add('country', TextType::class)
-            ->add('gender', TextType::class)
             ->add('city', TextType::class)
             ->add('zip_code', TextType::class)
             //->add('password', PasswordType::class)
@@ -146,7 +145,6 @@ class DefaultController extends Controller
     /**
      *
      * @Route("/mon-espace", name="monEspace")
-     * @Method("GET")
      */
     public function monEspaceAction(Request $request)
     {
@@ -159,14 +157,12 @@ class DefaultController extends Controller
 
         $profil = $user->getProfil();
 
-
         $form = $this->createFormBuilder($profil)
             ->add('firstName', TextType::class)
             ->add('lastName', TextType::class)
             ->add('cellphone', TextType::class)
             ->add('adress', TextType::class)
             ->add('country', TextType::class)
-            ->add('gender', TextType::class)
             ->add('city', TextType::class)
             ->add('zip_code', TextType::class)
             //->add('password', PasswordType::class)
@@ -175,10 +171,18 @@ class DefaultController extends Controller
 
         $form->handleRequest($request);
 
-        //$form = $this->createForm('UserBundle\Form\UserType', $user);
-        $form->handleRequest($request);
-
         $em = $this->getDoctrine()->getManager();
+
+        if ($form->isSubmitted() && $form->isValid()) {
+
+            $profil = $form->getData();
+            $profil->setUser($user);
+
+            $em->persist($profil);
+            $em->flush();
+        }
+
+        //$form = $this->createForm('UserBundle\Form\UserType', $user);
 
         $advert = $em->getRepository('AdvertBundle:Advert')->findOneByReservedBy($user);
         $adverts = $em->getRepository('AdvertBundle:Advert')->findByReservedBy($user);
@@ -186,6 +190,7 @@ class DefaultController extends Controller
         return $this->render('UserBundle:Default:monEspace.html.twig',array(
             'adverts'=> $adverts,
             'advert'=> $advert,
+            'form' => $form->createView(),
         ));
     }
 

@@ -10,35 +10,79 @@
 
     <div class="col-lg-6" style="height: 100px;">
 
+        {{ dump(app.user.profil) }}
+
         <div class="col-lg-12 myInformation-block">
             <div class="title col-lg-12">Mes informations</div>
-            <div class="col-lg-12 content" style="height: 100px;">
-                <div class="col-lg-6">
-                    <span class="col-lg-6">
-                        {{ app.user.username }}
+            <div class="col-lg-12 content" style="/*height: 100px;*/">
+
+                <style>
+                    input{
+                        width: 100%;
+                    }
+                </style>
+
+                <div class="col-lg-8">
+                    {{ form_start(form, {'attr': {'class': '' , 'enctype': 'multipart/form-data'}}) }}
+
+                    <span class="col-lg-5">
+                        <!--
+                        <input type="text" placeholder="prénom">
+                        -->
+                        {{ form_widget(form.firstName, {'attr': {'class': 'form-control' }}) }}
+
                     </span>
-                    <span class="col-lg-6">
-                        {{ app.user.username }}
+                    <span class="col-lg-5">
+                        <!--
+                        <input type="text" placeholder="nom">
+                        -->
+                        {{ form_widget(form.lastName, {'attr': {'class': 'form-control' }}) }}
                     </span>
-                    <br>
-                    <span class="col-lg-6">
-                        {{ app.user.username }}
+
+                    <span class="col-lg-10">
+                        <!--
+                        <input type="text" placeholder="adresse">
+                        -->
+                        {{ form_widget(form.adress, {'attr': {'class': 'form-control' }}) }}
                     </span>
-                    <br>
-                    <span class="col-lg-6">
-                        {{ app.user.username }}
+
+                    <span class="col-lg-5">
+                        <!--
+                        <input type="text" placeholder="cp">
+                        -->
+                        {{ form_widget(form.zip_code, {'attr': {'class': 'form-control' }}) }}
                     </span>
-                    <span class="col-lg-6">
-                        {{ app.user.username }}
+                    <span class="col-lg-5">
+                        <!--
+                        <input type="text" placeholder="ville">
+                        -->
+                        {{ form_widget(form.city, {'attr': {'class': 'form-control' }}) }}
                     </span>
-                    <br>
-                    <span class="col-lg-6">
-                        {{ app.user.username }}
+
+                    <span class="col-lg-5">
+                        <!--
+                        <input type="text" placeholder="email">
+                        -->
+                        {{ form_widget(form.cellphone, {'attr': {'class': 'form-control' }}) }}
                     </span>
+                    <span class="col-lg-5">
+                        <!--
+                        <input type="text" placeholder="email">
+                        -->
+                        {{ form_widget(form.country, {'attr': {'class': 'form-control' }}) }}
+                    </span>
+
+                    <button type="submit" class="col-lg-6">
+                        Editer mes informations
+                    </button>
+
+                    {{ form_widget(form._token) }}
+                    {{ form_errors(form) }}
+                    {{ form_end(form, {'render_rest': false}) }}
 
                 </div>
 
-                <div class="col-lg-6">
+                <div class="col-lg-4">
                    Change password
                 </div>
 
