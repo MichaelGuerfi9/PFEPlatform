@@ -63,7 +63,6 @@ class DefaultController extends Controller
             ->add('cellphone', TextType::class)
             ->add('adress', TextType::class)
             ->add('country', TextType::class)
-            ->add('gender', TextType::class)
             ->add('city', TextType::class)
             ->add('zip_code', TextType::class)
             //->add('password', PasswordType::class)
@@ -146,9 +145,8 @@ class DefaultController extends Controller
     /**
      *
      * @Route("/mon-espace", name="monEspace")
-     * @Method("GET")
      */
-    public function monEspaceAction()
+    public function monEspaceAction(Request $request)
     {
 
         $user = $this->getUser();
@@ -157,7 +155,34 @@ class DefaultController extends Controller
             die;
         }
 
+        $profil = $user->getProfil();
+
+        $form = $this->createFormBuilder($profil)
+            ->add('firstName', TextType::class)
+            ->add('lastName', TextType::class)
+            ->add('cellphone', TextType::class)
+            ->add('adress', TextType::class)
+            ->add('country', TextType::class)
+            ->add('city', TextType::class)
+            ->add('zip_code', TextType::class)
+            //->add('password', PasswordType::class)
+            ->add('save', SubmitType::class, array('label' => 'Editer le profil'))
+            ->getForm();
+
+        $form->handleRequest($request);
+
         $em = $this->getDoctrine()->getManager();
+
+        if ($form->isSubmitted() && $form->isValid()) {
+
+            $profil = $form->getData();
+            $profil->setUser($user);
+
+            $em->persist($profil);
+            $em->flush();
+        }
+
+        //$form = $this->createForm('UserBundle\Form\UserType', $user);
 
         $advert = $em->getRepository('AdvertBundle:Advert')->findOneByReservedBy($user);
         $adverts = $em->getRepository('AdvertBundle:Advert')->findByReservedBy($user);
@@ -165,6 +190,7 @@ class DefaultController extends Controller
         return $this->render('UserBundle:Default:monEspace.html.twig',array(
             'adverts'=> $adverts,
             'advert'=> $advert,
+            'form' => $form->createView(),
         ));
     }
 
@@ -190,14 +216,69 @@ class DefaultController extends Controller
 
         $allAskedExpertises = $em->getRepository('AdvertBundle:Expertise')->findByStatus("ask");
         $allAcceptedExpertises = $em->getRepository('AdvertBundle:Expertise')->findBy(array(
-            'status' =>'accepted',
-             'expertisedBy' => $user
+                'status' =>'accepted',
+                'expertisedBy' => $user
             )
         );
 
         return $this->render('UserBundle:Default:monEspaceExpertise.html.twig',array(
             'allAskedExpertises'=> $allAskedExpertises,
             'allAcceptedExpertises'=> $allAcceptedExpertises,
+        ));
+    }
+
+
+    /**
+     *
+     * @Route("/mesAchats", name="mesAchats")
+     * @Method("GET")
+     */
+    public function mesAchatsAction()
+    {
+
+        $user = $this->getUser();
+
+        if ($user == null){
+            die;
+        }
+
+        $em = $this->getDoctrine()->getManager();
+
+        $buyings = $em->getRepository('UserBundle:Buying')->findBy(array(
+                'user' => $user
+            )
+        );
+
+        return $this->render('UserBundle:Default:monEspaceBuying.html.twig',array(
+            'buyings'=> $buyings,
+        ));
+    }
+
+    /**
+     *
+     * @Route("/Wishlist", name="wishlist")
+     * @Method("GET")
+     */
+    public function wishlistAction()
+    {
+
+        $user = $this->getUser();
+
+        if ($user == null){
+            die;
+        }
+
+        $em = $this->getDoctrine()->getManager();
+
+        $buyings = $em->getRepository('UserBundle:Buying')->findBy(array(
+                'user' => $user
+            )
+        );
+
+        $favorite = $user->getFavoriteAdvert();
+
+        return $this->render('UserBundle:Default:monEspaceWhishlist.html.twig',array(
+            'favorite'=> $favorite,
         ));
     }
 

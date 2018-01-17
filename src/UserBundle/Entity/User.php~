@@ -45,6 +45,13 @@ class User extends BaseUser
     private $expertises;
 
     /**
+     * @var \UserBundle\Entity\Profil
+     * @ORM\OneToOne(targetEntity="Profil", mappedBy="user")
+     *
+     */
+    private $profil;
+
+    /**
      * Get id
      *
      * @return int
@@ -120,5 +127,63 @@ class User extends BaseUser
     public function getReservedCar()
     {
         return $this->reservedCar;
+    }
+
+    /**
+     * Add expertise
+     *
+     * @param \AdvertBundle\Entity\Expertise $expertise
+     *
+     * @return User
+     */
+    public function addExpertise(\AdvertBundle\Entity\Expertise $expertise)
+    {
+        $this->expertises[] = $expertise;
+
+        return $this;
+    }
+
+    /**
+     * Remove expertise
+     *
+     * @param \AdvertBundle\Entity\Expertise $expertise
+     */
+    public function removeExpertise(\AdvertBundle\Entity\Expertise $expertise)
+    {
+        $this->expertises->removeElement($expertise);
+    }
+
+    /**
+     * Get expertises
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getExpertises()
+    {
+        return $this->expertises;
+    }
+
+    /**
+     * Set profil
+     *
+     * @param \UserBundle\Entity\Profil $profil
+     *
+     * @return User
+     */
+    public function setProfil(\UserBundle\Entity\Profil $profil = null)
+    {
+        $this->profil = $profil;
+
+        return $this;
+    }
+
+    /**
+     * Get profil
+     *
+     * @return \UserBundle\Entity\Profil
+     */
+    public function getProfil()
+    {
+        return $this->profil;
     }
 }

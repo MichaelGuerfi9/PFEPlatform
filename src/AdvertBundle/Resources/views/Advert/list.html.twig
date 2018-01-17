@@ -43,7 +43,7 @@
                 <img class="card-img-top" src="{{ advert.imageUrl }}" style="width: 100%; height: auto;border-top-right-radius: 5%;border-top-left-radius: 5%;">
                 <div class="card-block" style="padding: 20px;">
                     <span style="position: absolute;height: 35px;width: 3px;background-color: #1a7bd3;left: 0;bottom: 85px;"></span>
-                    <h4 class="card-title" style="vertical-align: middle">{{ advert.carModel|upper }} <span style="float: right "><img style="height: 18px;" src="{{ asset("img/heart.png") }}" alt="like"></span> </h4>
+                    <h4 class="card-title" style="vertical-align: middle">{{ advert.carModel|upper }} <span style="float: right "><img style="height: 18px;" src="{{ asset("img/heart.png") }}" alt="like" data-id="{{ advert.id }}" class="add-fav"></span> </h4>
                     <div class="meta">
                         {{ advert.description|slice(0, 50) ~ '...' }}
                     </div>
@@ -155,5 +155,38 @@
 
             })
         });
+
+
+        $('.add-fav').on('click', function(event) {
+            event.preventDefault();
+
+            if ($(this).hasClass("add-fav")) {
+                var url = "{{ path("deleteFav") }}";
+                $(this).removeClass('add-fav');
+            }else {
+                var url = "{{ path("addFav") }}";
+                $(this).addClass('add-fav');
+            }
+
+
+            /* Act on the event */
+
+            $.ajax({
+                method: "POST",
+                url: url,
+                data: { id: $(this)[0].dataset.id }
+
+            })
+                .done(function( data ) {
+                    console.log(data);
+                    //alert( "Data Saved: " + data );
+                })
+                .fail(function() {
+                    alert( "error" );
+                })
+
+        });
+
+
     </script>
 {% endblock %}
