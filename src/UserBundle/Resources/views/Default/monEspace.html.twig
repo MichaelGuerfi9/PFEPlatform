@@ -10,8 +10,6 @@
 
     <div class="col-lg-6" style="height: 100px;">
 
-        {{ dump(app.user.profil) }}
-
         <div class="col-lg-12 myInformation-block">
             <div class="title col-lg-12">Mes informations</div>
             <div class="col-lg-12 content" style="/*height: 100px;*/">
@@ -22,7 +20,7 @@
                     }
                 </style>
 
-                <div class="col-lg-8">
+                <div class="col-lg-7">
                     {{ form_start(form, {'attr': {'class': '' , 'enctype': 'multipart/form-data'}}) }}
 
                     <span class="col-lg-5">
@@ -72,9 +70,11 @@
                         {{ form_widget(form.country, {'attr': {'class': 'form-control' }}) }}
                     </span>
 
-                    <button type="submit" class="col-lg-6">
-                        Editer mes informations
-                    </button>
+                    <div class="col-lg-10">
+                        <input type="submit" value="Editer mes informations" />
+                    </div>
+
+
 
                     {{ form_widget(form._token) }}
                     {{ form_errors(form) }}
@@ -82,8 +82,49 @@
 
                 </div>
 
-                <div class="col-lg-4">
-                   Change password
+                <div class="col-lg-5">
+
+                    <div class="col-lg-12">Changer de password</div>
+
+                    {{ form_start(formChangePassword, { 'attr': { 'class': 'fos_user_change_password' } }) }}
+
+                    <span class="col-lg-12">
+                        {{ form_widget(formChangePassword.current_password, { 'attr': {'class': 'form-control',  'placeholder': 'Votre ancien mot de passe'} }) }}
+                    </span>
+                    <span class="col-lg-12">
+                        {{ form_widget(formChangePassword.plainPassword.first, { 'attr': {'class': 'form-control', 'placeholder': 'Votre nouveau mot de passe'} }) }}
+                    </span>
+                    <span class="col-lg-12">
+                        {{ form_widget(formChangePassword.plainPassword.second, { 'attr': {'class': 'form-control', 'placeholder': 'Votre nouveau mot de passe'} }) }}
+                    </span>
+
+                    {{ form_widget(formChangePassword._token) }}
+
+                    <div class="col-lg-12">
+                        <input type="submit" value="Changer de password" />
+                    </div>
+                    {{ form_errors(formChangePassword) }}
+                    {{ form_end(formChangePassword, {'render_rest': false}) }}
+
+                    <script>
+
+                        $("#fos_user_change_password_form_plainPassword div label")[0].text = "";
+                        $("#fos_user_change_password_form_plainPassword div label")[1].text = "";
+
+                    </script>
+
+                    <!--
+                    <span class="col-lg-12">
+                        <input type="text">
+                    </span>
+                    <span class="col-lg-12">
+                        <input type="text">
+                    </span>
+                    <span class="col-lg-12">
+                        <input type="text">
+                    </span>
+                    -->
+
                 </div>
 
             </div>

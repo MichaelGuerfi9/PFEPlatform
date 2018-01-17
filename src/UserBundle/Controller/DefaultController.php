@@ -14,6 +14,18 @@ use Symfony\Component\HttpFoundation\Request;
 use AdvertBundle\Entity\Advert;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 
+use FOS\UserBundle\Event\FilterUserResponseEvent;
+use FOS\UserBundle\Event\FormEvent;
+use FOS\UserBundle\Event\GetResponseNullableUserEvent;
+use FOS\UserBundle\Event\GetResponseUserEvent;
+use FOS\UserBundle\FOSUserEvents;
+use FOS\UserBundle\Model\UserInterface;
+use FOS\UserBundle\Util\TokenGeneratorInterface;
+use Symfony\Component\EventDispatcher\EventDispatcherInterface;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+
 
 class DefaultController extends Controller
 {
@@ -182,6 +194,25 @@ class DefaultController extends Controller
             $em->flush();
         }
 
+
+
+        $dispatcher = $this->get('event_dispatcher');
+
+        $event = new GetResponseUserEvent($user, $request);
+        $dispatcher->dispatch(FOSUserEvents::CHANGE_PASSWORD_INITIALIZE, $event);
+
+        if (null !== $event->getResponse()) {
+            return $event->getResponse();
+        }
+
+
+        $formFactory = $this->get('fos_user.change_password.form.factory');
+
+        $formChangePassword = $formFactory->createForm();
+        $formChangePassword->setData($user);
+
+        $formChangePassword->handleRequest($request);
+
         //$form = $this->createForm('UserBundle\Form\UserType', $user);
 
         $advert = $em->getRepository('AdvertBundle:Advert')->findOneByReservedBy($user);
@@ -191,6 +222,7 @@ class DefaultController extends Controller
             'adverts'=> $adverts,
             'advert'=> $advert,
             'form' => $form->createView(),
+            'formChangePassword' => $formChangePassword->createView(),
         ));
     }
 
