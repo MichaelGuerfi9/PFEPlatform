@@ -194,8 +194,6 @@ class DefaultController extends Controller
             $em->flush();
         }
 
-
-
         $dispatcher = $this->get('event_dispatcher');
 
         $event = new GetResponseUserEvent($user, $request);
@@ -212,6 +210,26 @@ class DefaultController extends Controller
         $formChangePassword->setData($user);
 
         $formChangePassword->handleRequest($request);
+
+        if ($formChangePassword->isSubmitted() && $formChangePassword->isValid()) {
+            /** @var $userManager UserManagerInterface */
+            $userManager = $this->get('fos_user.user_manager');
+
+            $event = new FormEvent($form, $request);
+            $dispatcher->dispatch(FOSUserEvents::CHANGE_PASSWORD_SUCCESS, $event);
+
+            $userManager->updateUser($user);
+
+            if (null === $response = $event->getResponse()) {
+                $url = $this->generateUrl('fos_user_profile_show');
+                $response = new RedirectResponse($url);
+            }
+
+            $dispatcher->dispatch(FOSUserEvents::CHANGE_PASSWORD_COMPLETED, new FilterUserResponseEvent($user, $request, $response));
+
+            //return $response;
+            //Add flash message
+        }
 
         //$form = $this->createForm('UserBundle\Form\UserType', $user);
 

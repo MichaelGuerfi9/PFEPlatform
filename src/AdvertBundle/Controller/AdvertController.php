@@ -10,7 +10,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\JsonResponse;
-use UserBundle\Entity\Buying;
+use UserBundle\Entity\Buying;use Knp\Bundle\SnappyBundle\Snappy\Response\PdfResponse;
 
 /**
  * Advert controller.
@@ -298,6 +298,7 @@ class AdvertController extends Controller
         }
 
 
+
         $em = $this->getDoctrine()->getManager();
 
         return $this->render('AdvertBundle:Advert:payment.html.twig',array(
@@ -313,6 +314,13 @@ class AdvertController extends Controller
      */
     public function chargeAction(Request $request){
         \Stripe\Stripe::setApiKey("sk_test_mzzouXGudmDZATO4eu4RwatO");
+
+
+        $em = $this->getDoctrine()->getManager();
+        $toto = $em->getRepository('UserBundle:Buying')->find(1);
+
+        return $this->createPDFForAdvert($toto);
+        die;
 
         $token = $request->request->get('stripeToken');
         $advertId = $request->request->get('advertId');
@@ -344,9 +352,16 @@ class AdvertController extends Controller
             'advert'=> $advert,
         ));
 
-        echo("payement effectué");
-        die;
     }
+
+    public function createPDFForAdvert($buying){
+
+        return $this->render('AdvertBundle:Payement:bill.html.twig',array(
+            'buying'=> $buying,
+        ));
+
+    }
+
 
     /**
      * Lists all advert entities.
