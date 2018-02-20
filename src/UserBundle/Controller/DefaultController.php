@@ -192,6 +192,8 @@ class DefaultController extends Controller
 
             $em->persist($profil);
             $em->flush();
+            $this->addFlash("successProfile", "Information changé avec succes");
+
         }
 
         $dispatcher = $this->get('event_dispatcher');
@@ -228,7 +230,8 @@ class DefaultController extends Controller
             $dispatcher->dispatch(FOSUserEvents::CHANGE_PASSWORD_COMPLETED, new FilterUserResponseEvent($user, $request, $response));
 
             //return $response;
-            //Add flash message
+            $this->addFlash("successProfile", "Mot de passe changé avec succes");
+
         }
 
         //$form = $this->createForm('UserBundle\Form\UserType', $user);

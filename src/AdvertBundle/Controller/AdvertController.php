@@ -316,11 +316,9 @@ class AdvertController extends Controller
         \Stripe\Stripe::setApiKey("sk_test_mzzouXGudmDZATO4eu4RwatO");
 
 
-        $em = $this->getDoctrine()->getManager();
-        $toto = $em->getRepository('UserBundle:Buying')->find(1);
-
-        return $this->createPDFForAdvert($toto);
-        die;
+        //$em = $this->getDoctrine()->getManager();
+        //$toto = $em->getRepository('UserBundle:Buying')->find(1);
+        //return $this->createPDFForAdvert($toto);
 
         $token = $request->request->get('stripeToken');
         $advertId = $request->request->get('advertId');
@@ -348,6 +346,8 @@ class AdvertController extends Controller
         $em->persist($buying);
         $em->flush();
 
+        $this->createPDFForAdvert($buying);
+
         return $this->render('AdvertBundle:Payement:listCards.html.twig',array(
             'advert'=> $advert,
         ));
@@ -359,6 +359,8 @@ class AdvertController extends Controller
         return $this->render('AdvertBundle:Payement:bill.html.twig',array(
             'buying'=> $buying,
         ));
+
+        //TODO create and save PDF
 
     }
 
