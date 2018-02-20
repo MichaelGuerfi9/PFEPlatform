@@ -346,12 +346,18 @@ class AdvertController extends Controller
         $em->persist($buying);
         $em->flush();
 
-        $this->createPDFForAdvert($buying);
+        // $this->createPDFForAdvert($buying);
+
+        $this->addFlash("successProfile", "Payement effectué avec succes");
+
+        return $this->redirectToRoute("monEspace");
 
         return $this->render('AdvertBundle:Payement:listCards.html.twig',array(
             'advert'=> $advert,
         ));
 
+        echo("payement effectué");
+        die;
     }
 
     public function createPDFForAdvert($buying){

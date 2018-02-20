@@ -8,6 +8,18 @@
 
     <h2 class="col-lg-12 text-center">Espace expertise</h2>
 
+    {% for flash_message in app.session.flashBag.get('finishExpertise') %}
+        <div class="alert alert-success col-lg-8" style="margin-left: 20%">
+            {{ flash_message }}
+        </div>
+    {% endfor %}
+
+    {% for flash_message in app.session.flashBag.get('errorExpertise') %}
+        <div class="alert alert-success col-lg-8" style="margin-left: 20%">
+            {{ flash_message }}
+        </div>
+    {% endfor %}
+
     <div class="col-lg-6" style="height: 100px;">
 
         <div class="col-lg-12 information-block">

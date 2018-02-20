@@ -164,7 +164,7 @@ class DefaultController extends Controller
         $user = $this->getUser();
 
         if ($user == null){
-            die;
+            return $this->redirectToRoute("fos_user_security_login");
         }
 
         $profil = $user->getProfil();
@@ -238,10 +238,12 @@ class DefaultController extends Controller
 
         $advert = $em->getRepository('AdvertBundle:Advert')->findOneByReservedBy($user);
         $adverts = $em->getRepository('AdvertBundle:Advert')->findByReservedBy($user);
+        $buying = $em->getRepository('UserBundle:Buying')->findOneByAdvert($advert);
 
         return $this->render('UserBundle:Default:monEspace.html.twig',array(
             'adverts'=> $adverts,
             'advert'=> $advert,
+            'buying'=> $buying,
             'form' => $form->createView(),
             'formChangePassword' => $formChangePassword->createView(),
         ));

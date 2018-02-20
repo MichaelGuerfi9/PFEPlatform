@@ -5,6 +5,7 @@ namespace UserBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\ORM\Mapping\JoinColumn;
 use Doctrine\ORM\Mapping\OneToOne;
+use Doctrine\ORM\Mapping\ManyToOne;
 
 
 /**
@@ -25,11 +26,12 @@ class Buying
     private $id;
 
 
+
     /**
-     * One Product has One Shipment.
-     * @OneToOne(targetEntity="UserBundle\Entity\User")
+     * @ORM\ManyToOne(targetEntity="UserBundle\Entity\User")
      * @JoinColumn(name="user_id", referencedColumnName="id")
      */
+
     private $user;
 
     /**

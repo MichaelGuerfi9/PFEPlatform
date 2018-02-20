@@ -167,6 +167,11 @@ class ExpertiseController extends Controller
      */
     public function editAction(Request $request, Expertise $expertise)
     {
+
+        if ($expertise->getStatus() == "finished"){
+            throw new \Exception('Expertise terminée');
+        }
+
         $deleteForm = $this->createDeleteForm($expertise);
         $editForm = $this->createForm('AdvertBundle\Form\ExpertiseType', $expertise);
         $editForm->handleRequest($request);
@@ -179,7 +184,7 @@ class ExpertiseController extends Controller
             //TODO: status->finish
             //TODO: Add pdf path to expertise entity
 
-            return $this->redirectToRoute('expertise_edit', array('id' => $expertise->getId()));
+            return $this->redirectToRoute('expertise_show', array('id' => $expertise->getId()));
         }
 
         return $this->render('expertise/edit.html.twig', array(
@@ -224,5 +229,30 @@ class ExpertiseController extends Controller
             ->getForm()
             ;
     }
+
+    /**
+     *
+     * @Route("/expertise/{id}/finish", name="expertise_finish")
+     */
+    public function finishExpertise(Request $request, Expertise $expertise)
+    {
+        $form = $this->createDeleteForm($expertise);
+        $form->handleRequest($request);
+
+        if ($expertise->getStatus() == "accepted"){
+
+            $em = $this->getDoctrine()->getManager();
+            $expertise->setStatus("finished");
+            $em->persist($expertise);
+            $em->flush();
+            $this->addFlash("finishExpertise", "Expertise finie");
+        }else{
+            $this->addFlash("errorExpertise", "Expertise déja finie");
+        }
+
+
+        return $this->redirectToRoute('monEspaceExpertise');
+    }
+
 
 }
