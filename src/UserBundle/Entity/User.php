@@ -7,7 +7,8 @@ use Doctrine\ORM\Mapping\ManyToOne;
 use Doctrine\ORM\Mapping\OneToMany;
 use Doctrine\ORM\Mapping\JoinColumn;
 use AdvertBundle\Entity\Advert;
-use FOS\UserBundle\Model\User as BaseUser;
+use FOS\UserBundle\Model\User as BaseUser;use FOS\MessageBundle\Model\ParticipantInterface;
+
 
 /**
  * User
@@ -15,7 +16,7 @@ use FOS\UserBundle\Model\User as BaseUser;
  * @ORM\Table(name="user")
  * @ORM\Entity(repositoryClass="UserBundle\Repository\UserRepository")
  */
-class User extends BaseUser
+class User extends BaseUser implements ParticipantInterface
 {
     /**
      * @var int

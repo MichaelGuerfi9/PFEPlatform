@@ -34,3 +34,9 @@ services:
     # AppBundle\Service\ExampleService:
     #     arguments:
     #         $someArgument: 'some_value'
+
+    App\:
+        resource: '../../src/'
+        exclude: '../../src/{AdminBundle,AdvertBundle,AppBundle,UserBundle}/*'
+        exclude: '../../src/AdvertBundle/'
+        exclude: '../../src/{Entity,Migrations,Tests,Admin,Controller}'

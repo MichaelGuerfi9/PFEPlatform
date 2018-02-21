@@ -26,6 +26,8 @@ class AppKernel extends Kernel
             new AdminBundle\AdminBundle(),
             new AdvertBundle\AdvertBundle(),
             new Knp\Bundle\SnappyBundle\KnpSnappyBundle(),
+            new FOS\MessageBundle\FOSMessageBundle(),
+
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {
