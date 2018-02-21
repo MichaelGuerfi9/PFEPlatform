@@ -2,12 +2,157 @@
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed hamburger"  aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
+
+
+      <style>
+        .vmiddle{  height:100%;width: 0;  display: inline-block;  vertical-align: middle ;  }
+        #menuBurger ul li {  list-style-type: none;  }
+        #burger{margin:20px;  width: 30px;  height: 31px;  z-index: 101;  -webkit-transition: all 0.4s;  -moz-transition: all 0.4s;  transition: all 0.4s;  position: fixed;  cursor: pointer;  top:0;  right:0;  display: none;  }
+        #burger span::before, #burger span::after { background: #0087b8;  -webkit-transition: all 0.4s;  -moz-transition: all 0.4s;  transition: all 0.4s;  content: '';  display: block;  width: 100%;  height: 4px;  position: absolute;  left: 0;  }
+        .bgiWhite #burger span::before, .bgiWhite #burger span::after{ background-color: #0087b8; }
+        #burger span::after{bottom: 0;}
+        #burger span{  width: 20px;  height: 15px;  display: block;  position: absolute;  right: 5px;  top: 8px;  }
+        #burger.menuOpen span::before, #burger.menuOpen span::after {  background-color: #0087b8;  }
+        #burger.menuOpen span::after { transform: rotate(-45deg); bottom: 5px;}
+        #burger.menuOpen span::before { transform: rotate(45deg); top: 6px;  }
+        #menuBurger.menuOpen{  display: block;}
+        #menuBurger {position: fixed; height: 100%; width: 100%;  top:0;  left:0;z-index: 10;  background-color: #fff; display: none;}
+        #menuBurger li{    position: relative;  line-height: 40px;  padding-left: 20%;font-weight: 500; transition: .3s;}
+        #menuBurger ul{display: inline-block;  vertical-align: middle;  width:100%;}
+        
+        @media screen and (max-width: 1080px) {
+          #burger{
+            display: inline-block;}
+        }
+        .navbar-default {
+          height: 70px;
+        }
+      </style>
+      <div id="burger" ><span></span></div>
+      <div id="menuBurger" class="maj txtBlue">
+        <ul>
+            <li class="activePosition"><a href="{{ path('list') }}">Toutes les annonces</a></li>
+            <li><a href="">Swicar en quelques points</a></li>
+            <li><a href="">Dernières offres en ligne</a></li>
+            <li><a href="">Témoignages</a></li>
+        </ul><span class="vmiddle"></span>
+      </div>
+
+      <script>
+          $('a[href^="#"]').click(function () {
+              var the_id = $(this).attr("href");
+
+              $('html, body').animate({
+                  scrollTop: $(the_id).offset().top + 1
+              }, 'slow');
+              return false;
+          });
+
+          function rotateEach(el) {
+              el.each(function (id) {
+                  $(this).css({
+                      'opacity': 1,
+                      'transform': 'rotate(0deg)',
+                      'transition' : 'all 2s cubic-bezier(0.19, 1, 0.22, 1)'+ (id)*.2+'s'
+                  });
+              })
+          }
+          function unrotate(el) {
+              el.css({
+                  'opacity':0,
+                  'transform': 'translate(0, 50px) rotate(5deg)',
+                  'transition' : '0s',
+                  'transform-origin': 'center center'
+              });
+          }
+          // apparition menuBurger
+          unrotate( $('#menuBurger').find('li') );
+          $('#menuBurger').css({'display': 'none', 'opacity': 0})
+          $('#burger').bind('click', function (event) {
+              event.stopPropagation();
+              $(this).toggleClass('menuOpen');
+              if($(this).hasClass('menuOpen')){
+                  $('#menuBurger').css('display', 'block')
+                  $('#menuBurger').animate({opacity: 1 }, 200)
+                  rotateEach( $('#menuBurger').find('li') );
+              } else {
+                  $('#menuBurger').animate({opacity: 0 }, 200, function(){
+                      $('#menuBurger').css('display', 'none')
+                      unrotate( $('#menuBurger').find('li') );
+                  })
+              }
+          });
+          // INVIEW
+          var selectInview = $('.pays, .acti, .actu, #aeroport, #welcom, #actu .txtArea > div, #choixFiltre, #partage, #partenaire');
+          unrotate(selectInview.find('.toRotate'));
+          selectInview.bind('inview', function (event, visible) {
+              if (visible) {
+                  rotateEach( $(this).find('.toRotate') );
+              } else {
+                  unrotate( $(this).find('.toRotate') );
+              }
+          });
+
+      </script>
+
+
+      <style>
+        #bs-example-navbar-collapse-1{
+          border-color: transparent;
+        }
+        #nav-icon {  width: 50px;  height: 33px;  position: relative;  -webkit-transform: rotate(0deg);
+          -moz-transform: rotate(0deg);  -o-transform: rotate(0deg);  transform: rotate(0deg);  -webkit-transition: .5s ease-in-out;
+          -moz-transition: .5s ease-in-out;  -o-transition: .5s ease-in-out;  transition: .5s ease-in-out;  cursor: pointer;  }
+
+        #nav-icon span {  display: block;  position: absolute;  height: 5px;  width: 100%;  background: #0087b8;  border-radius: 9px;
+          opacity: 1;  left: 0;  -webkit-transform: rotate(0deg);  -moz-transform: rotate(0deg);  -o-transform: rotate(0deg);
+          transform: rotate(0deg);  -webkit-transition: .25s ease-in-out;  -moz-transition: .25s ease-in-out;
+          -o-transition: .25s ease-in-out;  transition: .25s ease-in-out;  }
+
+        #nav-icon span:nth-child(1) {
+          top: 0;
+        }
+
+        #nav-icon span:nth-child(2),#nav-icon span:nth-child(3) {
+          top: 14px;
+        }
+
+        #nav-icon span:nth-child(4) {
+          top: 28px;
+        }
+
+        #nav-icon.open span:nth-child(1) {
+          top: 14px;  width: 0;  left: 50%;
+        }
+
+        #nav-icon.open span:nth-child(2) {
+          -webkit-transform: rotate(45deg);  -moz-transform: rotate(45deg);  -o-transform: rotate(45deg);  transform: rotate(45deg);
+        }
+
+        #nav-icon.open span:nth-child(3) {
+          -webkit-transform: rotate(-45deg);
+          -moz-transform: rotate(-45deg);
+          -o-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+        }
+
+        #nav-icon.open span:nth-child(4) {
+          top: 18px;  width: 0;  left: 50%;
+        }
+
+      </style>
+
+    
+
+      <script>
+          $(document).ready(function(){
+              $('#nav-icon').click(function(){
+                  $(this).toggleClass('open');
+                  $("#bs-example-navbar-collapse-1").toggleClass('show');
+              });
+          });
+      </script>
+
       <a class="navbar-brand" href="{{ path("index") }}"><img width='100' style="margin-top:-15px" class="img-responsive" src="{{ asset('images/logo-turquoise.png') }}" alt=""></a>
     </div>
 
