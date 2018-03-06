@@ -9,7 +9,7 @@
 
     </div>
 
-    <div id="search" class="col-md-6" style="background: white; width: 50%; /*height: 100px;*/ margin-left: 25%; border: 1px solid grey; border-radius: 5px; /*z-index: 1;*/ top: 200px;">
+    <div id="search" class="col-md-6" style="background: white; width: 50%; /*height: 100px;*/ margin-left: 25%; border: 1px solid grey; border-radius: 5px; /*z-index: 1;*/ top: 200px; display: none;">
 
         <input id="homeSearchInput" type="text" class="center-block" style="width: 80%; margin-top: 2%; border: none; border-bottom: 1px solid grey; margin-bottom: 2%" placeholder="Modele, marque ville ...">
 
@@ -55,112 +55,6 @@
     <div class="col-md-12" style="background: #F5F5F5; margin-top: 14.5%; padding: 0" >
 
 
-        <div class="col-lg-12" style="padding: 0px">
-
-
-            <!--
-            <div class="triangleTopLeft" style="
-    width: 0;
-    height: 0;
-    border-top: 90px solid white;
-    border-right: 100vw solid transparent;
-    position: absolute;
-    top: 0px;"></div>
-
-            <div class="triangleBottomLeft" style="
-    width: 0;
-    height: 0;
-    border-bottom: 90px solid white;
-    border-right: 100vw solid transparent;
-    position:  absolute;
-    bottom: 0;"></div>
-
-            <p>Coucou Julien</p>
-            -->
-
-
-            <div class="trapezeBlue" style="
-
-    background: -moz-linear-gradient(155deg, #0183B4 9%, #075488 62%);/* FF3.6+ */
-    background: -webkit-gradient(linear, 155deg, color-stop(9%, 0183B4), color-stop(62%, 075488));/* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(155deg, #0183B4 9%, #075488 62%);/* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(155deg, #0183B4 9%, #075488 62%);/* Opera 11.10+ */
-    background: -ms-linear-gradient(115deg, #0183B4 9%, #075488 62%);/* IE10+ */
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1301FE', endColorstr='#F4F60C', GradientType='1'); /* for IE */
-    background: linear-gradient(115deg, #0183B4 9%, #075488 62%);/* W3C */height: 300px;
-    width: 100%;
-    position:  relative;">
-
-                <div class="triangleL" style="
-    width: 0;
-    height: 0;
-    border-bottom: 90px solid white;
-    border-left: 100vw solid transparent;
-    position:  absolute;
-    bottom: 0;
-    "></div>
-
-
-                <p>Coucou Julien</p>
-            </div><div class="trapezeWhite" style="
-    background-color: white;
-    height: 125px;
-    width: 100%;
-    position:  relative;">
-
-                <p>Coucou Julien</p>
-
-            </div>
-
-
-
-
-            <div class="trapezeBlue" style="
-
-    background: -moz-linear-gradient(155deg, #0183B4 9%, #075488 62%);/* FF3.6+ */
-    background: -webkit-gradient(linear, 155deg, color-stop(9%, 0183B4), color-stop(62%, 075488));/* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(155deg, #0183B4 9%, #075488 62%);/* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(155deg, #0183B4 9%, #075488 62%);/* Opera 11.10+ */
-    background: -ms-linear-gradient(115deg, #0183B4 9%, #075488 62%);/* IE10+ */
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1301FE', endColorstr='#F4F60C', GradientType='1'); /* for IE */
-    background: linear-gradient(115deg, #0183B4 9%, #075488 62%);/* W3C */height: 300px;
-    width: 100%;
-    position:  relative;">
-
-                <div class="triangleR" style="
-    width: 0;
-    height: 0;
-    border-bottom: 90px solid white;
-    border-left: 100vw solid transparent;
-    position:  absolute;
-    bottom: 0;
-    "></div>
-
-
-                <p>Coucou Julien</p>
-                <div class="triangleR" style="
-    width: 0;
-    height: 0;
-    border-top: 90px solid white;
-    border-left: 100vw solid transparent;
-    position:  absolute;
-    top: 0;
-    "></div></div>
-            <div class="trapezeWhite" style="
-    background-color: white;
-    height: 125px;
-    width: 100%;
-    position:  relative;">
-
-                <p>Coucou Julien</p>
-
-            </div>
-        </div>
-
-        </div>
-
-
-
         <!--
         <div id="blockInformations" class="col-lg-12" style="/*margin-left: 10%;*/">
 
@@ -197,6 +91,38 @@
     </div>
     <br>
 
+    <div class="col-md-12" style="background: #FFFFFF; margin-top: 14.5%; padding: 0" >
+
+        <h1 class="col-lg-12 text-center" style="margin-top: 20%; margin-bottom: 9%; font-size: 2em; color: #4A4A6B">
+            Quelques chiffres clés
+        </h1>
+
+        <div class="col-lg-12 block-3-infos">
+
+            <div class="col-lg-4 inline-block"style="width: 32%; display: inline-block">
+                <img style="width: 70%; display: block; margin-left: 11%" class="col-lg-12" src="{{ asset('img/1-offres.svg') }}" alt="">
+                <p class="number col-lg-12 text-center">3 017 <br><span class="text-info">offres postées</span></p>
+            </div>
+
+            <div class="col-lg-4 inline-block"style="width: 32%; display: inline-block">
+                <img style="width: 70%; display: block; margin-left: 11%" class="col-lg-12" src="{{ asset('img/2-vendus.svg') }}" alt="">
+                <p class="number col-lg-12 text-center">2 892 <br><span class="text-info">voitures vendus</span></p>
+            </div>
+
+            <div class="col-lg-4 inline-block"style="width: 32%; display: inline-block">
+                <img style="width: 70%; display: block; margin-left: 11%" class="col-lg-12" src="{{ asset('img/3-satisfait.svg') }}" alt="">
+                <p class="number col-lg-12 text-center">89 % <br><span class="text-info">clients satisfaits</span></p>
+            </div>
+
+        </div>
+
+
+    </div>
+
+    {% include 'AppBundle::somePointsContent.html.twig' %}
+
+
+    {#
     <div class="col-md-12" style="background: #E6E6E6; padding-bottom: 3%">
 
         <div id="blockLastAdvert" style="margin-left: 10%;">
@@ -224,7 +150,7 @@
 
                 </div>
             </div>
-#}
+#
 
             {% for advert in adverts %}
             
@@ -299,7 +225,7 @@
                                 t
                             </div>
                         </div>
-                        #}
+                        #
             <style>
 
                 .advertBlock{
@@ -317,88 +243,10 @@
 
         </div>
     </div>
+    #}
 
 
-    <div class="col-md-12" style="background: white">
-
-        <div id="commentBlock" class="col-lg-10" style="margin-left: 10%; ">
-
-            <h2 class="center-block" style="width:36%; text-align: center;">Ils nous ont fait confiance </h2>
-
-            <div class="comment col-lg-12">
-
-                <div class="your-class">
-                    <div class="col-lg-12">
-                        <img src="{{ asset("img/img.png") }}" class="col-lg-3">
-                        <div class="col-lg-9 comment-block">
-                            <p class="comment-comment">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto cumque laudantium mollitia natus nesciunt odio pariatur quaerat, rem. Ad, adipisci dicta ea natus nisi quibusdam reprehenderit rerum tempore unde vero.
-                            </p>
-                            <p class="comment-author">
-                                Alice Kruger
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-12">
-                        <img src="{{ asset("img/img.png") }}" class="col-lg-3">
-                        <div class="col-lg-9 comment-block">
-                            <p class="comment-comment">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto cumque laudantium mollitia natus nesciunt odio pariatur quaerat, rem. Ad, adipisci dicta ea natus nisi quibusdam reprehenderit rerum tempore unde vero.
-                            </p>
-                            <p class="comment-author">
-                                Alice Kruger
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <script type="text/javascript" src="/js/jquery-migrate.min.js"></script>
-                <script type="text/javascript" src="/js/slick.min.js"></script>
-
-                <script type="text/javascript">
-                    $(document).ready(function(){
-                        $('.your-class').slick({
-                            dots: true,
-                            infinite: true,
-                            speed: 300,
-                            slidesToShow: 1,
-                            adaptiveHeight: true,
-                            autoplay: true,
-                            autoplaySpeed: 2000,
-                            arrow: true
-                        });
-                    });
-                </script>
-
-                <style type="text/css">
-                    .your-class{
-                        width: 90%;
-                        left: 5%;
-                        /*
-                        height: 100px;
-                         */
-                        text-align: center;
-                        margin: 50px 0;
-                    }
-
-                    .comment-block {
-                        padding-top: 7%;
-                        text-align: left;
-                    }
-
-                </style>
-
-                {#
-                <img src="{{ asset("image.jpg") }}" alt="" class="col-md-2" style="border-radius: 50%">
-                #}
-
-            </div>
-
-        </div>
-
-    </div>
-
+    <!--
         <div class="col-md-12" style="background: linear-gradient(to right, #447398, #204D7E); color: white">
 
             <div id="blockFooter" class="col-lg-10" style="margin-left: 10%; ">
@@ -490,7 +338,7 @@
     </div>
 
 </div>
-
+--W
 
     <!-- Modal -->
 
@@ -549,4 +397,21 @@
     <p>Coucou Julien</p>
 </div>
 -->
+
+
+    <style>
+        .inline-block{
+            display: inline-block;
+        }
+        .block-3-infos{
+            padding: 0;
+        }
+        .number{
+            padding: 0;
+        }
+    </style>
+
+
+
+
 {% endblock %}

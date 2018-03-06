@@ -3,6 +3,111 @@
 {% block body %}
 <div class="grid col-md-12" style="margin-top: 3%; /*background: #F5F5F5;*/ padding: 0;">
 
+
+    <div class="col-lg-12" style="background-color: #F2F2F2; height: 1000px; margin-top: 3%">
+
+        <div class="col-lg-7">
+
+            <div class="col-lg-12" style="padding: 0">
+
+                <img class="" src="{{ advert.imageUrl }}" style="width: 100%;">
+
+            </div>
+
+            <div class="col-lg-12" style="background: white; margin-top: 2%">
+
+                <span class="blockMileage col-lg-3 ">
+                    <p>Kilometers</p>
+                    {{ advert.mileage }}
+                </span>
+
+                <span class="blockEnergy col-lg-3 ">
+                    <p>Carburant</p>
+                    {{ advert.energy }}
+                </span>
+
+                <span class="blockGearBox col-lg-3 ">
+                    <p>Boite de vitesse</p>
+                    {{ advert.gearBox }}
+                </span>
+
+                <span class="blockYear col-lg-3 ">
+                    <p>Année</p>
+                    {{ advert.yearOfProduction }}
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="col-lg-5">
+
+            <div class="col-lg-12" style="background: white">
+
+                <div class="col-lg-10" style="margin-left: 10%">
+
+                    <p class="price text-center" style="font-size: 50px;">
+                        {{ advert.price }} euros
+                    </p>
+
+                    <p class="text-center col-lg-12" style="font-size: 50px; padding: 0">
+                        <button class="col-lg-12" style=" -webkit-border-radius: 8;
+                        -moz-border-radius: 8;
+                    border-radius: 8px;
+                    font-family: Arial;
+                    color: #3a6cc2;
+                    font-size: 20px;
+                    padding: 10px 20px 10px 20px;
+                    border: solid #1f628d 2px;
+                    text-decoration: none;">
+                            Fiche technique du produit
+                        </button>
+                    </p>
+
+                    <p class="" style="font-size: 50px;">
+                        <p style="display: inline-block; font-weight: bold">Marque:</p> {{ advert.carModel }}
+                    </p>
+
+                    <p class="" style="font-size: 50px;">
+                        <p style="display: inline-block; font-weight: bold">Type de véhicule:</p> Lorem ipsum
+                    </p>
+
+                    <p class="" style="font-size: 50px;">
+                        <p style="display: inline-block; font-weight: bold">Couleur du véhicule:</p> Lorem ipsum
+                    </p>
+
+                    <p class="" style="font-size: 50px;">
+                        <p style="display: inline-block; font-weight: bold">Modèle du véhicule:</p> Lorem ipsum
+                    </p>
+
+                    <p class="text-center col-lg-12" style="font-size: 50px; padding: 0">
+                        <button class="col-lg-12" style=" -webkit-border-radius: 8;
+                        -moz-border-radius: 8;
+                    border-radius: 8px;
+                    font-family: Arial;
+                    color: white;
+                    background: #194577;
+                    font-size: 20px;
+                    padding: 10px 20px 10px 20px;
+                    border: solid #1f628d 2px;
+                    text-decoration: none;">
+                            Proceder au payement
+                        </button>
+                    </p>
+
+                </div>
+
+
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
 <h1>Advert</h1>
 
     <table>
