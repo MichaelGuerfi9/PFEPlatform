@@ -11,8 +11,6 @@ class DefaultController extends Controller
 {
 
     /**
-     * Lists all advert entities.
-     *
      * @Route("/somePoints", name="somePoints")
      * @Method("GET")
      */
@@ -20,6 +18,16 @@ class DefaultController extends Controller
     {
 
         return $this->render('AppBundle::somePoints.html.twig');
+    }
+
+
+    /**
+     * @Route("/aPropos", name="aPropos")
+     */
+    public function aProposAction()
+    {
+
+        return $this->render('AppBundle::aPropos.html.twig');
     }
 
 
