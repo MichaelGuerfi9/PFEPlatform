@@ -239,7 +239,7 @@ class AdvertController extends Controller
         $em->flush();
 
         return new JsonResponse(array(
-            'message' => "success"
+            'message' => "add",
             ));
 
 
@@ -279,7 +279,7 @@ class AdvertController extends Controller
         $em->flush();
 
         return new JsonResponse(array(
-            'message' => "success"
+            'message' => "delete"
         ));
 
 
