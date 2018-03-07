@@ -3,26 +3,41 @@
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
 
-
       <style>
         .vmiddle{  height:100%;width: 0;  display: inline-block;  vertical-align: middle ;  }
         #menuBurger ul li {  list-style-type: none;  }
-        #burger{margin:20px;  width: 30px;  height: 31px;  z-index: 101;  -webkit-transition: all 0.4s;  -moz-transition: all 0.4s;  transition: all 0.4s;  position: fixed;  cursor: pointer;  top:0;  right:0;  display: none;  }
+        #burger{margin:10px;  width: 30px;  height: 31px;  z-index: 101;  -webkit-transition: all 0.4s;  -moz-transition: all 0.4s;  transition: all 0.4s;  position: fixed;  cursor: pointer;  top:0;  left:0;  display: none;  }
         #burger span::before, #burger span::after { background: #0087b8;  -webkit-transition: all 0.4s;  -moz-transition: all 0.4s;  transition: all 0.4s;  content: '';  display: block;  width: 100%;  height: 4px;  position: absolute;  left: 0;  }
         .bgiWhite #burger span::before, .bgiWhite #burger span::after{ background-color: #0087b8; }
         #burger span::after{bottom: 0;}
         #burger span{  width: 20px;  height: 15px;  display: block;  position: absolute;  right: 5px;  top: 8px;  }
-        #burger.menuOpen span::before, #burger.menuOpen span::after {  background-color: #0087b8;  }
+        #burger.menuOpen span::before, #burger.menuOpen span::after {  background-color: #474668 !important;  }
         #burger.menuOpen span::after { transform: rotate(-45deg); bottom: 5px;}
         #burger.menuOpen span::before { transform: rotate(45deg); top: 6px;  }
         #menuBurger.menuOpen{  display: block;}
         #menuBurger {position: fixed; height: 100%; width: 100%;  top:0;  left:0;z-index: 10;  background-color: #fff; display: none;}
         #menuBurger li{    position: relative;  line-height: 40px;  padding-left: 20%;font-weight: 500; transition: .3s;}
         #menuBurger ul{display: inline-block;  vertical-align: middle;  width:100%;}
+        #menuBurger ul li a{color: #474668}
         
         @media screen and (max-width: 1080px) {
           #burger{
-            display: inline-block;}
+            display: inline-block;
+          }
+          nav.navbar{
+            background-color: transparent;
+            border-color: transparent;
+          }
+          nav.navbar.active{
+            background-color: white;
+            border-color: #e7e7e7;
+          }
+          nav.navbar.active #burger span::before, nav.navbar.active #burger span::after{
+            background: #474668;
+          }
+          nav.navbar #burger span::before, nav.navbar #burger span::after{
+            background: white;
+          }
         }
         .navbar-default {
           /*
@@ -143,8 +158,6 @@
         }
 
       </style>
-
-    
 
       <script>
           $(document).ready(function(){

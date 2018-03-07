@@ -1,11 +1,19 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-
-<div class="grid col-md-12" style="margin-top: 3%; background: #F5F5F5; padding: 0;">
+<style>
+    html, body{
+        height: 100%;
+        width: 100%;
+        position: relative;
+    }
+</style>
+<div class="grid col-md-12" style="background: #F5F5F5; padding: 0;">
 
     <div id="homeTopImage" class="col-md-12" style=" width: 100%; height: 300px; padding: 0;">
-        <img src="{{ asset("img/driver.png") }}" alt="" style="width: 100%">
+        <div style="height: 100%;
+    background: url({{ asset("img/poster.png") }});
+    background-size: cover;"></div>
 
     </div>
 
@@ -16,6 +24,7 @@
         <div class="center-block" style="width: 80%; margin-top: 2%; background: red; display: none;">
 
             <div class="col-md-2 searchMarque" style="border: 1px solid blue; ">
+                <img src="{{ asset("img/opel.png") }}" alt="">
                 <img src="{{ asset("img/opel.png") }}" alt="">
                 toto
             </div>

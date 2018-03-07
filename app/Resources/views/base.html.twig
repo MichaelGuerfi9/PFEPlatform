@@ -26,6 +26,33 @@
         <script  src="{{ asset('js/jquery.min.js') }}"></script>
         <script  src="{{ asset('js/bootstrap.min.js') }}"></script>
 
+        {#
+
+         <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/slick/slick.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/slick/slick-theme.min.css') }}" />
+    <link rel="icon" href="{{ asset('favicon') }}" />
+    <link rel="stylesheet" href="{{ asset('css/fonts.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/styles.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/responsive.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/print.css') }}" />
+
+        #}
+
+        <style>
+
+            @font-face {
+                font-family: 'Bebas';
+                src: url({{ asset('font/BEBAS.ttf') }})
+            }
+
+            @font-face {
+                font-family: 'Gotham';
+                src: url({{ asset('font/GothamMediumRegular.ttf') }})
+            }
+        </style>
+
         <!--
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
         <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/js/bootstrap.min.js"></script>
@@ -35,5 +62,16 @@
     {% include 'default/header.html.twig' %}
     {% block body %}{% endblock %}
     {% include 'default/footer.html.twig' %}
+    <script>
+        $(function() {
+            $(window).on("scroll", function() {
+                if($(window).scrollTop() > 50) {
+                    $("nav.navbar").addClass("active");
+                } else {
+                    $("nav.navbar").removeClass("active");
+                }
+            });
+        });
+    </script>
     </body>
 </html>
