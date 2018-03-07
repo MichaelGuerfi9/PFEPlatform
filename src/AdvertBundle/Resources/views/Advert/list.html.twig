@@ -62,14 +62,16 @@
                     {#</li>#}
                 {#</ul>#}
             {#</div>#}
-            <div class="cars" style="margin-top: 13%">
+            <div style="margin-top: 15%;margin-left: 5%; font-size: 12px"><span style="color: #6DCBCD">{{ adverts|length }}</span> annonces au total <span class="filter-menu" style="float: right;margin-right:4% "> Filtrer <i style="margin-left: 5px;margin-top: 4px;" class="fas fa-angle-down"></i></span></div>
+            <div class="cars" style="margin-top: -1%">
         {% for advert in adverts %}
+            <a href="{{ path('advert_show',{'id':advert.id}) }}">
             <div class="col-sm-2 col-md-4 col-lg-3 mt-4" style="background-color: white;border-radius: 1%;margin: 4%;padding: 0;height: 390px;">
                 <div class="card">
                     <img class="card-img-top" src="{{ advert.imageUrl }}" style="width: 100%; height: auto;border-top-right-radius: 1%;border-top-left-radius: 1%;">
                     <div class="card-block" style="padding: 20px;">
                         <span style="position: absolute;height: 35px;width: 3px;background-color: #6DCBCD;left: 0;bottom: 85px;"></span>
-                        <h4 class="card-title" style="vertical-align: middle; font-family: Bebas">{{ advert.carModel|upper }} <span style="float: right " data-id="{{ advert.id }}" class="add-fav"><i style="color: #6DCBCD" class="far fa-heart"></i></span> </h4>
+                        <h4 class="card-title" style="vertical-align: middle; font-family: Bebas; color: #000;">{{ advert.carModel|upper }} <span style="float: right " data-id="{{ advert.id }}" class="add-fav"><i style="color: #6DCBCD" class="far fa-heart"></i></span> </h4>
                         <div class="meta">
                             {{ advert.description|slice(0, 50) ~ '...' }}
                         </div>
@@ -90,6 +92,7 @@
                     </div>
                 </div>
             </div>
+            </a>
 
         {% endfor %}
             </div>
@@ -117,7 +120,7 @@
             align-items: stretch;
         }
 
-        .cars {
+        .wrapper {
             font-family: Gotham;
         }
 
@@ -134,6 +137,8 @@
             color: #fff;
             transition: all 0.3s;
         }
+
+        
 
         #sidebar .sidebar-header {
             padding: 20px;
