@@ -3,85 +3,176 @@
 {% block body %}
 
 
-    <div class="container" style="margin-top: 3%; margin-right: 0; background-color: #e3e3e3;">
-        <div class="row" style="margin-left: 20%;margin-top: 3%;">
-            <ul>
-                <li>
-                    <p class="btn">ALL
-                    </p>
-                </li>
-                <li>
-                    <p class="btn">TOYOTA</p>
-                </li>
-                <li>
-                    <p class="btn">CITROEN</p>
-                </li>
-                <li>
-                    <p class="btn">PEUGEOT</p>
-                </li>
-                <li>
-                    <p class="btn">RENAULT</p>
-                </li>
-                <li>
-                    <p class="btn">OPEL</p>
-                </li>
-                <li>
-                    <p class="btn">HONDA</p>
-                </li>
-                <li>
-                    <p class="btn">FORD</p>
-                </li>
-                <li>
-                    <p class="btn">BMW</p>
-                </li>
-            </ul>
-        </div>
-        <div class="cars">
-    {% for advert in adverts %}
-        <div class="col-sm-2 col-md-4 col-lg-3 mt-4" style="background-color: white;border-radius: 3%;margin: 2% 0.3% 2% 0.3%;padding: 0;height: 390px;">
-            <div class="card">
-                <img class="card-img-top" src="{{ advert.imageUrl }}" style="width: 100%; height: auto;border-top-right-radius: 5%;border-top-left-radius: 5%;">
-                <div class="card-block" style="padding: 20px;">
-                    <span style="position: absolute;height: 35px;width: 3px;background-color: #1a7bd3;left: 0;bottom: 85px;"></span>
-                    <h4 class="card-title" style="vertical-align: middle">{{ advert.carModel|upper }} <span style="float: right "><img style="height: 18px;" src="{{ asset("img/heart.png") }}" alt="like" data-id="{{ advert.id }}" class="add-fav"></span> </h4>
-                    <div class="meta">
-                        {{ advert.description|slice(0, 50) ~ '...' }}
+    <link rel="stylesheet" href="{{ asset('dist/bootstrap/css/bootstrap.min.css') }}" />
+    <script src="{{ asset('dist/bootstrap/js/jquery.min.js') }}"></script>
+    <script src="{{ asset('dist/bootstrap/js/bootstrap.min.js') }}"></script>
+    <div class="wrapper" style="margin-top: 3%; margin-right: 0; background-color: #e3e3e3;">
+        {#<nav id="sidebar">#}
+            {#<!-- Sidebar Header -->#}
+            {#<div class="sidebar-header">#}
+                {#<span>Recherchez un véhicule</span>#}
+            {#</div>#}
+
+
+            {#<!-- Sidebar Links -->#}
+            {#<ul class="list-unstyled components">#}
+                {#<li class="active"><a href="#">Home</a></li>#}
+                {#<li><a href="#">About</a></li>#}
+                {#<li><!-- Link with dropdown items -->#}
+                    {#<a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Pages</a>#}
+                    {#<ul class="collapse list-unstyled" id="homeSubmenu">#}
+                        {#<li><a href="#">Page</a></li>#}
+                        {#<li><a href="#">Page</a></li>#}
+                        {#<li><a href="#">Page</a></li>#}
+                    {#</ul>#}
+                {#<li><a href="#">Portfolio</a></li>#}
+                {#<li><a href="#">Contact</a></li>#}
+            {#</ul>#}
+        {#</nav>#}
+        <div class="content">
+            {#<div class="row" style="margin-left: 20%;margin-top: 3%;">#}
+                {#<ul>#}
+                    {#<li>#}
+                        {#<p class="btn">ALL#}
+                        {#</p>#}
+                    {#</li>#}
+                    {#<li>#}
+                        {#<p class="btn">TOYOTA</p>#}
+                    {#</li>#}
+                    {#<li>#}
+                        {#<p class="btn">CITROEN</p>#}
+                    {#</li>#}
+                    {#<li>#}
+                        {#<p class="btn">PEUGEOT</p>#}
+                    {#</li>#}
+                    {#<li>#}
+                        {#<p class="btn">RENAULT</p>#}
+                    {#</li>#}
+                    {#<li>#}
+                        {#<p class="btn">OPEL</p>#}
+                    {#</li>#}
+                    {#<li>#}
+                        {#<p class="btn">HONDA</p>#}
+                    {#</li>#}
+                    {#<li>#}
+                        {#<p class="btn">FORD</p>#}
+                    {#</li>#}
+                    {#<li>#}
+                        {#<p class="btn">BMW</p>#}
+                    {#</li>#}
+                {#</ul>#}
+            {#</div>#}
+            <div class="cars" style="margin-top: 13%">
+        {% for advert in adverts %}
+            <div class="col-sm-2 col-md-4 col-lg-3 mt-4" style="background-color: white;border-radius: 1%;margin: 4%;padding: 0;height: 390px;">
+                <div class="card">
+                    <img class="card-img-top" src="{{ advert.imageUrl }}" style="width: 100%; height: auto;border-top-right-radius: 1%;border-top-left-radius: 1%;">
+                    <div class="card-block" style="padding: 20px;">
+                        <span style="position: absolute;height: 35px;width: 3px;background-color: #6DCBCD;left: 0;bottom: 85px;"></span>
+                        <h4 class="card-title" style="vertical-align: middle; font-family: Bebas">{{ advert.carModel|upper }} <span style="float: right " data-id="{{ advert.id }}" class="add-fav"><i style="color: #6DCBCD" class="far fa-heart"></i></span> </h4>
+                        <div class="meta">
+                            {{ advert.description|slice(0, 50) ~ '...' }}
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <span class="float-right">
+                            <span style="color: #6DCBCD">{{ advert.mileage|number_format(0,'.',' ') }} km </span> |
+                            <span style="color: #6DCBCD">
+                            {% if advert.energy == 'diesel' %}
+                                Diesel
+                                {% else %}
+                                Essence
+                            {% endif %}
+                            </span>
+                            |
+                            <span style="color: #6DCBCD">{{ advert.price|number_format(0,'.',' ') }} € </span>
+                        </span>
                     </div>
                 </div>
-                <div class="card-footer">
-                    <span class="float-right">
-                        <span>{{ advert.price|number_format(0,'.',' ') }} <img src="{{ asset("img/euro.png") }}" alt="euro"> </span> |
-                        <span>{{ advert.mileage|number_format(0,'.',' ') }} <img src="{{ asset("img/speedometer.png") }}" alt="speedometer"></span> |
-                        <span>
-                        {% if advert.gearbox == 'manual' %}
-                            MANUELLE <img src="{{ asset("img/automatic.png") }}" alt="">
-                            {% else %}
-                            AUTOMATIQUE <img src="{{ asset("img/automatic.png") }}" alt="">
-                        {% endif %}
-                        </span>
-                    </span>
-                </div>
             </div>
-        </div>
-    {% endfor %}
+
+        {% endfor %}
+            </div>
         </div>
     </div>
     <style>
-        /*.card-title::before{*/
-            /*font-family: Bebas sans-serif;*/
-            /*width: 3px;*/
-            /*height: 20px;*/
-            /*background-color: #1a7bd3;*/
-            /*content: '';*/
-            /*display: inline-block;*/
-            /*margin-left: -20px;*/
-            /*margin-right: 15px;*/
-        /*}*/
+
+        @font-face {
+            font-family: 'Bebas';
+            src: url({{ asset('font/BEBAS.ttf') }})
+        }
+
+        @font-face {
+            font-family: 'Gotham';
+            src: url({{ asset('font/GothamMediumRegular.ttf') }})
+        }
 
         @media (min-width: 1200px) {
             .col-lg-3 {
                 width: 32%;
             }
+        }
+        .wrapper {
+            display: flex;
+            align-items: stretch;
+        }
+
+        .cars {
+            font-family: Gotham;
+        }
+
+
+        #sidebar {
+            min-width: 250px;
+            max-width: 250px;
+            min-height: 100vh;
+
+        }
+        #sidebar {
+            /* don't forget to add all the previously mentioned styles here too */
+            background: #7386D5;
+            color: #fff;
+            transition: all 0.3s;
+        }
+
+        #sidebar .sidebar-header {
+            padding: 20px;
+            background: #6d7fcc;
+        }
+
+        #sidebar ul.components {
+            padding: 20px 0;
+            border-bottom: 1px solid #47748b;
+        }
+
+        #sidebar ul p {
+            color: #fff;
+            padding: 10px;
+        }
+
+        #sidebar ul li a {
+            padding: 10px;
+            font-size: 1.1em;
+            display: block;
+        }
+        #sidebar ul li a:hover {
+            color: #7386D5;
+            background: #fff;
+        }
+
+        #sidebar ul li.active > a, a[aria-expanded="true"] {
+            color: #fff;
+            background: #6d7fcc;
+        }
+        ul ul a {
+            font-size: 0.9em !important;
+            padding-left: 30px !important;
+            background: #6d7fcc;
+        }
+
+
+        #sidebar.active {
+            margin-left: -250px;
         }
         {#@font-face {#}
             {#font-family: Babes2;#}
@@ -156,36 +247,54 @@
             })
         });
 
-
-        $('.add-fav').on('click', function(event) {
+        $('.add-fav,.deleteFav').on('click', function(event) {
             event.preventDefault();
 
-            if ($(this).hasClass("add-fav")) {
-                var url = "{{ path("deleteFav") }}";
-                $(this).removeClass('add-fav');
-            }else {
-                var url = "{{ path("addFav") }}";
-                $(this).addClass('add-fav');
-            }
 
-
+            var id = $(this).attr('data-id');
+            var url = "";
             /* Act on the event */
 
-            $.ajax({
-                method: "POST",
-                url: url,
-                data: { id: $(this)[0].dataset.id }
+            if ($(this).hasClass("add-fav")) {
+                url = "{{ path("addFav") }}";
 
-            })
-                .done(function( data ) {
-                    console.log(data);
-                    //alert( "Data Saved: " + data );
-                })
-                .fail(function() {
-                    alert( "error" );
-                })
+            }else {
+                url = "{{ path("deleteFav") }}";
+            }
+
+            console.log(url);
+
+            $.ajax({
+                        method: "POST",
+                        url: url,
+                        data: { id: id }
+
+                    })
+                    .done(function( data ) {
+                        console.log(data.message);
+                        console.log('wesh');
+                        if (data.message == "add") {
+                            console.log("yo");
+                            $('.add-fav').addClass('delete-fav');
+                            $('.add-fav').children().attr("data-prefix",'far');
+                            $('.add-fav').removeClass('add-fav');
+
+                        }else {
+                            $('.deleteFav').addClass('add-fav');
+                            $('.deleteFav').children().attr("data-prefix",'far');
+                            $('.deleteFav').removeClass('delete-fav');
+                        }
+
+                        //alert( "Data Saved: " + data );
+                    })
+                    .fail(function() {
+                        alert( "error" );
+                    })
 
         });
+
+
+
 
 
     </script>
