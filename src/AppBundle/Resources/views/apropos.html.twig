@@ -1,3 +1,7 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+{#
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,19 +13,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link rel="stylesheet" id="material-icons-css" href="https://fonts.googleapis.com/icon?family=Material+Icons" type="text/css" media="all">
     -->
-    <link rel="stylesheet" type="text/css" href="../web/css/bootstrap.min.css"/>
-    <link rel="stylesheet" type="text/css" href="../web/css/font-awesome.min.css"/>
 
-    <link rel="stylesheet" type="text/css" href="../web/slick/slick.css"/>
-    <link rel="stylesheet" type="text/css" href="../web/slick/slick-theme.css"/>
-
-    <link rel="icon" type="image/x-icon" href="../web/favicon.ico"/>
-
-    <link rel="stylesheet" type="text/css" href="../web/css/fonts.css"/>
-    <link rel="stylesheet" type="text/css" href="../web/css/styles.css"/>
-    <link rel="stylesheet" type="text/css" href="../web/css/responsive.css"/>
-    <link rel="stylesheet" type="text/css" href="../web/css/print.css"/>
-
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/slick/slick.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/slick/slick-theme.min.css') }}" />
+    <link rel="icon" href="{{ asset('favicon') }}" />
+    <link rel="stylesheet" href="{{ asset('css/fonts.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/styles.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/responsive.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/print.css') }}" />
 
     <script src="../web/js/jquery.min.js"></script>
     <script src="../web/js/bootstrap.min.js"></script>
@@ -203,6 +204,183 @@
         <li></li>
     </ul>
 </header>
+#}
+
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}" />
+    <link rel="icon" href="{{ asset('favicon') }}" />
+    <link rel="stylesheet" href="{{ asset('css/fonts.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/styles.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/responsive.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/print.css') }}" />
+
+    <style>
+        /*RESET CSS*/
+        html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            vertical-align: baseline;
+        }
+
+        /* HTML5 display-role reset for older browsers */
+        html, body {
+            height: 100%;
+        }
+
+        article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+            display: block;
+        }
+
+        ol, ul {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            cursor: pointer
+        }
+
+        blockquote, q {
+            quotes: none;
+        }
+
+        blockquote:before, blockquote:after, q:before, q:after {
+            content: '';
+            content: none;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        /*FIN RESET*/
+        .txtBlue {
+            color: #7dc0c6;
+        }
+
+        .txtPurple {
+            color: #474668;
+        }
+        .txtWhite{
+            color: white;
+        }
+
+        .vmiddle {
+            height: 100%;
+            width: 0;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .trapezePurple:nth-of-type(1) {
+            height: 375px;
+        }
+
+        .trapezePurple:nth-of-type(1) h2 {
+            text-align:  center;
+            padding-top:  20px;
+            font-size: 24px;
+            height: 50px;
+            font-weight:  bold;
+        }
+
+        .trapezePurple {
+            height: 450px;
+            background-color: #474668;
+        }
+
+        .trapezeWhite {
+            background-color: white;
+            height: 300px;
+        }
+
+        .trapezePurple, .trapezeWhite {
+            width: 100%;
+            position: relative;
+        }
+
+        .triangleBottomR, .triangleTopR {
+            border-left: 100vw solid transparent;
+        }
+
+        .triangleBottomR, .triangleTopR {
+            width: 0;
+            height: 0;
+            position: absolute;
+        }
+
+        .triangleBottomR {
+            border-bottom: 75px solid white;
+            bottom: 0;
+        }
+
+        .triangleTopR {
+            border-top: 75px solid white;
+            top: 0;
+        }
+
+        .trapezePurple div, .trapezeWhite div {
+            display: inline-block;
+            vertical-align: middle;
+            /*width: 100%;*/
+        }
+
+        .trapezePurple:nth-of-type(1) .leftImg, .trapezePurple:nth-of-type(1) .rightImg, .trapezePurple:nth-of-type(1) .leftText, .trapezePurple:nth-of-type(1) .rightText {
+            height: calc(100% - 50px) !important;
+        }
+
+        .leftImg, .rightImg, .leftText, .rightText {
+            height: 100%;
+            width: 50%;
+            top: 0;
+            display: inline-block;
+        }
+        .leftImg, .rightImg{
+            text-align: center;
+        }
+        .rightText, .leftText{
+            padding: 75px 0;
+        }
+        .rightText{
+            padding-right: 20px;
+        }
+        .leftText{
+            padding-left: 20px;
+        }
+        .trapezePurple:nth-of-type(1) .rightText{
+            padding: 0 0 75px 0;
+        }
+        .rightText div, .leftText div{
+            height: 100%;
+            position:  relative;
+            width:  100%;
+        }
+        .trapeze h3{
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .pictoSVG{
+            fill: #474668;
+            background-color: white;
+            border-radius: 50%;
+            height: 50%;
+            top: calc(25% - 37.5px);
+            position: relative;
+        }
+        .trapezePurple .pictoSVG.resize{
+            height: calc(50% - 75px);
+        }
+    </style>
+
+
 <div class="trapezePurple trapeze">
     <div class="triangleBottomR"></div>
     <h2 class="txtWhite">Swicar en quelques points</h2>
@@ -266,5 +444,10 @@
         </div>
     </div>
 </div>
+
+{#
 </body>
 </html>
+#}
+
+{% endblock %}
