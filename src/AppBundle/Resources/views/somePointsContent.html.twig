@@ -5,12 +5,45 @@
         body{
             background: #F5F5F5;
         }
+
+        .allContent{
+            margin-top: 13%;
+            background: #F5F5F5;
+        }
+
+        .title{
+            margin-top: 20%;
+            margin-bottom: 9%;
+            font-size: 2em;
+            color: #4A4A6B;
+            text-align: center;
+        }
+
+        @media (min-width: 1280px) {
+
+            .allContent {
+                margin-top: 0;
+            }
+
+            .title {
+                margin-top: 6%;
+                margin-bottom: 3%;
+                text-align: left;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                border-left: 5px solid #7EC4C8;
+                margin-left: 1.1%;
+            }
+
+        }
+
+
     </style>
 
-<div class="grid col-md-12" style="margin-top: 13%; background: #F5F5F5;">
+<div class="grid col-md-12 allContent" style="">
 
 
-    <h1 class="col-lg-12 text-center" style="margin-top: 20%; margin-bottom: 9%; font-size: 2em; color: #4A4A6B">Qui sommes nous ?</h1>
+    <h1 class="col-lg-12 title" style="">Qui sommes nous ?</h1>
 
     <img class="col-lg-12" style="width: 100%; margin-bottom: 5%" src="{{ asset('img/equipe1.jpeg') }}" alt="" />
 

@@ -66,10 +66,16 @@
     <script>
         $(function() {
             $(window).on("scroll", function() {
-                if($(window).scrollTop() > 50) {
-                    $("nav.navbar").addClass("active");
-                } else {
-                    $("nav.navbar").removeClass("active");
+                if(activeAnimation === 1){
+                    if($(window).scrollTop() > 50) {
+                        $("nav.navbar").addClass("active");
+                        $("nav.navbar").removeClass("nonActive");
+                        $('.st0').removeClass("active")
+                    } else {
+                        $("nav.navbar").addClass("nonActive");
+                        $("nav.navbar").removeClass("active");
+                        $('.st0').addClass("active");
+                    }
                 }
             });
         });

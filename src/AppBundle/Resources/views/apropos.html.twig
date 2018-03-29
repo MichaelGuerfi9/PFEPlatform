@@ -209,10 +209,13 @@
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}" />
     <link rel="icon" href="{{ asset('favicon') }}" />
-    <link rel="stylesheet" href="{{ asset('css/fonts.css') }}" />
+
+    <!--
+
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/responsive.css') }}" />
-    <link rel="stylesheet" href="{{ asset('css/print.css') }}" />
+
+    -->
 
     <style>
         /*RESET CSS*/
@@ -378,10 +381,24 @@
         .trapezePurple .pictoSVG.resize{
             height: calc(50% - 75px);
         }
+
+        .trapezePurple {
+            margin-top: 16%;
+        }
+
+        @media (min-width: 1280px) {
+
+            .trapezePurple {
+                margin-top: 3%;
+            }
+
+        }
+
+
     </style>
 
 
-<div class="trapezePurple trapeze">
+<div class="trapezePurple trapeze" style="">
     <div class="triangleBottomR"></div>
     <h2 class="txtWhite">Swicar en quelques points</h2>
     <div class="leftImg">
