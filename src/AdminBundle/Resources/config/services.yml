@@ -13,3 +13,9 @@ services:
             arguments: [~, AdvertBundle\Entity\Advert, ~]
             tags:
                 - { name: sonata.admin, manager_type: orm, label: Advert, group: Advert }
+
+#    admin.expertise:
+ #           class: AdminBundle\Admin\ExpertiseAdmin
+  #          arguments: [~, AdvertBundle\Entity\Expertise, ~]
+   #         tags:
+    #            - { name: sonata.admin, manager_type: orm, label: Expertise, group: Expertise }

@@ -1,9 +1,18 @@
-<footer class="col-lg-12" style="background: #474668">
+<footer class="col-lg-12" style="background: #474668; {#position: absolute;bottom: 0;#}">
 
     <div class="marginBlock" style="height: 1px"></div>
 
+    <img src="{{asset( 'img/footer.png' ) }}" style="max-width: 100%" class="col-lg-12">
 
-    <div class="col-lg-6">
+    <style type="text/css">
+    
+    .footer-not-responsive{
+        display: none;
+    }
+
+    </style>
+
+    <div class="col-lg-6 footer-not-responsive">
         <h3 class="footer-title col-lg-12">NOUS CONTACTER</h3>
 
         <div class="col-lg-6">
@@ -52,7 +61,7 @@
 
     </div>
 
-    <div class="col-lg-12">
+    <div class="col-lg-12 footer-not-responsive">
         <h3 class="footer-title col-lg-12" >NAVIGUER SUR SWICAR</h3>
 
         <ul class="list-link col-lg-6">

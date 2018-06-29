@@ -63,14 +63,20 @@
     {% include 'default/header.html.twig' %}
     {% block body %}{% endblock %}
     {% include 'default/footer.html.twig' %}
+    
     <script>
         $(function() {
+            $("nav.navbar").addClass("active");
+            $("nav.navbar").removeClass("nonActive");
+            $('.st0').removeClass("active")
+            /*
             $(window).on("scroll", function() {
                 if(activeAnimation === 1){
                     if($(window).scrollTop() > 50) {
                         $("nav.navbar").addClass("active");
                         $("nav.navbar").removeClass("nonActive");
                         $('.st0').removeClass("active")
+                        console.log("tototototototototo")
                     } else {
                         $("nav.navbar").addClass("nonActive");
                         $("nav.navbar").removeClass("active");
@@ -78,7 +84,16 @@
                     }
                 }
             });
+            */
         });
     </script>
+    
+    <style type="text/css">
+     *{
+        font-family: Gotham medium;
+    }
+    </style>
+   
+
     </body>
 </html>

@@ -27,7 +27,21 @@
 
         </div>
 
-        <div class="col-lg-12">
+        <form action="/charge" method="POST" style="text-align: center;">
+                <script
+                        src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                        data-key="pk_test_BMsXZLeHt3hYYkZg5Xvt2Giw"
+                        data-amount="{{advert.price * 100}}"
+                        data-name="Achat"
+                        data-description="{{advert.description}}"
+                        data-locale="fr"
+                        data-currency="eur">//data-image="/logo/premium.png"
+                </script>
+                <input type="hidden" name="type" value="expertise">
+                <input type="hidden" name="advertId" value="{{ advert.id }}">
+            </form>
+
+        <div class="col-lg-12" style="display: none">
 
             Voulez vous effectuez le payement de {{ advert.price |number_format(0,'.',' ') }} € ?
 

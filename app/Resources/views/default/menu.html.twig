@@ -1,10 +1,20 @@
 <header>
 
-    <ul class="nav navbar-nav">
-        <li><a href="{{ path('list') }}">Toutes les annonces</a></li>
-        <li><a href="">Swicar en quelques points</a></li>
-        <li><a href="">Dernières offres en ligne</a></li>
-        <li><a href="">Témoignages</a></li>
+<style type="text/css">
+.navbar-default .navbar-nav>li>a {
+    color: #47466B;
+    font-family: Gotham medium
+}
+.YouAreHere{
+    color: #69CBCE !important; 
+}
+</style>
+
+    <ul class="nav navbar-nav" style="color: #47466B">
+        <li><a href="{{ path('list') }}"{% if app.request.get('_route') == 'list' %} class="YouAreHere" {% endif %}>Toutes les annonces</a></li>
+        <li><a href="{{ path('somePoints') }}" {% if app.request.get('_route') == 'somePoints' %} class="YouAreHere" {% endif %}>Swicar en quelques points</a></li>
+        <li><a href="{{ path('expresLivreur') }}" {% if app.request.get('_route') == 'expresLivreur' %} class="YouAreHere" {% endif %}>Expert/Livreur</a></li>
+        <li><a href="{{ path('aPropos') }}" {% if app.request.get('_route') == 'aPropos' %} class="YouAreHere" {% endif %}>Qui sommes nous ?</a></li>
     </ul>
 
     {% if app.user and is_granted('ROLE_USER') %}
@@ -14,7 +24,13 @@
             <!-- Single button -->
             <li>
 
-            <li class="username" style=""><a href="{{ path('monEspace') }}">Bonjour {{ app.user.username|capitalize }}</a></li>
+            <li class="username" style="font-family: Gotham bold"><a href="{{ path('monEspace') }}">Bonjour {{ app.user.username|capitalize }}</a></li>
+
+            <li>
+                <a href=" {{ path('advert_new') }}">
+                    <button style="background: #69CBCE; color: #FFF; border: 0;padding-top: 3px; padding-bottom: 3px; border-radius: 4px">Déposer une annonce</button>
+                </a>
+            </li>
 
                 <!--
                 <div class="btn-group">

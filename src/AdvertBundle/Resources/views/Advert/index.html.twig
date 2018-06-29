@@ -10,10 +10,32 @@
 </style>
 <div class="grid col-md-12" style="background: #F5F5F5; padding: 0;">
 
-    <div id="homeTopImage" class="col-md-12" style=" width: 100%; height: 300px; padding: 0;">
-        <div style="height: 100%;
+    <div id="homeTopImage" class="col-md-12" style=" width: 100%; height: 750px; padding: 0;">
+        <div class="col-md-12" style="height: 100%;
     background: url({{ asset("img/poster.png") }});
-    background-size: cover;"></div>
+    background-size: cover;">
+        
+        <div class="col-lg-12" style="position:absolute; top: 31%; text-align: center">
+            <p class="col-lg-12 text-homeTopImage">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </p>
+
+            <p class="col-lg-12 text-homeTopImage">
+                Fusce vel massa quis neque tristique congue.
+            </p>
+
+        </div>
+
+
+    </div>
+
+    <style type="text/css">
+    .text-homeTopImage{
+        color: white;
+        font-family: Gotham medium
+        font-size: 1.5em;
+    }
+    </style>
 
     </div>
 
@@ -61,9 +83,9 @@
 
     </div>
 
-    <div class="col-md-12" style="background: #F5F5F5; margin-top: 14.5%; padding: 0" >
+    <div class="col-md-12" style="background: #F5F5F5; {#margin-top: 14.5%;#} padding: 0" >
 
-
+        <img src="img/somePoints2.png" style="padding:  0; max-width:  100%; " class="col-lg-12 img-escroc">
         <!--
         <div id="blockInformations" class="col-lg-12" style="/*margin-left: 10%;*/">
 
@@ -100,25 +122,93 @@
     </div>
     <br>
 
-    <div class="col-md-12" style="background: #FFFFFF; margin-top: 14.5%; padding: 0" >
+    <style type="text/css">
 
-        <h1 class="col-lg-12 text-center" style="margin-top: 20%; margin-bottom: 9%; font-size: 2em; color: #4A4A6B">
+        @media screen and (max-width: 720px) {
+            #blockNumberKey{
+                background: #FFFFFF; margin-top: 14.5%; margin-top: 0px; padding: 0
+            }
+            #blockNumberKey{
+                margin-top: 20%; margin-bottom: 9%; margin-bottom: 0%; font-size: 2em; color: #4A4A6B
+            }
+            .img-escroc{
+                display: none;
+            }
+        }
+
+        @media screen and (min-width: 721px) {
+
+            #textNumberKey{
+                display: none;
+            }
+            .block-3-infos{
+                display: none;
+            }
+
+        }
+
+        #blockNumberKey{
+            background: #FFFFFF; /*margin-top: 14.5%;*/margin-top: 0px; padding: 0
+        }
+          #blockNumberKey{
+            /*margin-top: 20%; margin-bottom: 9%;*/ margin-bottom: 0%; font-size: 2em; color: #4A4A6B
+        }
+          #blockNumberKey{
+            
+        }
+          #blockNumberKey{
+
+        }
+          #blockNumberKey{
+            
+        }
+        #blockNumberKey{
+            
+        }
+        #blockNumberKey{
+            
+        }
+        #blockNumberKey{
+            
+        }
+        #blockNumberKey{
+            
+        }
+        #blockNumberKey{
+            
+        }
+        #blockNumberKey{
+            
+        }
+        #blockNumberKey{
+            
+        }
+
+
+
+    </style>
+
+    <div class="col-md-12" id="blockNumberKey" {#style="background: #FFFFFF; margin-top: 14.5%; padding: 0" #}>
+
+    <img class="img-escroc" src="{{asset( 'img/test01.png' ) }}" style="width: 100%; padding: 0px" class="col-lg-12">
+
+        <h1 class="col-lg-12 text-center" id="textNumberKey" {#style="margin-top: 20%; margin-bottom: 9%; font-size: 2em; color: #4A4A6B"#}>
             Quelques chiffres clés
         </h1>
 
         <div class="col-lg-12 block-3-infos">
 
-            <div class="col-lg-4 inline-block"style="width: 32%; display: inline-block">
+            <div class="col-lg-4 inline-block" class="block-block3-infos" style="width: 32%; display: inline-block">
                 <img style="width: 70%; display: block; margin-left: 11%" class="col-lg-12" src="{{ asset('img/1-offres.svg') }}" alt="">
                 <p class="number col-lg-12 text-center">3 017 <br><span class="text-info">offres postées</span></p>
             </div>
 
-            <div class="col-lg-4 inline-block"style="width: 32%; display: inline-block">
+            <div class="col-lg-4 inline-block" class="block-block3-infos" style="width: 32%; display: inline-block">
                 <img style="width: 70%; display: block; margin-left: 11%" class="col-lg-12" src="{{ asset('img/2-vendus.svg') }}" alt="">
                 <p class="number col-lg-12 text-center">2 892 <br><span class="text-info">voitures vendus</span></p>
             </div>
 
-            <div class="col-lg-4 inline-block"style="width: 32%; display: inline-block">
+            <div class="col-lg-4 inline-block" class="block-block3-infos" style="width: 32%; display: inline-block">
                 <img style="width: 70%; display: block; margin-left: 11%" class="col-lg-12" src="{{ asset('img/3-satisfait.svg') }}" alt="">
                 <p class="number col-lg-12 text-center">89 % <br><span class="text-info">clients satisfaits</span></p>
             </div>
@@ -130,6 +220,20 @@
 
     {% include 'AppBundle::somePointsContent.html.twig' %}
 
+    <style type="text/css">
+        h1.col-lg-12.title{
+            margin-left: 11%;
+            border-left: 5px solid #7EC4C8;
+        }
+
+        @media screen and (min-width: 2000px){
+            h1.col-lg-12.title{
+                font-size: 4rem;
+            }
+
+        }
+
+    </style>
 
     {#
     <div class="col-md-12" style="background: #E6E6E6; padding-bottom: 3%">
