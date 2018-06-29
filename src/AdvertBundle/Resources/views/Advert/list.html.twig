@@ -138,7 +138,7 @@
             transition: all 0.3s;
         }
 
-        
+
 
         #sidebar .sidebar-header {
             padding: 20px;
@@ -280,14 +280,14 @@
                         console.log('wesh');
                         if (data.message == "add") {
                             console.log("yo");
-                            $('.add-fav').addClass('delete-fav');
-                            $('.add-fav').children().attr("data-prefix",'far');
-                            $('.add-fav').removeClass('add-fav');
+                            $("[data-id="+id+"]").addClass('delete-fav');
+                            $("[data-id="+id+"]").children().attr("data-prefix",'fas');
+                            $("[data-id="+id+"]").removeClass('add-fav');
 
                         }else {
-                            $('.deleteFav').addClass('add-fav');
-                            $('.deleteFav').children().attr("data-prefix",'far');
-                            $('.deleteFav').removeClass('delete-fav');
+                            $("[data-id="+id+"]").addClass('add-fav');
+                            $("[data-id="+id+"]").children().attr("data-prefix",'far');
+                            $("[data-id="+id+"]").removeClass('delete-fav');
                         }
 
                         //alert( "Data Saved: " + data );
